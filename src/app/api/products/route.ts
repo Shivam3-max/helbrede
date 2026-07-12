@@ -4,7 +4,7 @@ import { currentUser } from "@/lib/api-auth";
 import { parseRolePrices } from "../role-prices";
 
 export async function GET() {
-  return NextResponse.json({ products: listProducts() });
+  return NextResponse.json({ products: await listProducts() });
 }
 
 export async function POST(req: NextRequest) {
@@ -15,7 +15,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Name, packing and a valid MRP are required." }, { status: 400 });
   const prices = parseRolePrices(b, parseFloat(b.mrp));
   if ("error" in prices) return NextResponse.json({ error: prices.error }, { status: 400 });
-  const product = createProduct({
+  const product = await createProduct({
     name: String(b.name).trim(),
     composition: String(b.composition ?? "").trim(),
     packing: String(b.packing).trim(),

@@ -8,14 +8,14 @@
     "start": "next start -p 3480"
   },
   "dependencies": {
-    "better-sqlite3": "^12.11.1",
+    "@libsql/client": "^0.17.4",
+    "@vercel/blob": "^2.6.1",
     "next": "^16.2.10",
     "react": "^19.2.7",
     "react-dom": "^19.2.7"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
-    "@types/better-sqlite3": "^7.6.13",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",

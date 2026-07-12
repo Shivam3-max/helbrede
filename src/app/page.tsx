@@ -45,8 +45,8 @@ const STEPS = [
   },
 ];
 
-export default function Home() {
-  const products = listProducts();
+export default async function Home() {
+  const products = await listProducts();
   const groupCounts = groupsOf(products)
     .map((g) => ({
       name: g,

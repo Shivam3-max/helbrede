@@ -4,7 +4,7 @@ import { publicUser, SESSION_COOKIE } from "@/lib/api-auth";
 
 export async function POST(req: NextRequest) {
   const { email, password } = await req.json();
-  const user = getUser(String(email ?? ""));
+  const user = await getUser(String(email ?? ""));
   if (!user || user.password !== String(password ?? ""))
     return NextResponse.json({ error: "Invalid email or password." }, { status: 401 });
   if (user.status === "pending")
@@ -15,7 +15,7 @@ export async function POST(req: NextRequest) {
   if (user.status === "rejected")
     return NextResponse.json({ error: "This account application was declined. Contact support." }, { status: 403 });
 
-  const token = createSession(user.email);
+  const token = await createSession(user.email);
   const res = NextResponse.json({ user: publicUser(user) });
   res.cookies.set(SESSION_COOKIE, token, {
     httpOnly: true,

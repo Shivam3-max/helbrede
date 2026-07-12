@@ -7,7 +7,7 @@ import { Order } from "@/lib/types";
 export async function GET() {
   const user = await currentUser();
   if (!user) return NextResponse.json({ error: "Login required." }, { status: 401 });
-  const orders = user.isAdmin ? listOrders() : listOrders(user.email);
+  const orders = user.isAdmin ? await listOrders() : await listOrders(user.email);
   return NextResponse.json({ orders });
 }
 
@@ -23,7 +23,7 @@ export async function POST(req: NextRequest) {
 
   const lines = [];
   for (const i of items) {
-    const p = getProduct(i.productId);
+    const p = await getProduct(i.productId);
     const qty = Math.max(1, parseInt(String(i.qty)) || 0);
     if (!p) continue;
     if (p.isRx && !user.drugLicense && !user.medicalRegNo)
@@ -62,6 +62,6 @@ export async function POST(req: NextRequest) {
     total: round2(subtotal + gst),
     savingsVsMrp: round2(mrpTotal - subtotal),
   };
-  insertOrder(order);
+  await insertOrder(order);
   return NextResponse.json({ order });
 }

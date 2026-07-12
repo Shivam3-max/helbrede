@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import fs from "fs";
 import path from "path";
+import { del } from "@vercel/blob";
 import { deleteProduct, getProduct, updateProduct } from "@/lib/db";
 import { currentUser } from "@/lib/api-auth";
 import { parseRolePrices } from "../../role-prices";
@@ -9,7 +10,7 @@ type Params = { params: Promise<{ id: string }> };
 
 export async function GET(_req: NextRequest, { params }: Params) {
   const { id } = await params;
-  const product = getProduct(id);
+  const product = await getProduct(id);
   if (!product) return NextResponse.json({ error: "Not found." }, { status: 404 });
   return NextResponse.json({ product });
 }
@@ -18,13 +19,13 @@ export async function PUT(req: NextRequest, { params }: Params) {
   const user = await currentUser();
   if (!user?.isAdmin) return NextResponse.json({ error: "Admin only." }, { status: 403 });
   const { id } = await params;
-  if (!getProduct(id)) return NextResponse.json({ error: "Not found." }, { status: 404 });
+  if (!(await getProduct(id))) return NextResponse.json({ error: "Not found." }, { status: 404 });
   const b = await req.json();
   if (!b.name || !b.packing || !(parseFloat(b.mrp) > 0))
     return NextResponse.json({ error: "Name, packing and a valid MRP are required." }, { status: 400 });
   const prices = parseRolePrices(b, parseFloat(b.mrp));
   if ("error" in prices) return NextResponse.json({ error: prices.error }, { status: 400 });
-  const product = updateProduct(id, {
+  const product = await updateProduct(id, {
     name: String(b.name).trim(),
     composition: String(b.composition ?? "").trim(),
     packing: String(b.packing).trim(),
@@ -43,11 +44,15 @@ export async function DELETE(_req: NextRequest, { params }: Params) {
   const user = await currentUser();
   if (!user?.isAdmin) return NextResponse.json({ error: "Admin only." }, { status: 403 });
   const { id } = await params;
-  const product = getProduct(id);
+  const product = await getProduct(id);
   if (product?.image) {
-    const p = path.join(process.cwd(), "public", product.image);
-    if (fs.existsSync(p)) fs.unlinkSync(p);
+    if (product.image.startsWith("http")) {
+      try { await del(product.image); } catch { /* ignore */ }
+    } else {
+      const p = path.join(process.cwd(), "public", product.image);
+      if (fs.existsSync(p)) fs.unlinkSync(p);
+    }
   }
-  deleteProduct(id);
+  await deleteProduct(id);
   return NextResponse.json({ ok: true });
 }

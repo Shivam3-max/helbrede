@@ -11,6 +11,6 @@ export async function PUT(req: NextRequest, { params }: Params) {
   const b = await req.json();
   if (!["Placed", "Confirmed", "Dispatched", "Delivered"].includes(b.status))
     return NextResponse.json({ error: "Invalid status." }, { status: 400 });
-  setOrderStatus(id, b.status);
+  await setOrderStatus(id, b.status);
   return NextResponse.json({ ok: true });
 }
