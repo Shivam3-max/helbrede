@@ -8,11 +8,11 @@ export const metadata: Metadata = {
 };
 
 const OLD_NEW = [
-  ["PDF price lists forwarded on WhatsApp", "Live catalog with your personal slab prices"],
-  ["Rates negotiated call-by-call", "Transparent quantity slabs — same rules for everyone"],
+  ["PDF price lists forwarded on WhatsApp", "Live catalog with your personal trade rate"],
+  ["Rates negotiated call-by-call", "One transparent rate per role — same for everyone"],
   ["Orders lost in chat threads", "Tracked orders with status timeline & GST invoices"],
   ["No idea what's in stock", "Real-time availability with fast-mover signals"],
-  ["Schemes you hear about too late", "10+2 style schemes auto-applied in cart"],
+  ["MRP-only lists, margins in your head", "Every product shows your margin at a glance"],
   ["Business advice from hearsay", "Calculators, starter baskets & franchise tooling built in"],
 ];
 
@@ -23,7 +23,7 @@ const PILLARS = [
   },
   {
     title: "Pricing you can plan on",
-    body: "Four role ladders × four quantity slabs, published and predictable. Bulk planning becomes a spreadsheet exercise, not a phone negotiation.",
+    body: "One fixed net rate per role — distributor, stockist, chemist, doctor — published and predictable. Bulk planning becomes a spreadsheet exercise, not a phone negotiation.",
   },
   {
     title: "Built to grow businesses",

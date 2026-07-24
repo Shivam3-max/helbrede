@@ -6,7 +6,9 @@ export interface RawProduct {
   name: string;
   composition: string;
   packing: string;
-  mrp: string;
+  mrp: number;
+  /** Net distributor rate from the official price list. */
+  distributor: number;
 }
 
 export interface Product {

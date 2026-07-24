@@ -26,7 +26,7 @@ const CHECKLIST = [
   },
   {
     title: "Register on Helbrede Healthcare",
-    body: "Submit your license + GST here, get verified within a working day, and unlock slab pricing on 355+ SKUs.",
+    body: "Submit your license + GST here, get verified within a working day, and unlock your trade rates on 360+ SKUs.",
   },
   {
     title: "Place your starter order",
@@ -43,16 +43,15 @@ export default function Starter() {
   const [focus, setFocus] = useState<string>("balanced");
 
   const basket = useMemo(() => {
-    // deterministic "advisor": prioritize fast movers + schemes, spread across groups
-    let pool = PRODUCTS.filter((p) => p.mrp >= 20);
+    // deterministic "advisor": prioritize fast movers + healthy margin, spread across groups
+    let pool = PRODUCTS.filter((p) => p.mrp >= 20 && basePrice(p, role) > 0);
     if (focus === "ayurvedic") pool = pool.filter((p) => p.group === "Ayurvedic Specialties" || p.category.toLowerCase().includes("ayurvedic"));
     if (focus === "otc") pool = pool.filter((p) => !p.isRx);
     if (focus === "rx") pool = pool.filter((p) => p.isRx);
     const scored = [...pool].sort((a, b) => {
       const score = (p: typeof a) =>
         (p.movement === "fast" ? 2 : p.movement === "seasonal" ? 1 : 0) +
-        (p.scheme ? 1.5 : 0) +
-        marginPct(p.mrp, basePrice(p, role)) / 100;
+        Math.max(0, marginPct(p.mrp, basePrice(p, role))) / 100;
       return score(b) - score(a);
     });
     // pick top products across distinct groups first
@@ -65,11 +64,11 @@ export default function Starter() {
         seenGroups.add(p.group);
       }
     }
-    // allocate budget equally, min 50 units for slab-1
-    const per = budget / picked.length;
+    // allocate budget equally across the basket
+    const per = budget / (picked.length || 1);
     return picked
       .map((p) => {
-        const price = basePrice(p, role) * 0.95; // 50+ slab
+        const price = basePrice(p, role);
         const qty = Math.max(50, Math.floor(per / price / 10) * 10);
         return { p, qty, price, cost: qty * price };
       })
@@ -157,13 +156,12 @@ export default function Starter() {
                       </td>
                       <td className="py-2.5 pr-3 text-graphite">
                         {p.movement === "fast" ? "Fast mover" : p.movement === "seasonal" ? "Seasonal spike" : "Steady seller"}
-                        {p.scheme ? ` · ${p.scheme.buy}+${p.scheme.free} scheme` : ""}
                       </td>
                       <td className="py-2.5 pr-3 font-semibold">{qty}</td>
                       <td className="py-2.5 pr-3">{inr(Math.round(price * 100) / 100)}</td>
                       <td className="py-2.5 pr-3 font-semibold">{inr0(cost)}</td>
                       <td className="py-2.5 text-right font-bold" style={{ color: "var(--gold)" }}>
-                        {marginPct(p.mrp, price)}%
+                        {p.mrp > price ? `${marginPct(p.mrp, price)}%` : "—"}
                       </td>
                     </tr>
                   ))}

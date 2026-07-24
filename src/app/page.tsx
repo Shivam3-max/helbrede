@@ -11,11 +11,11 @@ import { Role } from "@/lib/types";
 export const dynamic = "force-dynamic";
 
 const STATS = [
-  { value: "355+", label: "Live SKUs" },
-  { value: "30", label: "Categories" },
-  { value: "4", label: "Buyer roles" },
-  { value: "16%", label: "Max slab discount" },
-  { value: "10+2", label: "Trade schemes" },
+  { value: "359", label: "Live SKUs" },
+  { value: "13", label: "Categories" },
+  { value: "4", label: "Buyer tiers" },
+  { value: "Net", label: "Distributor rates" },
+  { value: "GST", label: "Invoicing built-in" },
   { value: "9", label: "States served" },
 ];
 
@@ -26,18 +26,25 @@ const ROLE_ICONS: Record<Role, string> = {
   doctor: "M12 3v6m-3-3h6M5 21a7 7 0 0114 0",
 };
 
+const ROLE_TIER: Record<Role, string> = {
+  distributor: "Net distributor rate",
+  stockist: "Distributor +20%",
+  chemist: "Distributor +44%",
+  doctor: "Clinic dispensing rate",
+};
+
 const STEPS = [
   {
     title: "Register with your license",
     body: "Pick your role — stockist, distributor, chemist or doctor — and submit your drug license / GST / registration details.",
   },
   {
-    title: "Get verified & see your prices",
-    body: "Our team verifies your credentials. Instantly the whole catalog switches from MRP to your personal trade price ladder.",
+    title: "Get verified & see your rate",
+    body: "Our team verifies your credentials. Instantly the whole catalog switches from MRP to your fixed role-based trade rate.",
   },
   {
-    title: "Order in bulk, watch prices drop",
-    body: "Add quantity and the unit price falls live through the slabs. Schemes like 10+2 apply automatically in your cart.",
+    title: "Order in bulk, one clear rate",
+    body: "Every product shows one transparent price for your role — distributor, stockist, chemist or doctor. Add to cart and check out.",
   },
   {
     title: "Track, reorder, grow",
@@ -94,7 +101,7 @@ export default async function Home() {
             </Reveal>
             <Reveal delay={160}>
               <p className="mt-5 max-w-xl text-[15.5px] leading-relaxed text-graphite">
-                The complete Helbrede range — 355+ pharma, Ayurvedic and nutraceutical products —
+                The complete Helbrede range — 360+ pharma, Ayurvedic and nutraceutical products —
                 booked in bulk at transparent trade rates for stockists, distributors, chemists
                 and doctors. No phone calls, no PDF price lists, no haggling.
               </p>
@@ -102,7 +109,7 @@ export default async function Home() {
             <Reveal delay={240}>
               <div className="mt-7 flex flex-wrap gap-3">
                 <Link href="/products" className="btn-primary">
-                  Browse 355+ Products
+                  Browse 360+ Products
                 </Link>
                 <Link href="/register" className="btn-gold">
                   Register Your Business
@@ -117,7 +124,7 @@ export default async function Home() {
                 <span className="chip">License-verified buyers</span>
                 <span className="chip">Role-based trade pricing</span>
                 <span className="chip">GST invoicing</span>
-                <span className="chip">10+2 schemes</span>
+                <span className="chip">Net distributor rates</span>
               </div>
             </Reveal>
           </div>
@@ -154,8 +161,8 @@ export default async function Home() {
         <div className="container-x">
           <SectionHead
             eyebrow="Who it's for"
-            title="Every Buyer Gets Their Own Price Ladder"
-            sub="The same product, four different rates — computed live from your role and order size."
+            title="Every Buyer Gets Their Own Rate"
+            sub="The same product, four fixed trade rates — one for each role in the channel."
           />
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {(Object.keys(ROLES) as Role[]).map((r, i) => (
@@ -169,7 +176,7 @@ export default async function Home() {
                   <h3 className="mt-4 font-display text-[17px] font-black">{ROLES[r].label}</h3>
                   <p className="mt-1.5 text-[13px] leading-relaxed text-graphite">{ROLES[r].blurb}</p>
                   <p className="mt-3 text-[12.5px] font-bold" style={{ color: "var(--gold)" }}>
-                    Up to {Math.round((1 - ROLES[r].multiplier * 0.84) * 100)}% below MRP →
+                    {ROLE_TIER[r]} →
                   </p>
                 </Link>
               </Reveal>

@@ -1,2842 +1,3233 @@
 [
   {
     "sno": 1,
-    "category": "Ointment",
-    "name": "5D GEL",
-    "composition": "Diclofenac Diethylamine 1.16%, Methyl Saliylate 20% , linseed oil 3%, benzyl Alcohol 1%,menthol 0.5%",
-    "packing": "30GM",
-    "mrp": "108.00"
+    "name": "ACNE VANISH CREAM",
+    "composition": "Clindamicine Phosphate 1.0% & Adapalene Microsphers",
+    "packing": "20 GM",
+    "mrp": 175.0,
+    "category": "Ointment/Cream",
+    "distributor": 14.0
   },
   {
     "sno": 2,
-    "category": "Ointment",
     "name": "5D GEL",
     "composition": "Diclofenac Diethylamine 1.16%, Methyl Saliylate 20% , linseed oil 3%, benzyl Alcohol 1%,menthol 0.5%",
-    "packing": "10 GM",
-    "mrp": "50.00"
+    "packing": "30GM",
+    "mrp": 100.0,
+    "category": "Ointment/Cream",
+    "distributor": 8.5
   },
   {
     "sno": 3,
-    "category": "Ointment",
-    "name": "B.N CLOT Ointment",
-    "composition": "Beclomethasone Dipropionate 0.025%, Neomycin Sulphate 0.5%, Clotrimozole 1 % w/w ,Chlorocresol 1% w/w",
-    "packing": "10GM",
-    "mrp": "50.00"
+    "name": "BURN O SOFT",
+    "composition": "Diclofenac Diethylamine 1.16%, Methyl Saliylate 20% , linseed oil 3%, benzyl Alcohol 1%,menthol 0.5%",
+    "packing": "15 GM",
+    "mrp": 84.38,
+    "category": "Ointment/Cream",
+    "distributor": 16.0
   },
   {
     "sno": 4,
-    "category": "Ointment",
-    "name": "BURN O SOFT",
-    "composition": "Silver Sulphadiazine IP 1.0% w/w,Chlorhexine Gluconate Solution IP 0.20%w/w, Metronidazole IP 1.0 % w/w Cream base q.s",
-    "packing": "15GM",
-    "mrp": "80.00"
+    "name": "BN-CLOT",
+    "composition": "CLOTRIMAZOLE IP 1.0%w/w BECLOMETHASONE DIPROPIONATE IP 1.0%w/w",
+    "packing": "10 GM",
+    "mrp": 50.0,
+    "category": "Ointment/Cream",
+    "distributor": 5.0
   },
   {
     "sno": 5,
-    "category": "Ointment",
     "name": "CLOT CREAM",
-    "composition": "Clotrimozole 2 % w/w (Vaginal Gel),Chlorocresol 1% w/w",
+    "composition": "Clotrimozole 2 % w/w ,Chlorocresol 1% w/w (Vaginal Gel)",
     "packing": "30GM",
-    "mrp": "90.00"
+    "mrp": 90.0,
+    "category": "Ointment/Cream",
+    "distributor": 13.0
   },
   {
     "sno": 6,
-    "category": "Ointment",
-    "name": "CLOT-B Ointment",
-    "composition": "Clotrimazole 1.0%& Becomethasone Dipropionate 0.025% Cream",
-    "packing": "15GM",
-    "mrp": "75.00"
+    "name": "CLOT-B CREAM",
+    "composition": "Clotrimozole 1 % w/w ,Beclomethasone Dipropionate IP 0.025%w/w",
+    "packing": "15 GM",
+    "mrp": 75.0,
+    "category": "Ointment/Cream",
+    "distributor": 6.0
   },
   {
     "sno": 7,
-    "category": "Ointment",
-    "name": "FUSIHEL CREAM",
-    "composition": "Fusidic Acid Ointment",
-    "packing": "10GM",
-    "mrp": "60.00"
-  },
-  {
-    "sno": 8,
-    "category": "Ointment",
     "name": "CASTOHEL-NF CREAM",
     "composition": "Ciprofloxacin hydrochloride I.P 1.0% w/w,Metronidazole Benzote 1.00% w/w, clobelasol propionate IP 0.5% w/w,Terbinafine Hydrocloride 1.00%",
     "packing": "15 GM",
-    "mrp": "95.00"
+    "mrp": 95.0,
+    "category": "Ointment/Cream",
+    "distributor": 12.0
+  },
+  {
+    "sno": 8,
+    "name": "CIPROHEL-CF PLUS",
+    "composition": "Ciprofloxacin hydrochloride I.P 0.05w/w, Flucinolone Acetonide IP 0.025%w/w,Clotrimazole IP 1.0%w/w,Zink Sulphate IP 1.0%w/w Cream Base",
+    "packing": "15 GM",
+    "mrp": 95.0,
+    "category": "Ointment/Cream",
+    "distributor": 12.0
   },
   {
     "sno": 9,
-    "category": "Ointment",
-    "name": "HELDINE-M Ointment",
-    "composition": "Povidone-Iodine I.P. 5% w/w +Metronidazole I.P.1% w/w+Dexapanthenol I.P. 5 % w/w",
-    "packing": "15GM",
-    "mrp": "65.00"
+    "name": "DERMIDERM OC CREAM",
+    "composition": "Ciprofloxacin hydrochloride I.P 1.0% w/w,Metronidazole Benzote 1.00% w/w, clobelasol propionate IP 0.5% w/w,Terbinafine Hydrocloride 1.00%",
+    "packing": "15 GM",
+    "mrp": 95.0,
+    "category": "Ointment/Cream",
+    "distributor": 11.0
   },
   {
     "sno": 10,
-    "category": "Ointment",
-    "name": "HELDINE Ointment",
+    "name": "HELDINE Ointment (DPCO)",
     "composition": "Povidone-Iodine I.P. 5% w/w",
     "packing": "10 GM",
-    "mrp": "22.00"
+    "mrp": 22.0,
+    "category": "Ointment/Cream",
+    "distributor": 8.0
   },
   {
     "sno": 11,
-    "category": "Ointment",
-    "name": "HELDINE Ointment",
+    "name": "HELDINE Ointment (DPCO)",
     "composition": "Povidone-Iodine I.P. 5% w/w",
     "packing": "15 GM",
-    "mrp": "27.70"
+    "mrp": 30.94,
+    "category": "Ointment/Cream",
+    "distributor": 8.5
   },
   {
     "sno": 12,
-    "category": "Ointment",
-    "name": "HELDINE Ointment",
+    "name": "HELDINE Ointment (DPCO)",
     "composition": "Povidone-Iodine I.P. 5% w/w",
     "packing": "20 GM",
-    "mrp": "33.00"
+    "mrp": 36.56,
+    "category": "Ointment/Cream",
+    "distributor": 12.0
   },
   {
     "sno": 13,
-    "category": "Ointment",
-    "name": "HELDINE Ointment",
-    "composition": "Povidone-Iodine I.P. 5% w/w",
-    "packing": "30 GM",
-    "mrp": "66.00"
+    "name": "HELDINE-M OINTMENT",
+    "composition": "Povidone-Iodine IP 5% w/w ,METRONIDAZOLE IP 1%WW,ALOEVERA 1.5%WW",
+    "packing": "15 GM",
+    "mrp": 89.06,
+    "category": "Ointment/Cream",
+    "distributor": 12.5
   },
   {
     "sno": 14,
-    "category": "Ointment",
-    "name": "HELDINE Ointment",
-    "composition": "Povidone-Iodine I.P. 5% w/w",
-    "packing": "100 GM",
-    "mrp": "220.00"
+    "name": "HELDINE-O OINTMENT",
+    "composition": "Povidone-Iodine IP 5% w/w ,ORNIDAZOLE IP 1%Ww/w",
+    "packing": "15 GM",
+    "mrp": 90.0,
+    "category": "Ointment/Cream",
+    "distributor": 9.5
   },
   {
     "sno": 15,
-    "category": "Ointment",
-    "name": "HELDINE O OINTMENT",
-    "composition": "Povidone-Iodine I.P. 5% w/w + Ornidazole I.P. 1% w/w (Water - Soluble Ointment Base)",
-    "packing": "15GM",
-    "mrp": "220.00"
+    "name": "HELDINE-S OINTMENT",
+    "composition": "Povidone-Iodine IP 5% w/w ,SUCRALFATE USP 7%Ww/w",
+    "packing": "15 GM",
+    "mrp": 90.0,
+    "category": "Ointment/Cream",
+    "distributor": 9.5
   },
   {
     "sno": 16,
-    "category": "Ointment",
-    "name": "HELDINE S OINTMENT",
-    "composition": "Povidone-Iodine I.P. 5% & Sucralfate ointment USP 7%",
+    "name": "HELFLOX-TC",
+    "composition": "Ofloxacin Ip 0.75% w/w,Omidazole IP 2.0%w/w,clobelasole Propionate IP 0.05% w/w,Itraconazole Usp 1.00% w/w, Methyl paraben (preservation) 0.20 %, Prophyl paraben (preservation) 0.02%",
     "packing": "15GM",
-    "mrp": "62.00"
+    "mrp": 95.0,
+    "category": "Ointment/Cream",
+    "distributor": 12.0
   },
   {
     "sno": 17,
-    "category": "Ointment",
-    "name": "HELFLOX TC",
-    "composition": "Ofloxacin Ip 0.75% w/w,Omidazole IP 2.0%w/w,clobelasole Propionate IP 0.05% w/w,Itraconazole Usp 1.00% w/w, Methyl paraben (preservation) 0.20 %, Prophyl paraben (preservation) 0.02%",
-    "packing": "15GM",
-    "mrp": "95.00"
+    "name": "HELSALIC OINTMENT",
+    "composition": "Clobetasol Propionate 0.05% w/w SALICYLIC ACID 6%w/w",
+    "packing": "20 GM",
+    "mrp": 105.0,
+    "category": "Ointment/Cream",
+    "distributor": 13.0
   },
   {
     "sno": 18,
-    "category": "Ointment",
-    "name": "HELOVIR",
-    "composition": "ACICLOVIR CREAM",
-    "packing": "5 GM",
-    "mrp": "125.00"
+    "name": "HELSONE-HT OINTMENT",
+    "composition": "HYDROquinone USP 2%w/w, Tretinoin USP 0.025% w/w Mometasone Furoate I.P. 0.1% w/w (Cream Base)",
+    "packing": "15 GM",
+    "mrp": 150.0,
+    "category": "Ointment/Cream",
+    "distributor": 10.5
   },
   {
     "sno": 19,
-    "category": "Ointment",
-    "name": "HELSONE HT",
-    "composition": "Hydroquinone 2%, Tretinoin 0.025%, Mometosone Furoate 0.1%",
-    "packing": "15 GM",
-    "mrp": "150.00"
+    "name": "INTRAFAST GEL",
+    "composition": "Diclofenac Diethylamine 1.16%, Methyl Saliylate 20% , linseed oil 3%, benzyl Alcohol 1%,menthol 0.5%",
+    "packing": "30GM",
+    "mrp": 100.0,
+    "category": "Ointment/Cream",
+    "distributor": 8.5
   },
   {
     "sno": 20,
-    "category": "Ointment",
-    "name": "Helsalic",
-    "composition": "Clobetasol Propionate 0.05% w/w, Salicylic Acid 6.0% w/w",
-    "packing": "20GM",
-    "mrp": "105.00"
-  },
-  {
-    "sno": 21,
-    "category": "Ointment",
-    "name": "INTRAFAST GEL",
-    "composition": "Diclofenac Diethylamine 1.16%, Methyl Saliylate 20% , linseed oil 3%, benzyl Alcohol 1%,menthol 0.5%",
-    "packing": "30GM",
-    "mrp": "80.00"
-  },
-  {
-    "sno": 22,
-    "category": "Ointment",
-    "name": "INTRAFAST GEL",
-    "composition": "Diclofenac Diethylamine 1.16%, Methyl Saliylate 20% , linseed oil 3%, benzyl Alcohol 1%,menthol 0.5%",
-    "packing": "10GM",
-    "mrp": "50.00"
-  },
-  {
-    "sno": 23,
-    "category": "Ointment",
     "name": "KAT-KIT CREAM",
     "composition": "Ketoconazole Ip 2.0%w/w",
     "packing": "30GM",
-    "mrp": "105.00"
+    "mrp": 140.0,
+    "category": "Ointment/Cream",
+    "distributor": 15.0
+  },
+  {
+    "sno": 21,
+    "name": "KAT-KIT B CREAM",
+    "composition": "Ketoconazole Ip 2.0%w/w BECLOMETHASONE DIPROPIONATE IP 0.025%w/w",
+    "packing": "15 GM",
+    "mrp": 98.0,
+    "category": "Ointment/Cream",
+    "distributor": 10.0
+  },
+  {
+    "sno": 22,
+    "name": "KTC DERM 5 Ointment",
+    "composition": "Ketoconazole IP 2%w/w,Clobetasol Propionate 0.05% w/w + Neomycin Sulphate 0.10%w/w+Tolnaflate 1 % w/w+Iodochlorhydroxquinoline 1%w/w+Dexxpanthenol0.05%",
+    "packing": "15GM",
+    "mrp": 117.19,
+    "category": "Ointment/Cream",
+    "distributor": 13.5
+  },
+  {
+    "sno": 23,
+    "name": "LUDO GEL (DPCO)",
+    "composition": "LIDOCANE HCL IP 2%",
+    "packing": "30 GM",
+    "mrp": 89.0,
+    "category": "Ointment/Cream",
+    "distributor": 8.25
   },
   {
     "sno": 24,
-    "category": "Ointment",
-    "name": "KAT KIT B CREAM",
-    "composition": "Ketoconazole Ip 2.0%w/w+Beclomethasone Dipropionate 0.025%",
-    "packing": "15GM",
-    "mrp": "105.00"
+    "name": "LULIFORT CREAM",
+    "composition": "Luliconazole 1%w/w",
+    "packing": "20 GM",
+    "mrp": 210.94,
+    "category": "Ointment/Cream",
+    "distributor": 15.0
   },
   {
     "sno": 25,
-    "category": "Ointment",
-    "name": "KTC DERM 5 Ointment",
-    "composition": "Clobetasol Propionate 0.05% w/w + Gentamycin Sulphate 0.10%w/w+Tolnaflate 1.00 % w/w+Iodochlorhydroxquinoline 1.00%w/w& clotrimazole 1.00%w/w",
-    "packing": "15GM",
-    "mrp": "95.00"
+    "name": "MICROBIC CREAM (DPCO)",
+    "composition": "Permethrin 5%w/w Cream",
+    "packing": "30GM",
+    "mrp": 105.0,
+    "category": "Ointment/Cream",
+    "distributor": 13.0
   },
   {
     "sno": 26,
-    "category": "Ointment",
-    "name": "MICROBIC CREAM",
-    "composition": "Permethrin 5%cream",
-    "packing": "30GM",
-    "mrp": "105.00"
+    "name": "MUCIN CREAM (DPCO)",
+    "composition": "Mupirocin 2% w/w in a cream base q.s.",
+    "packing": "5GM",
+    "mrp": 105.0,
+    "category": "Ointment/Cream",
+    "distributor": 16.0
   },
   {
     "sno": 27,
-    "category": "Ointment",
-    "name": "MUCIN CREAM",
-    "composition": "Mupirocin 2% w/w in a cream base q.s.",
-    "packing": "5GM",
-    "mrp": "125.00"
+    "name": "NEO CLOBEMATE-GM CREAM",
+    "composition": "CLOBITASOLE PROPIONATE IP 0.05%w/w GENTAMICIN SULPHATE MICONAZOLE NITRATE IP 2.0%w/w CLOTRIMAZOLE",
+    "packing": "10 GM",
+    "mrp": 60.0,
+    "category": "Ointment/Cream",
+    "distributor": 5.5
   },
   {
     "sno": 28,
-    "category": "Ointment",
-    "name": "NEO-CLOBEMATE-GM",
-    "composition": "Clobetasol Propionate 0.05% w/w + Neomycin Sulphate 0.5% w/w + Miconazole Nitrate 2.0% w/w+Zinc sulphate 2.0% w/w(Cream Base)",
-    "packing": "10GM",
-    "mrp": "50.00"
+    "name": "ONMIFAST GEL",
+    "composition": "Diclofenac Diethylamine 1.16%, Methyl Saliylate 20% , linseed oil 3%, benzyl Alcohol 1%,menthol 0.5%",
+    "packing": "10 GM",
+    "mrp": 46.5,
+    "category": "Ointment/Cream",
+    "distributor": 5.5
   },
   {
     "sno": 29,
-    "category": "Ointment",
-    "name": "ORARAPID GEL (MANGO FLAVOUR)",
-    "composition": "Choline Salicyate Solution 8.7% w/w + Lignocaine Hydrochloride 2.0% w/w + Benzalkonium Chloride Solution 0.01% w/w",
-    "packing": "10GM",
-    "mrp": "48.90"
+    "name": "ONMIFAST GEL",
+    "composition": "Diclofenac Diethylamine 1.16%, Methyl Saliylate 20% , linseed oil 3%, benzyl Alcohol 1%,menthol 0.5%",
+    "packing": "30 GM",
+    "mrp": 101.25,
+    "category": "Ointment/Cream",
+    "distributor": 8.5
   },
   {
     "sno": 30,
-    "category": "Ointment",
-    "name": "PYN RELIEF GEL",
-    "composition": "Linseed Oil 3.00% w/w + Diclofenac Diethylamine 1.16% w/w + Methyl Salicyate 10.00% w/w + Menthol 5% w/w + Benzyl Alcohol 1.00% w/w (Gel Base)",
-    "packing": "30GM",
-    "mrp": "99.00"
+    "name": "ORARAPID GEL (MANGO FLAVOUR)",
+    "composition": "Choline Salicyate Solution 8.7% w/w + Lignocaine Hydrochloride 2.0% w/w + Benzalkonium Chloride Solution 0.01% w/w",
+    "packing": "10GM",
+    "mrp": 45.84,
+    "category": "Ointment/Cream",
+    "distributor": 8.5
   },
   {
     "sno": 31,
-    "category": "Ointment",
-    "name": "PYN RELIEF HOT GEL",
-    "composition": "Virgin Linseed Oil 3.00% w/w + Diclofenac Diethylamine 1.16% w/w + Methyl Salicyate 10.00% w/w + Menthol 5% w/w +Capsaicin 0.025% w/w+ Benzyl Alcohol 1.00% w/w (Gel Base)",
-    "packing": "30MG",
-    "mrp": "160.00"
+    "name": "POVIFOL",
+    "composition": "Povidone-Iodine I.P. 5% w/w",
+    "packing": "20 GM",
+    "mrp": 36.0,
+    "category": "Ointment/Cream",
+    "distributor": 12.5
   },
   {
     "sno": 32,
-    "category": "Ointment",
-    "name": "SHINY SKIN CREAM",
-    "composition": "Hydroquinone USP 2%w/w + Tretinoin USP 0.025% w/w + Mometasone Furoate I.P. 0.1% w/w (Cream Base)",
-    "packing": "15GM",
-    "mrp": "150.00"
+    "name": "PYN RELIEF GEL",
+    "composition": "Diclofenac Diethylamine 1.16%, Methyl Saliylate 10% , linseed oil 3%, benzyl Alcohol 1%,menthol 5%",
+    "packing": "30 GM",
+    "mrp": 92.0,
+    "category": "Ointment/Cream",
+    "distributor": 9.5
   },
   {
     "sno": 33,
-    "category": "Ointment",
-    "name": "SHINY SKIN SCAR AND ANTI MARKS",
-    "composition": "KOJIC ACID WITH VITAMIN CREAM",
-    "packing": "20 GM",
-    "mrp": "185.00"
-  },
-  {
-    "sno": 34,
-    "category": "Ointment",
-    "name": "SKINFAIR BRIGHT CREAM",
-    "composition": "Hydroquinone USP 2%w/w + Tretinoin USP 0.025% w/w + Mometasone Furoate I.P. 0.1% w/w (Cream Base)",
-    "packing": "15GM",
-    "mrp": "150.00"
+    "name": "PYN RELIEF HOT GEL",
+    "composition": "Diclofenac Diethylamine 1.16%, Methyl Saliylate 10% , linseed oil 3%, benzyl Alcohol 1%,menthol 5%,CAPSAICIN USP 0.025%w/w",
+    "packing": "30 GM",
+    "mrp": 140.0,
+    "category": "Ointment/Cream",
+    "distributor": 13.5
   },
   {
     "sno": 35,
-    "category": "Ointment",
-    "name": "SANSO FRESH GEL",
-    "composition": "P otassium nitrate medicated Toothpaste",
-    "packing": "50GM",
-    "mrp": "125.00"
+    "name": "QAUDIDERM-RF",
+    "composition": "BECLOMETHASONE DIPROPIONATE IP 0.025%w/w NEOMYCINE SULPHATE IP 0.5%w/w CLOTRIMAZOLE IP 1.0%w/w",
+    "packing": "15 GM",
+    "mrp": 84.0,
+    "category": "Ointment/Cream",
+    "distributor": 6.5
   },
   {
     "sno": 36,
-    "category": "Ointment",
-    "name": "LUDO GEL",
-    "composition": "Lidocaine hydrocloride gel 2%",
-    "packing": "30GM",
-    "mrp": "95.00"
+    "name": "SHINY SKIN CREAM",
+    "composition": "Hydroquinone USP 2%w/w + Tretinoin USP 0.025% w/w + Mometasone Furoate I.P. 0.1% w/w (Cream Base)",
+    "packing": "15GM",
+    "mrp": 140.63,
+    "category": "Ointment/Cream",
+    "distributor": 16.5
   },
   {
     "sno": 37,
-    "category": "Ointment",
-    "name": "LULIFORT CREAM",
-    "composition": "Ligonocaine Hydrochloride Gel ip 2%",
-    "packing": "20 GM",
-    "mrp": "225.00"
+    "name": "SANSO FRESH GEL (TOOTHPASTE)",
+    "composition": "Potassium nitrate medicated Toothpaste",
+    "packing": "50GM",
+    "mrp": 125.0,
+    "category": "Personal Care",
+    "distributor": 22.0
   },
   {
     "sno": 38,
-    "category": "Ointment",
-    "name": "LIGNOHEL",
-    "composition": "Luliconazole 1%w/w",
-    "packing": "30GM",
-    "mrp": "105.00"
-  },
-  {
-    "sno": 39,
-    "category": "Ointment",
-    "name": "CIPROHEL CF PLUS CREAM",
-    "composition": "Ciprofloxacin (0.5% w/w + Fluocinolone acetonide (0.025% w/w) + Clotrimazole (1% w/w)+Zinc",
-    "packing": "15 GM",
-    "mrp": "95.00"
+    "name": "NEO SENSODINE GEL (TOOTHPASTE)",
+    "composition": "",
+    "packing": "50GM",
+    "mrp": 117.0,
+    "category": "Personal Care",
+    "distributor": 22.0
   },
   {
     "sno": 40,
-    "category": "Ointment",
-    "name": "QAUDIDERM RF",
-    "composition": "Beclomethasone Dipropionate 0.025%, Neomycin Sulphate 0.5%, Clotrimozole 1 % w/w",
-    "packing": "5GM",
-    "mrp": "40.00"
+    "name": "BOSOM CREAM",
+    "composition": "Breast Enhancement and Enlargement cream",
+    "packing": "60gm",
+    "mrp": 490.0,
+    "category": "Ointment/Cream",
+    "distributor": 52.0
   },
   {
     "sno": 41,
-    "category": "Ointment",
-    "name": "QAUDIDERM RF",
-    "composition": "Beclomethasone Dipropionate 0.025%, Neomycin Sulphate 0.5%, Clotrimozole 1 % w/w",
-    "packing": "15 GM",
-    "mrp": "80.00"
+    "name": "CRACK GO CREAM",
+    "composition": "FOOT CRACK CREAM",
+    "packing": "25 GM",
+    "mrp": 99.0,
+    "category": "Ointment/Cream",
+    "distributor": 15.0
   },
   {
     "sno": 42,
-    "category": "Ayurvedic Cream",
-    "name": "CRACK GO CREAM",
+    "name": "CRACK GONE CREAM",
     "composition": "FOOT CRACK CREAM",
-    "packing": "20GM",
-    "mrp": "99.00"
+    "packing": "25 GM",
+    "mrp": 99.0,
+    "category": "Ointment/Cream",
+    "distributor": 15.0
   },
   {
     "sno": 43,
-    "category": "Ayurvedic Cream",
-    "name": "PILES MAN CREAM WITH APPLICATER",
-    "composition": "Herbal Cream for internal and External piles, bleeding piles",
-    "packing": "30GM",
-    "mrp": "110.00"
-  },
-  {
-    "sno": 44,
-    "category": "Ayurvedic Cream",
-    "name": "HERBAL PAIN RELIEF CREAM",
-    "composition": "Herbal pain relief cream",
-    "packing": "20GM",
-    "mrp": "99.00"
-  },
-  {
-    "sno": 45,
-    "category": "Ayurvedic Cream",
-    "name": "NOMORE MARKS CREAM",
-    "composition": "Ayurvedic anti marks cream",
-    "packing": "20GM",
-    "mrp": "150.00"
-  },
-  {
-    "sno": 49,
-    "category": "Ayurvedic Cream",
-    "name": "TURMERIC CREAM",
-    "composition": "Turmeric CREAM skin exfoliant herbal Cream",
-    "packing": "15 GM",
-    "mrp": "150.00"
-  },
-  {
-    "sno": 50,
-    "category": "Ayurvedic Cream",
-    "name": "ECZEMA CREAM",
-    "composition": "FOR ECZEMA,DERMATICS,RINGWARMS,ITCHES AND COLD CRACK",
-    "packing": "15 GM",
-    "mrp": "125.00"
-  },
-  {
-    "sno": 51,
-    "category": "Ayurvedic Cream",
-    "name": "MEGADINE ANTISEPTIC CREAM",
-    "composition": "AYURVEDIC ANTISEPTIC CREAM",
-    "packing": "15 GM",
-    "mrp": "45.00"
-  },
-  {
-    "sno": 52,
-    "category": "Ayurvedic Cream",
     "name": "DIAPER RASH FREE KID CREAM",
     "composition": "FOR DIAPER RASH",
     "packing": "20GM",
-    "mrp": "95.00"
+    "mrp": 95.0,
+    "category": "Ointment/Cream",
+    "distributor": 11.0
   },
   {
-    "sno": 53,
-    "category": "Ayurvedic Cream",
-    "name": "DANT SURKSHA TOOTHPASTE",
-    "composition": "AYURVEDIC TOOTHPASTE",
-    "packing": "100GM",
-    "mrp": "95.00"
+    "sno": 44,
+    "name": "ITCH SAFE GUARD",
+    "composition": "HERBAL CREAM FOR FUNGAS AND BACTERIA.",
+    "packing": "15GM",
+    "mrp": 95.0,
+    "category": "Ointment/Cream",
+    "distributor": 11.0
   },
   {
-    "sno": 54,
-    "category": "Ayurvedic Cream",
-    "name": "NEEM,TULSI,LONG TOOTHPASTE",
-    "composition": "AYURVEDIC TOOTHPASTE",
-    "packing": "100GM",
-    "mrp": "95.00"
+    "sno": 45,
+    "name": "ITCH HEAL GUARD",
+    "composition": "HERBAL CREAM FOR FUNGAS AND BACTERIA.",
+    "packing": "15GM",
+    "mrp": 95.0,
+    "category": "Ointment/Cream",
+    "distributor": 11.0
   },
   {
-    "sno": 56,
-    "category": "Ayurvedic Cream",
+    "sno": 46,
+    "name": "LICE KILL CREAM",
+    "composition": "LICE REMOVING CREAM FOR HAIR",
+    "packing": "30GM",
+    "mrp": 125.0,
+    "category": "Ointment/Cream",
+    "distributor": 13.0
+  },
+  {
+    "sno": 47,
+    "name": "LICE AWAY OINTMENT",
+    "composition": "LICE REMOVING CREAM FOR HAIR",
+    "packing": "30GM",
+    "mrp": 117.0,
+    "category": "Ointment/Cream",
+    "distributor": 13.0
+  },
+  {
+    "sno": 48,
     "name": "MOSKITO SAFE CREAM",
     "composition": "Mosquito repellent creams",
     "packing": "30 GM",
-    "mrp": "100.00"
+    "mrp": 100.0,
+    "category": "Ointment/Cream",
+    "distributor": 17.0
   },
   {
-    "sno": 57,
-    "category": "Ayurvedic Cream",
+    "sno": 49,
     "name": "MOSKITO SAFE CREAM",
     "composition": "Mosquito repellent creams",
     "packing": "50 GM",
-    "mrp": "150.00"
+    "mrp": 140.0,
+    "category": "Ointment/Cream",
+    "distributor": 24.0
   },
   {
-    "sno": 58,
-    "category": "Tablets",
-    "name": "ACIHEL",
-    "composition": "Aceclofenac 100mg + Paracetamol 325mg",
-    "packing": "20X10",
-    "mrp": "50.00"
+    "sno": 50,
+    "name": "MOVONN CREAM",
+    "composition": "Herbal pain relief cream",
+    "packing": "20GM",
+    "mrp": 99.0,
+    "category": "Ointment/Cream",
+    "distributor": 14.0
+  },
+  {
+    "sno": 51,
+    "name": "MOVFREE CREAM",
+    "composition": "Herbal pain relief cream",
+    "packing": "20GM",
+    "mrp": 99.0,
+    "category": "Ointment/Cream",
+    "distributor": 14.0
+  },
+  {
+    "sno": 52,
+    "name": "NO-MORE MARKS CREAM",
+    "composition": "Ayurvedic anti marks cream",
+    "packing": "20GM",
+    "mrp": 150.0,
+    "category": "Ointment/Cream",
+    "distributor": 15.0
+  },
+  {
+    "sno": 53,
+    "name": "PILES MAN CREAM WITH APPLICATER",
+    "composition": "Herbal Cream for internal and External piles, bleeding piles",
+    "packing": "30GM",
+    "mrp": 125.0,
+    "category": "Ointment/Cream",
+    "distributor": 16.0
+  },
+  {
+    "sno": 54,
+    "name": "PILES GONE CREAM WITH APPLICATER",
+    "composition": "Herbal Cream for internal and External piles, bleeding piles",
+    "packing": "30GM",
+    "mrp": 125.0,
+    "category": "Ointment/Cream",
+    "distributor": 16.0
+  },
+  {
+    "sno": 55,
+    "name": "TURMERIC CREAM",
+    "composition": "FOR CLEAR & GLOWING CREAM",
+    "packing": "30 GM",
+    "mrp": 150.0,
+    "category": "Ointment/Cream",
+    "distributor": 16.0
+  },
+  {
+    "sno": 56,
+    "name": "DANT SURKSHA TOOTHPASTE",
+    "composition": "AYURVEDIC TOOTHPASTE",
+    "packing": "100GM",
+    "mrp": 95.0,
+    "category": "Personal Care",
+    "distributor": 24.0
+  },
+  {
+    "sno": 57,
+    "name": "NEEM,TULSI,LONG",
+    "composition": "AYURVEDIC TOOTHPASTE",
+    "packing": "100GM",
+    "mrp": 95.0,
+    "category": "Ointment/Cream",
+    "distributor": 24.0
   },
   {
     "sno": 59,
-    "category": "Tablets",
     "name": "ACIHEL - SP",
     "composition": "Aceclofenac IP 100mg + Paracetamol IP 325mg+ Serratiopeptidase IP 15mg",
-    "packing": "10X10",
-    "mrp": "110.00"
+    "packing": "20X10",
+    "mrp": 117.19,
+    "category": "Tablets",
+    "distributor": 195.0
   },
   {
     "sno": 60,
+    "name": "ACIFOL-SP",
+    "composition": "Aceclofenac IP 100mg + Paracetamol IP 325mg+ Serratiopeptidase IP 10mg",
+    "packing": "20X10",
+    "mrp": 168.75,
     "category": "Tablets",
-    "name": "ACIHEL -MR",
-    "composition": "Aceclofenac IP 100mg + PCM IP 325mg + Chlorozoxazone USP 250mg. Tab + Excipient q.s. + Colour : Titanium Dioxide IP",
-    "packing": "10X10",
-    "mrp": "125.00"
+    "distributor": 175.0
   },
   {
     "sno": 61,
+    "name": "ACIHEL - MR (ALU)",
+    "composition": "Aceclofenac (100mg) + Paracetamol (325mg) + Chlorzoxazone (250mg)",
+    "packing": "20X10 Tab.",
+    "mrp": 150.0,
     "category": "Tablets",
-    "name": "AZIHEL 250",
-    "composition": "Azithromycin Dihydrate IP 250mg",
-    "packing": "20x1x6",
-    "mrp": "57.00"
+    "distributor": 160.0
   },
   {
     "sno": 62,
+    "name": "CETHEL 10 (DPCO)",
+    "composition": "CETIRIZINE HYSROCHLORIDE TABLET 10MG",
+    "packing": "25X4X10",
+    "mrp": 19.21,
     "category": "Tablets",
-    "name": "AZIHEL 250",
-    "composition": "Azithromycin Dihydrate IP 250mg",
-    "packing": "20x1x6",
-    "mrp": "57.00"
+    "distributor": 105.0
   },
   {
     "sno": 63,
+    "name": "DICLOHEL",
+    "composition": "DICLOFENAC POTASIUM BP 50 MG PARACETAMOL IP 325 MG",
+    "packing": "30X10",
+    "mrp": 30.0,
     "category": "Tablets",
-    "name": "MEECLAV 625 TAB",
-    "composition": "Amoxycillin 500 mg &Pottassium clavulanate 125mg with LB",
-    "packing": "10x1x6",
-    "mrp": "175.00"
+    "distributor": 135.0
   },
   {
     "sno": 64,
+    "name": "DEFAHEL 6 TABLET",
+    "composition": "deflazacort tablet 6 mg",
+    "packing": "20X10",
+    "mrp": 140.63,
     "category": "Tablets",
-    "name": "MEECLAV 625 TAB",
-    "composition": "Amoxycillin 500 mg &Pottassium clavulanate 125mg with LB",
-    "packing": "10x1x10",
-    "mrp": "330.00"
+    "distributor": 220.0
   },
   {
     "sno": 65,
+    "name": "DROTAHEL-M",
+    "composition": "DROTAVERINE HCL. IP 80 MG MEFENAMIC ACID IP 250 MG",
+    "packing": "20X10",
+    "mrp": 195.0,
     "category": "Tablets",
-    "name": "MEECEF 200 LB",
-    "composition": "Cefexime 200 DT with LB",
-    "packing": "10X1X10",
-    "mrp": "195.00"
+    "distributor": 175.0
   },
   {
     "sno": 66,
+    "name": "FERIHEL-XT TABLET",
+    "composition": "FERROUS Ascorbate 100mg Folic Acid 1.5 mg Zink Sulphate 22.5mg Tablet",
+    "packing": "10X1X10",
+    "mrp": 140.0,
     "category": "Tablets",
-    "name": "TRYCEF 200 LB",
-    "composition": "Cefexime 200 DT with LB",
-    "packing": "10X10",
-    "mrp": "150.00"
+    "distributor": 95.0
+  },
+  {
+    "sno": 67,
+    "name": "HELMONT L TAB",
+    "composition": "Montelukast Sodium 10mg + Levocetirizine Dihydrochloride 5mg (Alu-Alu PACK)",
+    "packing": "20x10",
+    "mrp": 117.19,
+    "category": "Tablets",
+    "distributor": 185.0
   },
   {
     "sno": 68,
+    "name": "KILLHEL COLD TABLET",
+    "composition": "Paracetamol IP 500 mgPhenylephrine Hcl.5mg,Caffeine 30mg,Diphenhydramine Hcl. 25mg",
+    "packing": "20x10",
+    "mrp": 125.0,
     "category": "Tablets",
-    "name": "CEPROHEL-200 DT",
-    "composition": "Cefpodoxime 200mg DT",
-    "packing": "10x1x10",
-    "mrp": "295.00"
+    "distributor": 120.0
   },
   {
     "sno": 69,
+    "name": "LICETZIN TABLET",
+    "composition": "Levocetirizine TABLET10mg",
+    "packing": "30X10",
+    "mrp": 56.25,
     "category": "Tablets",
-    "name": "KILLHELCOLD",
-    "composition": "Paracetamol I.P. 450mg + Phenylephrine Hydrochloride I.P. 5mg + Guaiphenesin I.P. 50mg + Cetrizine Dihydrochloride I.P. 5mg + Ambroxol Hydrochloride I.P. 15mg",
-    "packing": "20X10",
-    "mrp": "60.00"
+    "distributor": 82.0
   },
   {
     "sno": 70,
+    "name": "M-PREDIHEL TABLET",
+    "composition": "METHYL PREDNISOLONE TABLET 4MG",
+    "packing": "20X10",
+    "mrp": 56.25,
     "category": "Tablets",
-    "name": "HELMONT L TAB",
-    "composition": "Montelukast Sodium 10mg + Levocetirizine Dihydrochloride 5mg (Alu-Alu PACK)",
-    "packing": "10X1X10",
-    "mrp": "125.00"
+    "distributor": 145.0
   },
   {
     "sno": 71,
+    "name": "MEFEHEL SPAS TABLET",
+    "composition": "DICYCLOMINE (10MG)MEFENAMIC ACID 250MG",
+    "packing": "10X4X10",
+    "mrp": 46.88,
     "category": "Tablets",
-    "name": "ZEECORT 6",
-    "composition": "Deflazacort 6mg ALU-ALU",
-    "packing": "10X10",
-    "mrp": "125.00"
+    "distributor": 170.0
   },
   {
     "sno": 72,
+    "name": "MONTIFOL-L",
+    "composition": "Montelukast Sodium 10mg + Levocetirizine Dihydrochloride 5mg (Alu-Alu PACK)",
+    "packing": "20x10",
+    "mrp": 25.0,
     "category": "Tablets",
-    "name": "NEUROHEL FORTE TABLETS",
-    "composition": "VITAMIN 2 COMPLEX WITH B12 TABLETS",
-    "packing": "25X30",
-    "mrp": "70.00"
+    "distributor": 165.0
   },
   {
     "sno": 73,
+    "name": "NIMUHEL PLUS",
+    "composition": "NIMUSLIDE & PARACITAMOL Tab",
+    "packing": "30X10",
+    "mrp": 49.0,
     "category": "Tablets",
-    "name": "CALCIHEL 500 TABLET",
-    "composition": "Calcitriol 0.25mcg + Calcium Citrate Malate 250mg + Zinc 7.5mg (Alu-Alu Pack) (Soft Gelatin)",
-    "packing": "20X15",
-    "mrp": "125.00"
+    "distributor": 0
   },
   {
     "sno": 74,
-    "category": "Capsules",
-    "name": "PANTAHEL-DSR",
-    "composition": "Pantoprazole Sodium Sesquihydrate 40mg + Domperidone 30mg (Entric Coated Pellets)",
-    "packing": "20X10",
-    "mrp": "1195.00"
+    "name": "NIMUFOL PLUS",
+    "composition": "NIMUSLIDE & PARACITAMOL Tab",
+    "packing": "30X10",
+    "mrp": 49.0,
+    "category": "Tablets",
+    "distributor": 100.0
   },
   {
     "sno": 75,
-    "category": "Capsules",
-    "name": "RABEHEL -DSR",
-    "composition": "Rabeprazole Sodium 20mg + Domperidone 30mg (Enteric Coated Pellets)",
+    "name": "NORFOHEL TZ",
+    "composition": "Norfloxacin (400mg) + Tinidazole (600mg)+LB Tab.",
     "packing": "20X10",
-    "mrp": "95.00"
+    "mrp": 125.0,
+    "category": "Tablets",
+    "distributor": 250.0
   },
   {
     "sno": 76,
-    "category": "Capsules",
-    "name": "RABEHEL -LS",
-    "composition": "Each cap contains: Rabeprazole Sodium & Levosulpiride(SR) capsules",
-    "packing": "10X1X10",
-    "mrp": "250.00"
+    "name": "NORFOHEL 400",
+    "composition": "Norfloxacin (400mg)",
+    "packing": "6X5X10",
+    "mrp": 51.56,
+    "category": "Tablets",
+    "distributor": 470.0
   },
   {
     "sno": 77,
-    "category": "Capsules",
-    "name": "PANTAHEL -LS",
-    "composition": "Each cap contains: Pantoprazole Sodium Sesquihydrate & Levosulpiride(SR) capsules",
-    "packing": "10X1X10",
-    "mrp": "300.00"
+    "name": "ONDSET MD TABLET (DPCO)",
+    "composition": "ondansetron DISPERSIBLE TABLET 4mg",
+    "packing": "30X10",
+    "mrp": 46.88,
+    "category": "Tablets",
+    "distributor": 130.0
   },
   {
     "sno": 78,
-    "category": "Capsules",
-    "name": "ITRAHEL 200",
-    "composition": "Itraconazole 200mg capsules",
+    "name": "PANTAHEL-D TABLET",
+    "composition": "Pantoprazole 40mg & Domperidone 10mg Tab.",
     "packing": "10X1X10",
-    "mrp": "450.00"
+    "mrp": 140.0,
+    "category": "Tablets",
+    "distributor": 0
   },
   {
     "sno": 79,
-    "category": "Capsules",
-    "name": "ITRAHEL 100",
-    "composition": "Itraconazole 100mg capsules",
-    "packing": "10X1X10",
-    "mrp": "250.00"
+    "name": "PANTAHEL-40 TABLET",
+    "composition": "PANTOPRAZOLE SODIUM GASTRO-RESISTANT TABLET",
+    "packing": "20X10",
+    "mrp": 107.81,
+    "category": "Tablets",
+    "distributor": 120.0
   },
   {
     "sno": 80,
-    "category": "Capsules",
-    "name": "OMEHEL",
-    "composition": "Omeprazole capsules 20mg",
-    "packing": "20X15",
-    "mrp": "42.00"
+    "name": "PREDIONE 10 TABLET (DPCO)",
+    "composition": "PREDNISOLONE TABLET 10 MG",
+    "packing": "20X5X10",
+    "mrp": 11.2,
+    "category": "Tablets",
+    "distributor": 460.0
   },
   {
     "sno": 81,
-    "category": "Capsules",
-    "name": "OMEHEL D",
-    "composition": "Omeprazole 20 mg and domperidone 10 mg capsules",
-    "packing": "20X15",
-    "mrp": "150.00"
+    "name": "PREDIONE 5 TABLET",
+    "composition": "PREDNISOLONE TABLET 5 MG",
+    "packing": "20X5X10",
+    "mrp": 6.6,
+    "category": "Tablets",
+    "distributor": 315.0
   },
   {
     "sno": 82,
-    "category": "Capsules",
-    "name": "BEECOSULE CAPSULES",
-    "composition": "Vitamin B-Complex with Multivitamin and zinc capsules",
-    "packing": "20X15",
-    "mrp": "45.00"
-  },
-  {
-    "sno": 83,
-    "category": "Capsules",
-    "name": "FEFOHEL Z",
-    "composition": "Carbonyl Iron, Zink Sulphate & FolicAcid Capsule",
-    "packing": "15X20",
-    "mrp": "140.00"
+    "name": "RANIHEL TABLET (STRIP)",
+    "composition": "RANITIDINE 150MG",
+    "packing": "20X30 Tab.",
+    "mrp": 40.0,
+    "category": "Tablets",
+    "distributor": 275.0
   },
   {
     "sno": 84,
-    "category": "Capsules",
-    "name": "HELDOX LB",
-    "composition": "Doxycyline with LB capsules",
-    "packing": "30X10",
-    "mrp": "85.00"
+    "name": "CEFPROHEL 100 DT TABLETS",
+    "composition": "Cefpodoxime Proxetil (100mg)",
+    "packing": "10X10",
+    "mrp": 112.5,
+    "category": "Tablets",
+    "distributor": 0
   },
   {
     "sno": 85,
-    "category": "Capsules",
-    "name": "BEKASULE CAPSULES",
-    "composition": "CaVitamin B-Complex with Multivitamin and zinc capsules",
-    "packing": "20X20",
-    "mrp": "45.00"
+    "name": "CEFPROHEL 200 DT TABLETS",
+    "composition": "Cefpodoxime Proxetil (200mg)",
+    "packing": "10X10",
+    "mrp": 210.0,
+    "category": "Tablets",
+    "distributor": 360.0
   },
   {
     "sno": 86,
-    "category": "Capsules",
-    "name": "TETRAHEL 250 CAPSULES",
-    "composition": "Tetracycline 250 MG",
-    "packing": "230X10",
-    "mrp": "28.85"
+    "name": "CEFPROHEL CV TABLETS",
+    "composition": "Cefpodoxime Proxetil (200mg) + Clavulanic Acid (125mg)",
+    "packing": "10X1X6",
+    "mrp": 325.0,
+    "category": "Tablets",
+    "distributor": 0
   },
   {
     "sno": 87,
-    "category": "Capsules",
-    "name": "PREGAHEL 300 CAPSULES",
-    "composition": "\"Pregabalin 300 mg Capsule \"",
-    "packing": "10X1X10",
-    "mrp": "240.00"
+    "name": "CIPROHEL 250 TABLET (DPCO)",
+    "composition": "Ciprofloxacin (250mg)",
+    "packing": "20X10",
+    "mrp": 24.5,
+    "category": "Tablets",
+    "distributor": 160.0
   },
   {
     "sno": 88,
-    "category": "Nutraceuticals Capsules",
-    "name": "CALCIHEL -Z CAPSULES",
-    "composition": "Calcitriol 0.25mcg + Calcium Citrate Malate 250mg + Zinc 7.5mg (Alu-Alu Pack) (Soft Gelatin)",
-    "packing": "10X1X10",
-    "mrp": "140.00"
+    "name": "CIPROHEL 500 TABLET (DPCO)",
+    "composition": "Ciprofloxacin (500mg)",
+    "packing": "10X2X10 Tab.",
+    "mrp": 47.4,
+    "category": "Tablets",
+    "distributor": 275.0
   },
   {
     "sno": 89,
-    "category": "Nutraceuticals Capsules",
-    "name": "MYCOVIT FORT CAPSULES",
-    "composition": "Methylcobalamin Folic acid,Pyridoxine Hydrochloride,Thiamine & Alpha Liopic Acid capsules",
+    "name": "HELCLAVE CV JUNIOR KID",
+    "composition": "DISPERSIBLE AMOXICILLIN & POTASSIUM CLAVULANATE TABLET BP",
     "packing": "10X1X10",
-    "mrp": "160.00"
+    "mrp": 126.0,
+    "category": "Tablets",
+    "distributor": 240.0
   },
   {
     "sno": 90,
-    "category": "Nutraceuticals Capsules",
-    "name": "NEUTROHEL FORTE CAPSULES",
-    "composition": "Methylcobalamin Folic acid,Pyridoxine Hydrochloride,Thiamine & Alpha Liopic Acid capsules",
-    "packing": "20X1X10",
-    "mrp": "185.00"
+    "name": "MEECLAV 625 LB TABLET",
+    "composition": "Amoxycillin (500mg) + Clavulanic Acid (125mg)",
+    "packing": "10X1X10",
+    "mrp": 430.0,
+    "category": "Tablets",
+    "distributor": 425.0
   },
   {
     "sno": 91,
-    "category": "Nutraceuticals Capsules",
-    "name": "MAXIVIT CAPSULES",
-    "composition": "Multivitamin + Multimineral & Antioxidants",
+    "name": "MEECEF 200 LB TABLET",
+    "composition": "cefixime 200 WITH LB TABLETS",
     "packing": "10X1X10",
-    "mrp": "110.00"
+    "mrp": 182.81,
+    "category": "Tablets",
+    "distributor": 0
   },
   {
     "sno": 92,
-    "category": "Nutraceuticals Capsules",
-    "name": "LUCOZIN GOLD CAPSULES",
-    "composition": "Lycopene, Chromium Picolinate, Green Tea Extra , Multivitamin & Multiminerals capsules",
+    "name": "MEECEF O TABLET",
+    "composition": "cefixime and ofloxacin tablets",
     "packing": "10X1X10",
-    "mrp": "150.00"
+    "mrp": 290.62,
+    "category": "Tablets",
+    "distributor": 390.0
   },
   {
     "sno": 93,
-    "category": "Nutraceuticals Capsules",
-    "name": "PREMETHOVIT CAPSULES",
-    "composition": "Pregabalin IP 75mg & Methylcobalamin 750 mg Capsules",
-    "packing": "10X1X10",
-    "mrp": "125.00"
-  },
-  {
-    "sno": 94,
-    "category": "Nutraceuticals Capsules",
-    "name": "HELZYME CAPSULES",
-    "composition": "Digestive enzyme Capsules",
-    "packing": "10x1x10",
-    "mrp": "140.00"
+    "name": "MEECLOX-LB",
+    "composition": "Amoxycillin (500mg) + ClOxacillin (125mg) &Lactic Acid Bacillus",
+    "packing": "10x2x10",
+    "mrp": 166.0,
+    "category": "Tablets",
+    "distributor": 440.0
   },
   {
     "sno": 95,
-    "category": "Nutraceuticals Capsules",
-    "name": "FCOLVIT CAPSULES",
-    "composition": "Iron Tonic with Cyanocabalmin, Zinc and Folic Acid syrup",
-    "packing": "10x1x10",
-    "mrp": "140.00"
+    "name": "BIOFULLY HAIR TABLET",
+    "composition": "BIOTIN,CALCIUM D PANTATHENATE,NIACINAMIDE,IRON,COPPER,SELENIUM DIOXIDE,VITAMINS AND MINERALS",
+    "packing": "10X1X10",
+    "mrp": 285.0,
+    "category": "Tablets",
+    "distributor": 175.0
   },
   {
     "sno": 96,
-    "category": "Nutraceuticals Capsules",
-    "name": "ZEYNCOVIT CAPSULES BLUE BIG ALU-ALU PACK",
-    "composition": "Multivitamin + Multimineral & Antioxidants",
-    "packing": "230X10",
-    "mrp": "140.00"
+    "name": "CALCIHEL 500 TABLET",
+    "composition": "Calcitriol 0.25mcg + Calcium Citrate Malate 250mg + Zinc 7.5mg (Alu-Alu Pack) (Soft Gelatin)",
+    "packing": "20X15",
+    "mrp": 110.0,
+    "category": "Tablets",
+    "distributor": 95.0
   },
   {
     "sno": 97,
-    "category": "Nutraceuticals Capsules",
-    "name": "ZEYNCOVIT CAPSULES",
-    "composition": "Multivitamin + Multimineral & Antioxidants",
-    "packing": "10X1X10",
-    "mrp": "140.00"
+    "name": "HELQ-10 TABLET",
+    "composition": "Cyanocobalamin,Coenzyme Q-10,Lycopene,L-Glutathione, l-Carnitine, L-Tartrate, Selenium, Zink Oxide with DHA",
+    "packing": "10x1x10",
+    "mrp": 625.0,
+    "category": "Tablets",
+    "distributor": 300.0
   },
   {
     "sno": 98,
-    "category": "Ayurvedic Capsules",
-    "name": "ANZYLIV DS CAPSULES",
-    "composition": "A Natural care for Liver & digestive system",
-    "packing": "10x1x10",
-    "mrp": "75.00"
+    "name": "NEUROHEL FORTE TABLETS",
+    "composition": "VITAMIN B COMPLEX WITH B12 TABLETS",
+    "packing": "25X30",
+    "mrp": 60.0,
+    "category": "Tablets",
+    "distributor": 270.0
   },
   {
     "sno": 99,
-    "category": "Ayurvedic Capsules",
-    "name": "ANZYLIV 4 G CAPSULES",
-    "composition": "A Natural care for Liver & digestive system",
-    "packing": "10x1x10",
-    "mrp": "85.00"
+    "name": "NEUROFOL FORTE TABLETS",
+    "composition": "VITAMIN B COMPLEX WITH B12 TABLETS",
+    "packing": "25X30",
+    "mrp": 70.0,
+    "category": "Tablets",
+    "distributor": 270.0
   },
   {
     "sno": 100,
-    "category": "Ayurvedic Capsules",
-    "name": "STONIL CAPSULES",
-    "composition": "Stone remover capsules",
-    "packing": "10x1x10",
-    "mrp": "75.00"
+    "name": "NEUROHEL Z TABLETS",
+    "composition": "VITAMIN B COMPLEX WITH B12 TABLETS",
+    "packing": "25X4X10",
+    "mrp": 25.0,
+    "category": "Tablets",
+    "distributor": 180.0
   },
   {
     "sno": 101,
-    "category": "Ayurvedic Capsules",
-    "name": "SHE MOOD CAPSULES",
-    "composition": "Remedy for Reproductive System of Female",
-    "packing": "10x1x10",
-    "mrp": "95.00"
+    "name": "NEUROFOL Z TABLETS",
+    "composition": "VITAMIN B COMPLEX WITH B12 TABLETS",
+    "packing": "25X4X10",
+    "mrp": 25.0,
+    "category": "Tablets",
+    "distributor": 180.0
   },
   {
     "sno": 102,
-    "category": "Ayurvedic Capsules",
-    "name": "MUSLI CAPSULES",
-    "composition": "Herbal capsules for Premium vitality,Strenght,Stamina Power.",
-    "packing": "10x1x10",
-    "mrp": "180.00"
+    "name": "ONE DAILY TABLET",
+    "composition": "MULTIVITAMIN, MULTIMINERAL,AMINO ACIDS WITH TAURINE,LYCOPENE,ASTAXANTHIN & GINSENG EXTRACTS TABLET",
+    "packing": "10X1X10",
+    "mrp": 295.0,
+    "category": "Tablets",
+    "distributor": 170.0
   },
   {
     "sno": 103,
-    "category": "Ayurvedic Capsules",
-    "name": "IMMOVIT CAPSULES",
-    "composition": "Immunity Booster Capsules",
+    "name": "SILYCOM-Q10 TABLET",
+    "composition": "Silymarine,L-Glutathione, N-Acetyl Cysteine, L-Carnitine, L-Irnithine, Coenzyme Q10 with Antioxident,Micronutrients & Trace Elements Tablets",
     "packing": "10X1X10",
-    "mrp": "180.00"
-  },
-  {
-    "sno": 104,
-    "category": "Ayurvedic Capsules",
-    "name": "FIT O TUMMY CAPSULES",
-    "composition": "Controlling obesity & losing weight ,fat burning capsules",
-    "packing": "10x1x10",
-    "mrp": "140.00"
+    "mrp": 425.0,
+    "category": "Tablets",
+    "distributor": 110.0
   },
   {
     "sno": 105,
-    "category": "Ayurvedic Capsules",
-    "name": "PILES MAN CAPSULES",
-    "composition": "Herbal capsules for internal and External piles, bleeding piles ,",
-    "packing": "10x1x10",
-    "mrp": "140.00"
+    "name": "CEE-DX TABLET",
+    "composition": "USEFULL IN MENTAL HEALTH DISORDERS",
+    "packing": "1X800",
+    "mrp": 431.25,
+    "category": "Tablets",
+    "distributor": 32.0
   },
   {
     "sno": 106,
-    "category": "Ayurvedic Capsules",
-    "name": "SPERM MUCH CAPSULES",
-    "composition": "Herbal capsules to increase sperm count, increase sperm quality .",
-    "packing": "10x1x10",
-    "mrp": "150.00"
+    "name": "CLOROPRAX TABLET",
+    "composition": "USEFULL IN MENTAL HEALTH DISORDERS",
+    "packing": "10X4X20",
+    "mrp": 55.0,
+    "category": "Tablets",
+    "distributor": 75.0
   },
   {
     "sno": 107,
-    "category": "Ayurvedic Capsules",
-    "name": "VIGOREX PLATINUM CAPSULES",
-    "composition": "Herbal Capsule is useful in Stress, Fatigue, Exhaustion, General weakness, Loss of libido. Golden Time Capsule improves sexual desire, non hormonal and safe, relax mind and body, enhances strength and vitality",
-    "packing": "10x1x10",
-    "mrp": "210.00"
+    "name": "ENTEROQUICK TABLET",
+    "composition": "USEFULL IN DIARRHEA & DYSENTERY",
+    "packing": "30X30",
+    "mrp": 35.0,
+    "category": "Tablets",
+    "distributor": 130.0
   },
   {
     "sno": 108,
-    "category": "Ayurvedic Capsules",
-    "name": "VIGOREX GOLD CAPSULES",
-    "composition": "Herbal Capsule is useful in Stress, Fatigue, Exhaustion, General weakness, Loss of libido. Golden Time Capsule improves sexual desire, non hormonal and safe, relax mind and body, enhances strength and vitality",
-    "packing": "10x1x10",
-    "mrp": "240.00"
-  },
-  {
-    "sno": 109,
-    "category": "Ayurvedic Capsules",
-    "name": "RAKT SUDHI CAPSULES",
-    "composition": "Herbal blood purifier capsules",
-    "packing": "10x1x10",
-    "mrp": "95.00"
-  },
-  {
-    "sno": 110,
-    "category": "Ayurvedic Capsules",
-    "name": "PLATOHEL CAPSULES",
-    "composition": "Help in Increasing Platelet count",
-    "packing": "10x1x10",
-    "mrp": "140.00"
-  },
-  {
-    "sno": 111,
-    "category": "Ayurvedic Capsules",
-    "name": "SHILAJEET GOLD CAPSULES",
-    "composition": "Herbal capsules for Premium vitality,Strenght,Stamina Power.",
-    "packing": "10x1x10",
-    "mrp": "350.00"
-  },
-  {
-    "sno": 112,
-    "category": "Ayurvedic Capsules",
-    "name": "BODYGROW CAPSULES",
-    "composition": "Weight Gainer ,Energy Booster and Muscles Enhancer",
-    "packing": "10x1x10",
-    "mrp": "350.00"
-  },
-  {
-    "sno": 113,
-    "category": "Ayurvedic Capsules",
-    "name": "SWASTH VARDHAK CAPSULES",
-    "composition": "Herbal Capsules to Makes body healthy, Energetic, Active & Fit",
-    "packing": "3x1x10",
-    "mrp": "350.00"
-  },
-  {
-    "sno": 114,
-    "category": "Ayurvedic Capsules",
-    "name": "TULSI CAPSULES",
-    "composition": "Tulsi Herbal capsules forFever and common cold .cough,sore throat ,respiration,Kidney ,heart, vomiting,stress mouth infection, strong immunity,skin disorder and headacne",
-    "packing": "10x1x10",
-    "mrp": "310.00"
-  },
-  {
-    "sno": 115,
-    "category": "Ayurvedic Capsules",
-    "name": "ARJUN CAPSULES",
-    "composition": "Herbal capsules for weight control, beneficial in heart disease",
-    "packing": "10x1x10",
-    "mrp": "310.00"
-  },
-  {
-    "sno": 116,
-    "category": "Ayurvedic Capsules",
-    "name": "TRIPHALA CAPSULES",
-    "composition": "TRIPHALA CAPSULES FOR NATURAL ANTIOXIDENT , SUPPORT HEALTHY DIGESTION AND ABSORPTION, GENTLY MENTAIN REGULARITY AND ASSISTS NATURAL INTERNAL CLEANSING.",
-    "packing": "10x1x10",
-    "mrp": "310.00"
-  },
-  {
-    "sno": 117,
-    "category": "Ayurvedic Capsules",
-    "name": "ASHOKA CORDIAL CAPSULES",
-    "composition": "Remedy for Reproductive System of Female",
-    "packing": "10x1x10",
-    "mrp": "310.00"
-  },
-  {
-    "sno": 118,
-    "category": "Ayurvedic Capsules",
-    "name": "ASHWAGANDHA CAPSULES",
-    "composition": "Herbal capsules for sexual,body and nervine weakness",
-    "packing": "10x1x10",
-    "mrp": "350.00"
-  },
-  {
-    "sno": 119,
-    "category": "Ayurvedic Capsules",
-    "name": "BP CONTROL CAPSULES",
-    "composition": "Herbal Capsule for Control High Blood pressure.",
-    "packing": "10x1x10",
-    "mrp": "350.00"
-  },
-  {
-    "sno": 120,
-    "category": "Ayurvedic Capsules",
-    "name": "LONG ME CAPSULES",
-    "composition": "Herbal capsules for height growth",
-    "packing": "10X1X10",
-    "mrp": "350.00"
-  },
-  {
-    "sno": 121,
-    "category": "Ayurvedic Capsules",
-    "name": "RATRI FALL CAPSULES",
-    "composition": "Most powerful & Safe Frequent night fall herbal treatment capsules",
-    "packing": "10X1X10",
-    "mrp": "350.00"
-  },
-  {
-    "sno": 122,
-    "category": "Ayurvedic Capsules",
-    "name": "BOSOM CAPSULES",
-    "composition": "Breast Enhancement and Enlargement Capsules",
-    "packing": "10X1X10",
-    "mrp": "310.00"
-  },
-  {
-    "sno": 123,
-    "category": "Ayurvedic Capsules",
-    "name": "PYN RELIEF CAPSULES",
-    "composition": "Herbal Capsules FOR JOINT PAIN",
-    "packing": "10X1X10",
-    "mrp": "310.00"
-  },
-  {
-    "sno": 124,
-    "category": "Ayurvedic Capsules",
-    "name": "NEEM KARELA CAPSULES",
-    "composition": "Herbal Capsules FOR JOINT PAIN",
-    "packing": "10X1X10",
-    "mrp": "310.00"
-  },
-  {
-    "sno": 125,
-    "category": "Ayurvedic Capsules",
-    "name": "S.C.M SUGAR CONTROL CAPSULES",
-    "composition": "Sugar control herbal capsules",
-    "packing": "10X1X10",
-    "mrp": "310.00"
-  },
-  {
-    "sno": 126,
-    "category": "Ayurvedic Capsules",
-    "name": "MEMORY FIT",
-    "composition": "BRAIN CAPSULES",
-    "packing": "10X1X10",
-    "mrp": "310.00"
-  },
-  {
-    "sno": 127,
-    "category": "Ayurvedic Capsules",
-    "name": "EYES FRESH CAPSULES",
-    "composition": "Herbal Capsules to Makes your cool and fresh ,stress relief",
-    "packing": "10X1X10",
-    "mrp": "310.00"
-  },
-  {
-    "sno": 128,
-    "category": "Ayurvedic Capsules",
-    "name": "ASTHMA VIRAM CAPSULES",
-    "composition": "Manage Asthma Attack with Asthma Diet & Home Asthma Treatment",
-    "packing": "10X1X10",
-    "mrp": "310.00"
-  },
-  {
-    "sno": 129,
-    "category": "Ayurvedic Capsules",
-    "name": "ALOE- VERA CAPSULES",
-    "composition": "Herbal Capsules to Makes body healthy, Energetic, Active & Fit",
-    "packing": "10X1X10",
-    "mrp": "310.00"
-  },
-  {
-    "sno": 130,
-    "category": "Ayurvedic Capsules",
-    "name": "STRESS VIRAM CAPSULES",
-    "composition": "FOR STRESS RELIEF",
-    "packing": "10X1X10",
-    "mrp": "350.00"
-  },
-  {
-    "sno": 131,
-    "category": "Ayurvedic Capsules",
-    "name": "NULL ADICTION",
-    "composition": "Ayurveda herbal medicine for Alcohol, smoking and tobacco addiction",
-    "packing": "10X1X10",
-    "mrp": "350.00"
-  },
-  {
-    "sno": 131,
-    "category": "Tablets",
-    "name": "CLOROPRAX TABLET",
-    "composition": "TRADITIONAL HERBAL FORMULA",
-    "packing": "10X4X20",
-    "mrp": "180.00"
-  },
-  {
-    "sno": 132,
-    "category": "Tablets",
-    "name": "CEE-DX TABLET",
-    "composition": "TRADITIONAL HERBAL FORMULA",
-    "packing": "800 TABLETS",
-    "mrp": "800.00"
-  },
-  {
-    "sno": 133,
-    "category": "Tablets",
     "name": "ENTEROQUIN TABLET",
     "composition": "FOR DIARRHEA AND DYSENTERY",
     "packing": "30X30",
-    "mrp": "180.00"
+    "mrp": 35.0,
+    "category": "Tablets",
+    "distributor": 130.0
+  },
+  {
+    "sno": 109,
+    "name": "KABZ ANTT TABLET",
+    "composition": "RELIEVING CONSTIPATION AND REDUCING INDIGESTION AND BLOATING",
+    "packing": "30 TAB",
+    "mrp": 145.0,
+    "category": "Tablets",
+    "distributor": 25.0
+  },
+  {
+    "sno": 110,
+    "name": "KLAROPREX TABLET",
+    "composition": "TRADITIONAL HERBAL FORMULA",
+    "packing": "10X4X20",
+    "mrp": 56.0,
+    "category": "Tablets",
+    "distributor": 75.0
+  },
+  {
+    "sno": 111,
+    "name": "LEVOHEL-DS TABLET",
+    "composition": "LIVER TABLET",
+    "packing": "60 TAB.",
+    "mrp": 350.0,
+    "category": "Tablets",
+    "distributor": 36.0
+  },
+  {
+    "sno": 112,
+    "name": "PLATOGAIN TABLET",
+    "composition": "Help in Increasing Platelet count",
+    "packing": "5X2X15",
+    "mrp": 65.0,
+    "category": "Tablets",
+    "distributor": 225.0
+  },
+  {
+    "sno": 113,
+    "name": "PLATOHEL GOLD TABLET",
+    "composition": "Carica Papaya Leaf, Giloy,Tulsi, neem & Goat Milk",
+    "packing": "5X2X15",
+    "mrp": 65.0,
+    "category": "Tablets",
+    "distributor": 225.0
+  },
+  {
+    "sno": 115,
+    "name": "PANTAHEL-40 INJECTION (DPCO)",
+    "composition": "PANTOPRAZOLE 40 MG",
+    "packing": "0",
+    "mrp": 50.0,
+    "category": "Ointment/Cream",
+    "distributor": 7.0
+  },
+  {
+    "sno": 118,
+    "name": "BEECAFOL CAPSULE (STRIP)",
+    "composition": "B-COMPLEX,MULTIVITAMIN AND ZINK CAPSULE",
+    "packing": "20X15",
+    "mrp": 120.0,
+    "category": "Capsules",
+    "distributor": 115.0
+  },
+  {
+    "sno": 119,
+    "name": "BEKAHEL CAPSULE (STRIP)",
+    "composition": "B-COMPLEX,MULTIVITAMIN AND ZINK CAPSULE",
+    "packing": "20X15",
+    "mrp": 120.0,
+    "category": "Capsules",
+    "distributor": 115.0
+  },
+  {
+    "sno": 120,
+    "name": "ESOHEL-D CAPSULE",
+    "composition": "Esomeprazole+Domeperidone",
+    "packing": "20x10",
+    "mrp": 275.0,
+    "category": "Capsules",
+    "distributor": 210.0
+  },
+  {
+    "sno": 121,
+    "name": "FEFOHEL Z",
+    "composition": "Carbonyl Iron, Zink Sulphate & FolicAcid Capsule",
+    "packing": "20X15",
+    "mrp": 140.0,
+    "category": "Tablets",
+    "distributor": 135.0
+  },
+  {
+    "sno": 122,
+    "name": "HELCOB CAPSULE",
+    "composition": "METHYCOBALAMIN 750mcg& PREGABALIN 75 mg CAPSULE",
+    "packing": "10X10",
+    "mrp": 150.0,
+    "category": "Capsules",
+    "distributor": 135.0
+  },
+  {
+    "sno": 123,
+    "name": "HELDOX-LB",
+    "composition": "Doxycyline with LB capsules",
+    "packing": "30X10",
+    "mrp": 175.0,
+    "category": "Tablets",
+    "distributor": 305.0
+  },
+  {
+    "sno": 124,
+    "name": "HELPROLAC CAPSULES",
+    "composition": "PREBIOTIC AND PROBIOTIC CAPSULES",
+    "packing": "10X10",
+    "mrp": 213.56,
+    "category": "Capsules",
+    "distributor": 95.0
+  },
+  {
+    "sno": 125,
+    "name": "ITRABREDE-100 CAPSULE (DPCO)",
+    "composition": "ITRACONAZOLE 100 MG",
+    "packing": "10X1X10",
+    "mrp": 186.0,
+    "category": "Capsules",
+    "distributor": 250.0
+  },
+  {
+    "sno": 126,
+    "name": "ITRABREDE-200 CAPSULE (DPCO)",
+    "composition": "ITRACONAZOLE 200 MG",
+    "packing": "10X1X10",
+    "mrp": 247.0,
+    "category": "Capsules",
+    "distributor": 350.0
+  },
+  {
+    "sno": 127,
+    "name": "NEUROHEL FORTE CAPSULES",
+    "composition": "Methylcobalamin Folic acid,Pyridoxine Hydrochloride,Thiamine & Alpha Liopic Acid capsules",
+    "packing": "20X1X10",
+    "mrp": 304.69,
+    "category": "Capsules",
+    "distributor": 350.0
+  },
+  {
+    "sno": 128,
+    "name": "OMEHEL CAPSULE STRIP (DPCO)",
+    "composition": "Omeprazole capsules 20mg",
+    "packing": "20X15",
+    "mrp": 39.27,
+    "category": "Capsules",
+    "distributor": 135.0
+  },
+  {
+    "sno": 129,
+    "name": "OMIFOL CAPSULE STRIP (DPCO)",
+    "composition": "Omeprazole capsules 20mg",
+    "packing": "20X15",
+    "mrp": 42.0,
+    "category": "Capsules",
+    "distributor": 135.0
+  },
+  {
+    "sno": 130,
+    "name": "OMEHEL D CAPSULE STRIP",
+    "composition": "Omeprazole 20 mg and domperidone 10 mg capsules",
+    "packing": "20X15",
+    "mrp": 150.0,
+    "category": "Capsules",
+    "distributor": 150.0
+  },
+  {
+    "sno": 131,
+    "name": "OMIFOL D CAPSULE STRIP",
+    "composition": "Omeprazole 20 mg and domperidone 10 mg capsules",
+    "packing": "20X15",
+    "mrp": 140.0,
+    "category": "Capsules",
+    "distributor": 155.0
+  },
+  {
+    "sno": 132,
+    "name": "PANTAHEL-DSR",
+    "composition": "Pantoprazole Sodium Sesquihydrate 40mg + Domperidone 30mg (Entric Coated Pellets)",
+    "packing": "20X10",
+    "mrp": 164.06,
+    "category": "Tablets",
+    "distributor": 210.0
+  },
+  {
+    "sno": 133,
+    "name": "PANTUCID-DSR CAPSULE (BLUE)",
+    "composition": "Pantoprazole Sodium Sesquihydrate 40mg + Domperidone 30mg (Entric Coated Pellets)",
+    "packing": "20X10",
+    "mrp": 175.0,
+    "category": "Capsules",
+    "distributor": 210.0
   },
   {
     "sno": 134,
-    "category": "Tablets",
-    "name": "PLATO HEL TABLET",
-    "composition": "CARICA PAPAYA LEAF EXTRACT TABLETS",
-    "packing": "5X2X15",
-    "mrp": "510.00"
+    "name": "PANTUCID-DSR CAPSULE (SILVER)",
+    "composition": "Pantoprazole Sodium Sesquihydrate 40mg + Domperidone 30mg (Entric Coated Pellets)",
+    "packing": "20X10",
+    "mrp": 164.06,
+    "category": "Capsules",
+    "distributor": 210.0
   },
   {
     "sno": 135,
-    "category": "Nutraceuticals Liquid Syrups 200 Ml",
-    "name": "TRIPRON(Pinapple and Mixfruit flavour)",
-    "composition": "Cyproheptadine hydrochloride & tricholine citrate syrup",
-    "packing": "200 ML",
-    "mrp": "125.00"
+    "name": "RABEHEL -DSR (PLAIN)",
+    "composition": "Rabeprazole Sodium 20mg + Domperidone 30mg (Enteric Coated Pellets)",
+    "packing": "20X10",
+    "mrp": 150.0,
+    "category": "Tablets",
+    "distributor": 165.0
   },
   {
     "sno": 136,
-    "category": "Nutraceuticals Liquid Syrups 200 Ml",
-    "name": "TRIPRON(Mango and Orange flavour)",
-    "composition": "Cyproheptadine hydrochloride & tricholine citrate syrup",
-    "packing": "200 ML",
-    "mrp": "125.00"
+    "name": "RABEHEL -DSR (RED)",
+    "composition": "Rabeprazole Sodium 20mg + Domperidone 30mg (Enteric Coated Pellets)",
+    "packing": "20X10",
+    "mrp": 140.63,
+    "category": "Tablets",
+    "distributor": 165.0
   },
   {
     "sno": 137,
-    "category": "Nutraceuticals Liquid Syrups 200 Ml",
-    "name": "HUNGRY (Pinapple and Mixfruit flavour)",
-    "composition": "Cyproheptadine hydrochloride & tricholine citrate syrup",
-    "packing": "200 ML",
-    "mrp": "150.00"
+    "name": "RABCID-DSR (BLUE)",
+    "composition": "Rabeprazole Sodium 20mg + Domperidone 30mg (Enteric Coated Pellets)",
+    "packing": "20X10",
+    "mrp": 150.0,
+    "category": "Tablets",
+    "distributor": 165.0
   },
   {
     "sno": 138,
-    "category": "Nutraceuticals Liquid Syrups 200 Ml",
-    "name": "MYCOVIT-SYRUP",
-    "composition": "Methylcobalamin ,Multivitamins & Minerals Syrup",
-    "packing": "200ML",
-    "mrp": "125.00"
+    "name": "RABCID-DSR (SILVER)",
+    "composition": "Rabeprazole Sodium 20mg + Domperidone 30mg (Enteric Coated Pellets)",
+    "packing": "20X10",
+    "mrp": 150.0,
+    "category": "Tablets",
+    "distributor": 165.0
   },
   {
     "sno": 139,
-    "category": "Nutraceuticals Liquid Syrups 200 Ml",
-    "name": "WE PORT SYRUP",
-    "composition": "Protein with Vitamins and minerals",
-    "packing": "10x1x10",
-    "mrp": "125.00"
+    "name": "RABEHEL -LS",
+    "composition": "Each cap contains: Rabeprazole Sodium & Levosulpiride(SR) capsules",
+    "packing": "10X1X10",
+    "mrp": 250.0,
+    "category": "Tablets",
+    "distributor": 170.0
   },
   {
     "sno": 140,
-    "category": "Nutraceuticals Liquid Syrups 200 Ml",
-    "name": "HEMORICH SYRUP",
-    "composition": "Antioxidant,Multivitamin & Multiminerals syrup",
-    "packing": "200ML",
-    "mrp": "125.00"
-  },
-  {
-    "sno": 141,
-    "category": "Nutraceuticals Liquid Syrups 200 Ml",
-    "name": "VETOPLEX SYRUP",
-    "composition": "Vitamins ,Folic Acid, Zinc & Minerals Syrup",
-    "packing": "200ML",
-    "mrp": "125.00"
+    "name": "ZEYNCOVIT CAPSULES",
+    "composition": "Multivitamin + Multimineral & Antioxidants",
+    "packing": "10X1X10",
+    "mrp": 140.0,
+    "category": "Capsules",
+    "distributor": 95.0
   },
   {
     "sno": 142,
-    "category": "Nutraceuticals Liquid Syrups 200 Ml",
-    "name": "CALCIHEL D SYRUP",
-    "composition": "Calcium,Magnesium,Zinc & Vitamin D3 Suspension",
-    "packing": "200ML",
-    "mrp": "125.00"
+    "name": "CALCIHEL D3 SOFTGEL CAPSULES (DPCO)",
+    "composition": "Cholecalciferol USP 60000IU",
+    "packing": "1X4 Cap.",
+    "mrp": 130.0,
+    "category": "Capsules",
+    "distributor": 165.0
   },
   {
     "sno": 143,
-    "category": "Nutraceuticals Liquid Syrups 200 Ml",
-    "name": "FERIHEL SYRUP",
-    "composition": "Ferrous Ascorbate,Folic acid with Zinc syrup",
-    "packing": "200ML",
-    "mrp": "125.00"
+    "name": "CALCIHEL K\u00b27 SOFTGEL CAPSULES",
+    "composition": "Calcium Carbonate IP 1250MG, Calcitriol IP 0.25mcg , Zinc Sulphate Monohydrate eq. to Elemental Zinc IP 7.5mg, Magnesium eq. to elemental Magnesium ip 50mg, Vitamin K27 45mcg, Methylcobalamin ip 1500mcg, L-Methyl Folate 800mcg",
+    "packing": "10X1X10",
+    "mrp": 328.13,
+    "category": "Capsules",
+    "distributor": 205.0
   },
   {
     "sno": 144,
-    "category": "Nutraceuticals Liquid Syrups 200 Ml",
-    "name": "FCOLVIT SYRUP",
-    "composition": "Iron Tonic with Cyanocabalmin, Zinc and Folic Acid syrup",
-    "packing": "200ML",
-    "mrp": "125.00"
+    "name": "DEEPBREATH SOFT GEL CAPSULES",
+    "composition": "Camphor IP 66 25mg,Chlorothymol 5mg,Eucalyptus Oil USP 125mg,Menthol IP 55mg,Terpineol BP 120mg ,Preservatives (Sodium Methylparaben IP And Sodium Propylparaben IP)",
+    "packing": "20X10",
+    "mrp": 95.0,
+    "category": "Capsules",
+    "distributor": 180.0
   },
   {
     "sno": 145,
-    "category": "Nutraceuticals Liquid Syrups 200 Ml",
-    "name": "ZINGYTAL SYRUP",
-    "composition": "Ginseng,multivitamin & multimineral",
-    "packing": "200ML",
-    "mrp": "125.00"
+    "name": "GEMCALCIHEL SOFTGEL CAPSULES",
+    "composition": "Calcitriol IP 0.25mcg,Calcium Carbonate IP 500mg-Eq. to Elemental Calcium 200mg,Zinc Sulphate Monohydrate eq. to Zinc IP 7.5mg",
+    "packing": "5X2X15",
+    "mrp": 250.0,
+    "category": "Capsules",
+    "distributor": 125.0
   },
   {
     "sno": 146,
-    "category": "Nutraceuticals Liquid Syrups 200 Ml",
-    "name": "SILYCOM SUSPENSION",
-    "composition": "Lecithin,Silymarin and Vitamin B-Complex Suspension",
-    "packing": "200ML",
-    "mrp": "125.00"
+    "name": "LUCOZIN GOLD SOFTGEL CAPSULES",
+    "composition": "Lycopene 10% USP 4000mcg, Lutein 10% USP 4000mcg, Betacarotene 30% USP 5.17mg Black Grape Seed Ext.10mg, Selenium Dioxide Mono. USP 25mcg Zinc Sulphate Monohydrate IP 10mg",
+    "packing": "10X1X10",
+    "mrp": 140.63,
+    "category": "Capsules",
+    "distributor": 95.0
   },
   {
     "sno": 147,
-    "category": "Nutraceuticals Liquid Syrups 200 Ml",
-    "name": "LUCOZIN Gold",
-    "composition": "Lycopene, multivitamin",
-    "packing": "200 ML",
-    "mrp": "195.00"
+    "name": "MAXIVIT SOFTGEL CAPSULES",
+    "composition": "Vitamin B1 Oily Form) as Palmitate IP 2000IU , Vitamin B1 IP 1mg ,Vitamin B2 IP 1mg,Vitamin B6 IP 1mg, Vitamin B12 IP 1mg, Vitamin C IP 33.3 mg, Folic Acid IP 0.3 mg. Vitamin D3 IP 200 IU Calcium Pantothenate IP 1 mg Niacinamide IP 15 mg Dibasic Calcium Phosphate IP Eq. to elemental Calcium 100mg Eq. to elemental Phosphorus 77 mg Ferrous Fumarate IP 50mg Copper Sulphate USP 10 mcg Eq. to elemental Copper Potassium Iodide IP 1.5 mcg Magnesium Oxide IP 1 mg Manganese Sulphate BP 10 mcg Potassium Sulphate IP 1 mg Zinc Sulphate IP 0.15 mg",
+    "packing": "20X1X10",
+    "mrp": 97.85,
+    "category": "Capsules",
+    "distributor": 115.0
   },
   {
     "sno": 148,
-    "category": "Nutraceuticals Liquid Syrups 200 Ml",
-    "name": "MAXI VIT SYRUP",
-    "composition": "Multivitamin + Multimineral & Antioxidants",
-    "packing": "200ML",
-    "mrp": "125.00"
-  },
-  {
-    "sno": 149,
-    "category": "Nutraceuticals Liquid Syrups 200 Ml",
-    "name": "WE VIT SYRUP",
-    "composition": "Vitamin B-Complex with Vitamin C",
-    "packing": "200ML",
-    "mrp": "125.00"
+    "name": "REVIVEMAX 12G SOFTGEL CAPSULES",
+    "composition": "Omega-3 Fatty Acids, Ginseng, Ginkgo Biloba Extract, Green Tea Extract, Garlic Extract, Glutamic Acid, Grape Seed Extract, Ginger Extract, Green Coffee Bean Extract, Glycyrrhiza Glabra Extract, Gulab Extract, Gillo, Extract, Multivitamin, Multimineral & Antioxidants Softgel Capsules",
+    "packing": "10X1X10",
+    "mrp": 399.53,
+    "category": "Capsules",
+    "distributor": 180.0
   },
   {
     "sno": 150,
-    "category": "Nutraceuticals Liquid Syrups 200 Ml",
-    "name": "MORE-HB",
-    "composition": "Haematinic Syrup of Iron Folic Acid Vitamin b12 Fortified with Minerals",
-    "packing": "200 ML",
-    "mrp": "125.00"
+    "name": "ANZYLIV-DS",
+    "composition": "LIVER ENZYME CAPSULE",
+    "packing": "10X1X10",
+    "mrp": 175.0,
+    "category": "Tablets",
+    "distributor": 125.0
   },
   {
     "sno": 151,
-    "category": "Nutraceuticals Liquid Syrups 200 Ml",
-    "name": "ZEYNCOVIT SYRUP",
-    "composition": "Multivitamin & Multiminerals syrup",
-    "packing": "200ML",
-    "mrp": "125.00"
+    "name": "ASHOKA CORDIAL CAPSULE",
+    "composition": "MENSTRUAL IRREGULARITIES AND LEUCORREA",
+    "packing": "10X1X10",
+    "mrp": 175.0,
+    "category": "Capsules",
+    "distributor": 105.0
   },
   {
     "sno": 152,
-    "category": "Nutraceuticals Liquid Syrups 200 Ml",
-    "name": "HELZYME (CARDAMOM FLAVOUR)",
-    "composition": "Fungal Diastase + Papain",
-    "packing": "200 ML",
-    "mrp": "125.00"
+    "name": "ASHWAGANDHA CAPSULES",
+    "composition": "Herbal capsules for sexual,body and nervine weakness",
+    "packing": "10x1x10",
+    "mrp": 350.0,
+    "category": "Capsules",
+    "distributor": 150.0
   },
   {
     "sno": 153,
-    "category": "Nutraceuticals Liquid Syrups 200 Ml",
-    "name": "HELZYME (MIX FRUIT FLAVOUR)",
-    "composition": "Fungal Diastase + Papain",
-    "packing": "200 ML",
-    "mrp": "125.00"
+    "name": "ASHWAGANDHA CAPSULES (F)",
+    "composition": "Herbal capsules for sexual,body and nervine weakness",
+    "packing": "10x1x10",
+    "mrp": 350.0,
+    "category": "Capsules",
+    "distributor": 150.0
   },
   {
     "sno": 154,
-    "category": "Nutraceuticals Liquid Syrups 200 Ml",
-    "name": "HELZYME (ORANGE FLAVOUR)",
-    "composition": "Fungal Diastase + Papain",
-    "packing": "200 ML",
-    "mrp": "125.00"
+    "name": "B P CONTROL CAPSULE",
+    "composition": "Control High Blood Pressure",
+    "packing": "10X1X10",
+    "mrp": 350.0,
+    "category": "Capsules",
+    "distributor": 105.0
   },
   {
     "sno": 155,
-    "category": "Nutraceuticals Liquid Syrups 200 Ml",
-    "name": "HELZYME (PINEAPPLE FLAVOUR)",
-    "composition": "Fungal Diastase + Papain",
-    "packing": "200 ML",
-    "mrp": "125.00"
+    "name": "BOSOM CAPSULES",
+    "composition": "Breast Enhancement and Enlargement Capsules",
+    "packing": "10x1x10",
+    "mrp": 310.0,
+    "category": "Capsules",
+    "distributor": 135.0
   },
   {
     "sno": 156,
-    "category": "Nutraceuticals Liquid Syrups 200 Ml",
-    "name": "EN-ZYMOVIT (Orange flavour)",
-    "composition": "Digestive Enzyme & Multivitamins with L-Lysine Syrup",
-    "packing": "200ML",
-    "mrp": "160.00"
+    "name": "FIT O TUMMY CAPSULES",
+    "composition": "Controlling obesity & losing weight ,fat burning capsules",
+    "packing": "10x1x10",
+    "mrp": 140.0,
+    "category": "Capsules",
+    "distributor": 160.0
   },
   {
     "sno": 157,
-    "category": "Nutraceuticals Liquid Syrups 200 Ml",
-    "name": "EN-ZYMOVIT (Guvava flavour )",
-    "composition": "Digestive Enzyme & Multivitamins with L-Lysine Syrup",
-    "packing": "200ML",
-    "mrp": "160.00"
+    "name": "LIVO DIGEST-DS CAPSULE",
+    "composition": "NATURAL CARE FOR LIVER & DIGESTIVE SYSTEM",
+    "packing": "10X1X10",
+    "mrp": 175.0,
+    "category": "Capsules",
+    "distributor": 110.0
   },
   {
     "sno": 158,
-    "category": "Nutraceuticals Liquid Syrups 200 Ml",
-    "name": "EN-ZYMOVIT (Pineapple flavour )",
-    "composition": "Digestive Enzyme & Multivitamins with L-Lysine Syrup",
-    "packing": "200ML",
-    "mrp": "160.00"
+    "name": "LONG ME CAPSULE",
+    "composition": "HELPFUL IN PHYSICAL DEVELOPMENT",
+    "packing": "10X1X10",
+    "mrp": 350.0,
+    "category": "Capsules",
+    "distributor": 125.0
   },
   {
     "sno": 159,
-    "category": "Nutraceuticals Liquid Syrups 200 Ml",
-    "name": "EN-ZYMOVIT (Strawberry flavour )",
-    "composition": "Digestive Enzyme & Multivitamins with L-Lysine Syrup",
-    "packing": "200ML",
-    "mrp": "160.00"
+    "name": "MUSLI PLUS CAPSULES",
+    "composition": "Herbal capsules for Premium vitality,Strenght,Stamina Power.",
+    "packing": "10x1x10",
+    "mrp": 180.0,
+    "category": "Capsules",
+    "distributor": 185.0
   },
   {
     "sno": 160,
-    "category": "Nutraceuticals Liquid Syrups 200 Ml",
-    "name": "EN-ZYMOVIT(Mango flavour )",
-    "composition": "Digestive Enzyme & Multivitamins with L-Lysine Syrup",
-    "packing": "200ML",
-    "mrp": "160.00"
+    "name": "NEEM KARELA JAMUN CAPSULES",
+    "composition": "Herbal Capsules FOR JOINT PAIN",
+    "packing": "10x1x11",
+    "mrp": 310.0,
+    "category": "Capsules",
+    "distributor": 105.0
   },
   {
     "sno": 161,
-    "category": "Nutraceuticals Liquid Syrups 200 Ml",
-    "name": "EN-ZYMOVIT(Mix fruit flavour )",
-    "composition": "Digestive Enzyme & Multivitamins with L-Lysine Syrup",
-    "packing": "200ML",
-    "mrp": "160.00"
+    "name": "PILES MAN CAPSULES",
+    "composition": "Herbal capsules for internal and External piles, bleeding piles ,",
+    "packing": "10x1x10",
+    "mrp": 140.0,
+    "category": "Capsules",
+    "distributor": 140.0
   },
   {
     "sno": 162,
-    "category": "Ayurvedic Syrups 200 Ml",
-    "name": "SHANKPUSPI",
-    "composition": "Brain Tonic",
-    "packing": "200ML",
-    "mrp": "175.00"
+    "name": "PILESGONE CAPSULES",
+    "composition": "Herbal capsules for internal and External piles, bleeding piles ,",
+    "packing": "10x1x10",
+    "mrp": 140.0,
+    "category": "Capsules",
+    "distributor": 140.0
   },
   {
     "sno": 163,
-    "category": "Ayurvedic Syrups 200 Ml",
-    "name": "ASTHMA HAARI",
-    "composition": "Manage Asthma Attack with Asthma Diet & Home Asthma Treatment",
-    "packing": "200ML",
-    "mrp": "175.00"
+    "name": "PLATOHEL CAPSULES",
+    "composition": "Help in Increasing Platelet count",
+    "packing": "10x1x10",
+    "mrp": 140.0,
+    "category": "Capsules",
+    "distributor": 165.0
   },
   {
     "sno": 164,
-    "category": "Ayurvedic Syrups 200 Ml",
-    "name": "STRI KIRAN",
-    "composition": "Complete Tonic For Women",
-    "packing": "200ML",
-    "mrp": "150.00"
+    "name": "PLATOGAIN CAPSULE",
+    "composition": "Help in Increasing Platelet count",
+    "packing": "10x1x10",
+    "mrp": 350.0,
+    "category": "Capsules",
+    "distributor": 165.0
   },
   {
     "sno": 165,
-    "category": "Ayurvedic Syrups 200 Ml",
-    "name": "IMMOVIT SYRUP",
-    "composition": "Immunity Booster",
-    "packing": "200ML",
-    "mrp": "150.00"
+    "name": "RAKT SHUDHI CAPSULE",
+    "composition": "BLOOD PURIFIRE CAPSULE",
+    "packing": "10X1X10",
+    "mrp": 140.0,
+    "category": "Capsules",
+    "distributor": 105.0
   },
   {
     "sno": 166,
-    "category": "Ayurvedic Syrups 200 Ml",
-    "name": "IRON GOLD",
-    "composition": "Complete Iron Tonic",
-    "packing": "200ML",
-    "mrp": "175.00"
+    "name": "SHE MOOD CAPSULES",
+    "composition": "Remedy for Reproductive System of Female",
+    "packing": "10x1x10",
+    "mrp": 95.0,
+    "category": "Capsules",
+    "distributor": 105.0
   },
   {
     "sno": 167,
-    "category": "Ayurvedic Syrups 200 Ml",
-    "name": "ROOPDHAY SYRUP",
-    "composition": "For Pimple & Blackheads",
-    "packing": "200ML",
-    "mrp": "150.00"
+    "name": "SHILAJEET GOLD CAPSULES",
+    "composition": "Herbal capsules for Premium vitality,Strenght,Stamina Power.",
+    "packing": "10x1x10",
+    "mrp": 350.0,
+    "category": "Capsules",
+    "distributor": 185.0
   },
   {
     "sno": 168,
-    "category": "Ayurvedic Syrups 200 Ml",
-    "name": "LIVOHEL",
-    "composition": "Liver Tonic",
-    "packing": "200ML",
-    "mrp": "175.00"
+    "name": "SHILAJEET GOLD CAPSULES (F)",
+    "composition": "Herbal capsules for Premium vitality,Strenght,Stamina Power.",
+    "packing": "10x1x10",
+    "mrp": 350.0,
+    "category": "Capsules",
+    "distributor": 185.0
   },
   {
     "sno": 169,
-    "category": "Ayurvedic Syrups 200 Ml",
-    "name": "LIVOHEL-DS",
-    "composition": "Liver Tonic",
-    "packing": "200ML",
-    "mrp": "175.00"
+    "name": "STONIL CAPSULES",
+    "composition": "Stone remover capsules",
+    "packing": "10x1x10",
+    "mrp": 175.0,
+    "category": "Capsules",
+    "distributor": 140.0
   },
   {
     "sno": 170,
-    "category": "Ayurvedic Syrups 200 Ml",
-    "name": "PLATO HEL SYRUP",
-    "composition": "Help in Increasing Platelet count",
-    "packing": "200ML",
-    "mrp": "175.00"
+    "name": "STONFALL CAPSULE",
+    "composition": "Stone remover capsules",
+    "packing": "10x1x10",
+    "mrp": 175.0,
+    "category": "Capsules",
+    "distributor": 140.0
   },
   {
     "sno": 171,
-    "category": "Ayurvedic Syrups 200 Ml",
-    "name": "MUSLI PLUS SYRUP",
-    "composition": "It is traditionally used for arthritis, cancer, diabetes, boosting vitality, improving sexual performance.",
-    "packing": "200ML",
-    "mrp": "175.00"
+    "name": "SPERM MUCH CAPSULE",
+    "composition": "INCREASE SPERM COUNT,IMPROVE SPERM QUALITY AND SEXUAL PERFORMANCE",
+    "packing": "10X1X10",
+    "mrp": 350.0,
+    "category": "Capsules",
+    "distributor": 160.0
   },
   {
     "sno": 172,
-    "category": "Ayurvedic Syrups 200 Ml",
-    "name": "CALCI-KO SYRUP",
-    "composition": "Calcium & Iron Tonic",
-    "packing": "200ML",
-    "mrp": "150.00"
+    "name": "SWASTH VARDHAK CAPSULES",
+    "composition": "Herbal Capsules to Makes body healthy, Energetic, Active & Fit",
+    "packing": "3X20",
+    "mrp": 350.0,
+    "category": "Capsules",
+    "distributor": 38.0
   },
   {
     "sno": 173,
-    "category": "Ayurvedic Syrups 200 Ml",
-    "name": "BODY GROW",
-    "composition": "Weight Gainer ,Energy Booster and Muscles Enhancer",
-    "packing": "200ML",
-    "mrp": "175.00"
+    "name": "TUMMY O FIT CAPSULE",
+    "composition": "Controlling obesity & losing weight ,fat burning capsules",
+    "packing": "10x1x10",
+    "mrp": 140.0,
+    "category": "Capsules",
+    "distributor": 160.0
   },
   {
     "sno": 174,
-    "category": "Ayurvedic Syrups 200 Ml",
-    "name": "ASHOKA CORDIAL",
-    "composition": "Menstrual irregularities and Leucorrhea",
-    "packing": "200ML",
-    "mrp": "175.00"
+    "name": "VIGOREX GOLD CAPSULES",
+    "composition": "Herbal Capsule is useful in Stress, Fatigue, Exhaustion, General weakness, Loss of libido. Golden Time Capsule improves sexual desire, non hormonal and safe, relax mind and body, enhances strength and vitality",
+    "packing": "10x1x10",
+    "mrp": 240.0,
+    "category": "Capsules",
+    "distributor": 185.0
   },
   {
     "sno": 175,
-    "category": "Ayurvedic Syrups 200 Ml",
-    "name": "GET-IT-ZYME SYRUP (PINEAPPLE AND MIX F)",
-    "composition": "Enzyliv syrup and Multivitamin syrup",
-    "packing": "200ML",
-    "mrp": "125.00"
-  },
-  {
-    "sno": 176,
-    "category": "Ayurvedic Syrups 225 Ml",
-    "name": "GAS A RELAX (lemon and orange flavour)",
-    "composition": "Ayurvedic Medicine for Acidity & Gas",
-    "packing": "225ML",
-    "mrp": "195.00"
+    "name": "VIGO-POWER GOLD CAPSULE",
+    "composition": "Herbal Capsule is useful in Stress, Fatigue, Exhaustion, General weakness, Loss of libido. Golden Time Capsule improves sexual desire, non hormonal and safe, relax mind and body, enhances strength and vitality",
+    "packing": "10X1X10",
+    "mrp": 350.0,
+    "category": "Capsules",
+    "distributor": 185.0
   },
   {
     "sno": 177,
-    "category": "Ayurvedic Syrups 225 Ml",
-    "name": "RELAX MIND",
-    "composition": "Ayurvedic Medicine for sound sleep ,Stress free life and Healthy nerves",
-    "packing": "225ML",
-    "mrp": "195.00"
+    "name": "CALCIHEL D3 NANOSHOT",
+    "composition": "VITAMIN D-3 ORAL SOLUTION 60000 I.U.",
+    "packing": "4X5ML",
+    "mrp": 70.31,
+    "category": "Tablets",
+    "distributor": 33.0
   },
   {
     "sno": 178,
-    "category": "Ayurvedic Syrups 225 Ml",
-    "name": "CHANAKYA BUDDHI SYRUP",
-    "composition": "Brain Tonic",
-    "packing": "225ML",
-    "mrp": "175.00"
+    "name": "AZIHEL-100",
+    "composition": "AZITHROMYCIN 100 MG",
+    "packing": "15 ML",
+    "mrp": 65.0,
+    "category": "Syrup",
+    "distributor": 0
   },
   {
     "sno": 179,
-    "category": "Ayurvedic Syrups 225 Ml",
-    "name": "SWARN LATA SYRUP",
-    "composition": "Menstrual irregularities,Leucorrhea and Dysfunctional Uterine Bleeding",
-    "packing": "225ML",
-    "mrp": "290.00"
+    "name": "AZIHEL-200 (DPCO)",
+    "composition": "AZITHROMYCIN 200 MG",
+    "packing": "15 ML",
+    "mrp": 57.3,
+    "category": "Syrup",
+    "distributor": 18.5
   },
   {
     "sno": 180,
-    "category": "Ayurvedic Syrups 225 Ml",
-    "name": "ANZYLIV",
-    "composition": "Liver Tonic+Enzyme",
-    "packing": "225ML",
-    "mrp": "175.00"
+    "name": "ATRAHEL DROPS",
+    "composition": "Hydroxyzine Hydrochloride drops",
+    "packing": "15ML",
+    "mrp": 95.0,
+    "category": "Drops",
+    "distributor": 9.5
   },
   {
     "sno": 181,
-    "category": "Ayurvedic Syrups 225 Ml",
-    "name": "ANZYLIV COOL",
-    "composition": "Liver Tonic+Enzyme+Antacid",
-    "packing": "225ML",
-    "mrp": "175.00"
+    "name": "BETAHEL DROPS",
+    "composition": "Betamethasone sodium phosphate oral drops",
+    "packing": "15ML",
+    "mrp": 70.31,
+    "category": "Drops",
+    "distributor": 11.5
   },
   {
     "sno": 182,
-    "category": "Ayurvedic Syrups 225 Ml",
-    "name": "ANZYLIV-DS",
-    "composition": "Liver Tonic Double Strength",
-    "packing": "225ML",
-    "mrp": "175.00"
+    "name": "BETASTAN DROPS",
+    "composition": "Betamethasone sodium phosphate oral drops",
+    "packing": "15ML",
+    "mrp": 70.31,
+    "category": "Drops",
+    "distributor": 11.5
   },
   {
     "sno": 183,
-    "category": "Ayurvedic Syrups 225 Ml",
-    "name": "ANZYLIV 4G",
-    "composition": "A Natural care for Liver & digestive system (liver-ds+Alkaliser+Enzyme+Antacid Syrup)",
-    "packing": "225ML",
-    "mrp": "190.00"
+    "name": "COLIACHE DROPS",
+    "composition": "DIL OIL,FENNEL OIL WITH SIMETHICONE DROPS.",
+    "packing": "15 ML",
+    "mrp": 70.31,
+    "category": "Drops",
+    "distributor": 11.5
   },
   {
     "sno": 184,
-    "category": "Ayurvedic Syrups 225 Ml",
-    "name": "ASHOKA CORDIAL",
-    "composition": "Menstrual irregularities and Leucorrhea",
-    "packing": "225ML",
-    "mrp": "195.00"
+    "name": "FEV RELIEF DROPS",
+    "composition": "PARACEtamol 100 MG",
+    "packing": "15 ML",
+    "mrp": 26.85,
+    "category": "Drops",
+    "distributor": 11.5
   },
   {
     "sno": 185,
-    "category": "Ayurvedic Syrups 225 Ml",
-    "name": "SHE-MOOD SYRUP",
-    "composition": "Remedy for Reproductive System of Female",
-    "packing": "225ML",
-    "mrp": "175.00"
+    "name": "HELROX LS DROPS",
+    "composition": "levosalbutamole,ambroxal hydrochloride & guaiphenesin dr0ps",
+    "packing": "15ML",
+    "mrp": 70.31,
+    "category": "Drops",
+    "distributor": 11.5
   },
   {
     "sno": 186,
-    "category": "Ayurvedic Syrups 225 Ml",
-    "name": "STONIL SYRUP",
-    "composition": "Relief from kidney stone",
-    "packing": "225ML",
-    "mrp": "175.00"
+    "name": "KILLCOLD DROPS",
+    "composition": "phenylephrine ,hydrochloride chlorpheniramine maleate & paracetamol drops",
+    "packing": "15ML",
+    "mrp": 70.31,
+    "category": "Drops",
+    "distributor": 11.5
   },
   {
     "sno": 187,
-    "category": "Ayurvedic Syrups 225 Ml",
-    "name": "RAKT SUDHI",
-    "composition": "Herbal blood purifier",
-    "packing": "225ML",
-    "mrp": "190.00"
+    "name": "ONDSET DROPS (DPCO)",
+    "composition": "ondansetron oral solution ip 2mg",
+    "packing": "30ML",
+    "mrp": 37.8,
+    "category": "Drops",
+    "distributor": 9.5
   },
   {
     "sno": 188,
-    "category": "Ayurvedic Syrups 100 Ml",
-    "name": "LIVOHEL DS SYRUP",
-    "composition": "Liver Tonic",
-    "packing": "100ML",
-    "mrp": "95.00"
+    "name": "SPASMOFOL DROPS",
+    "composition": "Dicyclomine Hydrochloride and Activated Dimeticone Drops",
+    "packing": "15 ML",
+    "mrp": 55.0,
+    "category": "Drops",
+    "distributor": 11.5
   },
   {
     "sno": 189,
-    "category": "Nutraceutical Syrup 100 Ml",
-    "name": "HELZYME (CARDAMOM FLAVOUR)",
-    "composition": "Fungal Diastase + Papain",
-    "packing": "100ML",
-    "mrp": "85.00"
+    "name": "STOMSPAS DROPS",
+    "composition": "Dicyclomine Hydrochloride and Activated Dimeticone Drops",
+    "packing": "15ML",
+    "mrp": 51.56,
+    "category": "Drops",
+    "distributor": 11.5
   },
   {
     "sno": 190,
-    "category": "Nutraceutical Syrup 100 Ml",
-    "name": "MORE HB SYRUP",
-    "composition": "Haematinic Syrup of Iron Folic Acid Vitamin b12 Fortified with Minerals",
-    "packing": "100ML",
-    "mrp": "95.00"
-  },
-  {
-    "sno": 191,
-    "category": "Nutraceutical Syrup 100 Ml",
-    "name": "WE VIT SYRUP",
-    "composition": "Liver Tonic",
-    "packing": "100ML",
-    "mrp": "85.00"
+    "name": "TRIPRON DROPS",
+    "composition": "Cyproheptadine hydrochloride & tricholine citrate drops",
+    "packing": "15ML",
+    "mrp": 75.0,
+    "category": "Drops",
+    "distributor": 9.5
   },
   {
     "sno": 192,
-    "category": "Nutraceutical Syrup 100 Ml",
-    "name": "MAXI VIT SYRUP",
-    "composition": "Multivitamin + Multimineral & Antioxidants",
-    "packing": "100ML",
-    "mrp": "85.00"
+    "name": "CALCIHEL D3 DROPS",
+    "composition": "Calcium,Magnesium,Zinc & Vitamin D3 Suspension",
+    "packing": "15ML",
+    "mrp": 85.0,
+    "category": "Drops",
+    "distributor": 10.25
   },
   {
     "sno": 193,
-    "category": "Liquid Syrups 300 Ml",
-    "name": "HELZYME SYRUP",
+    "name": "HELZYME DROPS (Pineapple and Mixfruit)",
     "composition": "Fungal Diastase + Papain",
-    "packing": "300ML",
-    "mrp": "350.00"
+    "packing": "15ML",
+    "mrp": 70.0,
+    "category": "Drops",
+    "distributor": 10.25
   },
   {
     "sno": 194,
-    "category": "Liquid Syrups 300 Ml",
-    "name": "ZEYNCOVIT SYRUP",
-    "composition": "Multivitamin + Multimineral & Antioxidants",
-    "packing": "300ML",
-    "mrp": "350.00"
+    "name": "HELZYME DROPS",
+    "composition": "Fungal Diastase + Papain",
+    "packing": "15 ML",
+    "mrp": 85.0,
+    "category": "Drops",
+    "distributor": 10.25
   },
   {
     "sno": 195,
-    "category": "Ayurvedic Syrups 300 Ml",
-    "name": "LIVOHEL DS SYRUP",
+    "name": "(MIX FRUIT) LEVOHEL 52 DROPS",
     "composition": "Liver Tonic",
-    "packing": "300ML",
-    "mrp": "350.00"
+    "packing": "30ML",
+    "mrp": 95.0,
+    "category": "Drops",
+    "distributor": 10.25
   },
   {
     "sno": 196,
-    "category": "Ayurvedic Syrups 300 Ml",
-    "name": "GOOD HEALTH SYRUP",
-    "composition": "COMPLETE TONIC FOR FAMILY",
-    "packing": "450 ML",
-    "mrp": "360.00"
+    "name": "LYCODENT GOLD DROPS",
+    "composition": "Lycopene, multivitamin",
+    "packing": "15 ML",
+    "mrp": 85.0,
+    "category": "Drops",
+    "distributor": 10.25
   },
   {
     "sno": 197,
-    "category": "Cough Syrups",
-    "name": "HELROX COUGH SYRUP",
-    "composition": "AmbroxolHCL I.P. 15mg + Terbutaline Sulphate I.P. 1.25mg + Guaiphenesin I.P. 50mg + Menthol I.P. 2.5mg",
-    "packing": "100 ML",
-    "mrp": "125.00"
+    "name": "LUCOZIN GOLD DROPS",
+    "composition": "Lycopene, multivitamin",
+    "packing": "15ML",
+    "mrp": 70.0,
+    "category": "Drops",
+    "distributor": 10.25
   },
   {
     "sno": 198,
-    "category": "Cough Syrups",
-    "name": "HELREX SYRUP",
-    "composition": "Bromhexine Hydrochloride I.P. 2mg + Terbutaline Sulphate I.P. 1.25mg + Guaiphenesin I.P. 50mh + Menthol I.P. 0.5mg",
-    "packing": "100 ML",
-    "mrp": "125.00"
-  },
-  {
-    "sno": 199,
-    "category": "Cough Syrups",
-    "name": "HELKUF DX SYRUP",
-    "composition": "Dextromethorphan Hydrobromide I.P. 10mg + Phenylephrine HCL I.P. 2.5mg + Chlorpheniramine Maleate I.P. 2mg.",
-    "packing": "100 ML",
-    "mrp": "125.00"
-  },
-  {
-    "sno": 200,
-    "category": "Cough Syrups",
-    "name": "HELROX LS",
-    "composition": "AmbroxolHCL I.P. 30mg + Levosalbutamol Sulphate I.P. 1mg + Guaiphenesin I.P. 50mg",
-    "packing": "100 ML",
-    "mrp": "125.00"
-  },
-  {
-    "sno": 201,
-    "category": "Cough Syrups",
-    "name": "ROXEHEL DX",
-    "composition": "Dextromethorphan Hydrobromide I.P. 10mg + Chlorpheniramine Maleate I.P. 4mg.",
-    "packing": "100 ml",
-    "mrp": "125.00"
-  },
-  {
-    "sno": 202,
-    "category": "Cough Syrups",
-    "name": "HELMONT L KID SYRUP",
-    "composition": "Montelukast Sodium + Levocetirizine Dihydrochloride",
-    "packing": "60 ML",
-    "mrp": "80.00"
-  },
-  {
-    "sno": 203,
-    "category": "Cough Syrups",
-    "name": "CETHEL COLD SYRUP",
-    "composition": "Paracetamol 125mg + Phenylephrine Hydrochloride 2.5mg+ Cetirizine 1 mg syrup",
-    "packing": "60ML",
-    "mrp": "65.00"
-  },
-  {
-    "sno": 204,
-    "category": "Cough Syrups",
-    "name": "CETHEL COLD DS SYRUP",
-    "composition": "Paracetamol 250mg + Phenylephrine Hydrochloride 2.5mg+ Cetirizine 1 mg syrup",
-    "packing": "60ML",
-    "mrp": "80.00"
-  },
-  {
-    "sno": 205,
-    "category": "Cough Syrups",
-    "name": "KUFFDRYL SYRUP",
-    "composition": "Levosalbutamol Sulphate I.P. 1mg + Guaiphenesin I.P. 50mg AmbroxolHCL I.P. 30mg",
-    "packing": "100 ML",
-    "mrp": "150.00"
-  },
-  {
-    "sno": 206,
-    "category": "Ayurvedic Cough Syrups",
-    "name": "COUGHERB JUNIOR",
-    "composition": "Herbel Cough Syrup",
-    "packing": "60ML",
-    "mrp": "70.00"
-  },
-  {
-    "sno": 207,
-    "category": "Ayurvedic Cough Syrups",
-    "name": "COUGHERB",
-    "composition": "Herbel Cough Syrup",
-    "packing": "100ML",
-    "mrp": "90.00"
-  },
-  {
-    "sno": 208,
-    "category": "Ayurvedic Cough Syrups",
-    "name": "COUGHERB SF",
-    "composition": "Herbel Cough Syrup",
-    "packing": "100ML",
-    "mrp": "90.00"
-  },
-  {
-    "sno": 209,
-    "category": "Ayurvedic Cough Syrups",
-    "name": "HERBAL MITHAS HONEY COUGH SYRUP",
-    "composition": "Herbel Cough Syrup",
-    "packing": "100ML",
-    "mrp": "90.00"
-  },
-  {
-    "sno": 210,
-    "category": "Dry Syrup",
-    "name": "AUGUCLAV CV DRY SYRUP with water",
-    "composition": "Amoxycillin 200mg & Pottassium clavulanate 28.5mg oral (STRAWBERRY FLAVOUR)",
-    "packing": "30ML",
-    "mrp": "55.00"
-  },
-  {
-    "sno": 211,
-    "category": "Dry Syrup",
-    "name": "HELCLAV DRY SYRUP",
-    "composition": "Amoxycillin 200mg & Pottassium clavulanate 28.5mg oral(STRAWBERRY FLAVOUR)",
-    "packing": "30ML",
-    "mrp": "52.90"
-  },
-  {
-    "sno": 212,
-    "category": "Dry Syrup",
-    "name": "HELCEF-50 DRY SYRUP",
-    "composition": "Cefixime 50mg Oral Suspension I.P.",
-    "packing": "30ML",
-    "mrp": "44.00"
-  },
-  {
-    "sno": 213,
-    "category": "Dry Syrup",
-    "name": "HELCEF-100 DRY SYRUP",
-    "composition": "Cefixime 100mg Oral Suspension I.P.",
-    "packing": "30ML",
-    "mrp": "70.70"
-  },
-  {
-    "sno": 214,
-    "category": "Dry Syrup",
-    "name": "CEFPROHEL-50 DRY SYRUP",
-    "composition": "Cefprodoxime 50 mgOral SuspensionI.P",
-    "packing": "30ML",
-    "mrp": "66.80"
-  },
-  {
-    "sno": 215,
-    "category": "Dry Syrup",
-    "name": "CEFPROHEL-100 DRY SYRUP",
-    "composition": "Cefprodoxime 100mg Oral SuspensionI.P",
-    "packing": "30ML",
-    "mrp": "108.00"
-  },
-  {
-    "sno": 216,
-    "category": "Dry Syrup",
-    "name": "CEFPROHEL CV DRY SYRUP",
-    "composition": "Cefprodoxime 50mg & Pottassium clavulanate 31.25 oral",
-    "packing": "30ML",
-    "mrp": "81.00"
-  },
-  {
-    "sno": 217,
-    "category": "Neutraceutical Drops 15 Ml",
-    "name": "CALCIHEL D DROPS",
-    "composition": "Calcium,Magnesium,Zinc & Vitamin D3 Suspension",
-    "packing": "15ML",
-    "mrp": "60.00"
-  },
-  {
-    "sno": 218,
-    "category": "Neutraceutical Drops 15 Ml",
-    "name": "FERIHEL DROPS",
-    "composition": "Ferrous Ascorbate,Folic acid with Zinc syrup",
-    "packing": "15ML",
-    "mrp": "60.00"
-  },
-  {
-    "sno": 219,
-    "category": "Neutraceutical Drops 15 Ml",
-    "name": "MORE-HB DROPS",
-    "composition": "Haematinic Syrup of Iron Folic Acid Vitamin b12 Fortified with Minerals",
-    "packing": "15ML",
-    "mrp": "60.00"
-  },
-  {
-    "sno": 220,
-    "category": "Neutraceutical Drops 15 Ml",
-    "name": "LUCOZIN Gold DROPS",
-    "composition": "Lycopene, multivitamin",
-    "packing": "15ML",
-    "mrp": "60.00"
-  },
-  {
-    "sno": 221,
-    "category": "Neutraceutical Drops 15 Ml",
     "name": "MAXI VIT DROPS",
     "composition": "Multivitamin + Multimineral & Antioxidants",
     "packing": "15ML",
-    "mrp": "60.00"
+    "mrp": 85.0,
+    "category": "Drops",
+    "distributor": 10.25
   },
   {
-    "sno": 222,
-    "category": "Neutraceutical Drops 15 Ml",
-    "name": "HELZYME DROPS(Pineapple and Mixfruit)",
-    "composition": "Fungal Diastase + Papain",
+    "sno": 199,
+    "name": "MORE-HB DROPS",
+    "composition": "Haematinic Syrup of Iron Folic Acid Vitamin b12 Fortified with Minerals",
     "packing": "15ML",
-    "mrp": "60.00"
+    "mrp": 85.0,
+    "category": "Drops",
+    "distributor": 10.25
   },
   {
-    "sno": 223,
-    "category": "Neutraceutical Drops 15 Ml",
+    "sno": 200,
+    "name": "PEPOZYME DROPS",
+    "composition": "Fungal Diastase + Papain",
+    "packing": "15 ML",
+    "mrp": 85.0,
+    "category": "Drops",
+    "distributor": 10.25
+  },
+  {
+    "sno": 201,
     "name": "WE VIT DROPS",
     "composition": "Vitamin B-Complex with Vitamin C",
     "packing": "15ML",
-    "mrp": "60.00"
+    "mrp": 85.0,
+    "category": "Drops",
+    "distributor": 10.25
+  },
+  {
+    "sno": 202,
+    "name": "TULSI DROPS (AYURVEDIC)",
+    "composition": "PANCH TULSI EXTRACTS",
+    "packing": "30ML",
+    "mrp": 240.0,
+    "category": "Drops",
+    "distributor": 20.0
+  },
+  {
+    "sno": 204,
+    "name": "CREMAHEL PLUS-SF (MINT FLAVOUR)",
+    "composition": "EACH 10ML : Liquid paraffin 1.25ml,milk of magnesia 3.75ml,sodium Picosulphate bp 3.33 mg",
+    "packing": "170ML",
+    "mrp": 162.0,
+    "category": "Syrup",
+    "distributor": 24.0
+  },
+  {
+    "sno": 205,
+    "name": "DYZEHEL MPS SUSPENSION (Mint,Elaichi FLAVOUR )",
+    "composition": "EACH 10ML : Dried aluminium Hydroxide Gel IP 250 mg ,Magnesium Hydroxide 250mg,Activated Simethicone 50mg",
+    "packing": "170ml",
+    "mrp": 117.19,
+    "category": "Syrup",
+    "distributor": 15.0
+  },
+  {
+    "sno": 206,
+    "name": "MUACANE GEL (MINT)",
+    "composition": "magnesium hydroxide,dried aluminium & oxcetacaine hydroxide",
+    "packing": "170ML",
+    "mrp": 159.38,
+    "category": "Ointment/Cream",
+    "distributor": 21.0
+  },
+  {
+    "sno": 207,
+    "name": "MUCOFOLGEL",
+    "composition": "magnesium hydroxide,dried aluminium & oxcetacaine hydroxide",
+    "packing": "170ML",
+    "mrp": 155.0,
+    "category": "Ointment/Cream",
+    "distributor": 21.0
+  },
+  {
+    "sno": 208,
+    "name": "PICUCID LAXATIVE ORAL",
+    "composition": "Sodium Picosulfate 5 mg Oral solution",
+    "packing": "100 ML",
+    "mrp": 145.31,
+    "category": "Syrup",
+    "distributor": 12.75
+  },
+  {
+    "sno": 209,
+    "name": "SOLUTION LACTUHEL SOLUTION (DPCO)",
+    "composition": "LACTULOSE ORAL SOLUTION",
+    "packing": "100 ML",
+    "mrp": 137.0,
+    "category": "Syrup",
+    "distributor": 37.0
+  },
+  {
+    "sno": 211,
+    "name": "TRIPRON (Pinapple flavour)",
+    "composition": "Cyproheptadine hydrochloride & tricholine citrate syrup",
+    "packing": "200 ML",
+    "mrp": 125.0,
+    "category": "Syrup",
+    "distributor": 21.5
+  },
+  {
+    "sno": 212,
+    "name": "TRIPRON (Mixfruit flavour)",
+    "composition": "Cyproheptadine hydrochloride & tricholine citrate syrup",
+    "packing": "200 ML",
+    "mrp": 125.0,
+    "category": "Syrup",
+    "distributor": 21.5
+  },
+  {
+    "sno": 213,
+    "name": "HUNGRY (Pinapple)",
+    "composition": "Cyproheptadine Hydrochloride & Tricholine Citrate Syrup",
+    "packing": "200 ML",
+    "mrp": 170.0,
+    "category": "Syrup",
+    "distributor": 21.5
+  },
+  {
+    "sno": 214,
+    "name": "HUNGRY (Mixfruit)",
+    "composition": "Cyproheptadine Hydrochloride & Tricholine Citrate Syrup",
+    "packing": "200 ML",
+    "mrp": 164.0,
+    "category": "Syrup",
+    "distributor": 21.5
+  },
+  {
+    "sno": 215,
+    "name": "ALKAHEL SYRUP",
+    "composition": "Disodium Hydrogen citrate BP 0.335 gm",
+    "packing": "100 ML",
+    "mrp": 107.81,
+    "category": "Syrup",
+    "distributor": 11.5
+  },
+  {
+    "sno": 216,
+    "name": "ATRAHEL SUSPENTION",
+    "composition": "Hydroxyzine Hydrochloride Solution",
+    "packing": "100ML",
+    "mrp": 155.0,
+    "category": "Syrup",
+    "distributor": 14.0
+  },
+  {
+    "sno": 217,
+    "name": "FEV RELIEF-250 SUSPENTION (DPCO)",
+    "composition": "Paracetamol IP 250 MG",
+    "packing": "60 ML",
+    "mrp": 75.0,
+    "category": "Syrup",
+    "distributor": 0
+  },
+  {
+    "sno": 218,
+    "name": "HELMONT L KID SOLUTION",
+    "composition": "Montelukast Sodium + Levocetirizine Dihydrochloride",
+    "packing": "60 ML",
+    "mrp": 80.0,
+    "category": "Syrup",
+    "distributor": 13.5
+  },
+  {
+    "sno": 219,
+    "name": "IBUHELGESIC-PLUS SUSPENSION",
+    "composition": "IBUPROFEN AND PARACETAMOL SUSPENSION",
+    "packing": "60ML",
+    "mrp": 70.0,
+    "category": "Syrup",
+    "distributor": 12.5
+  },
+  {
+    "sno": 220,
+    "name": "IBUHELGESIC-PLUS SUSPENSION",
+    "composition": "IBUPROFEN AND PARACETAMOL SUSPENSION",
+    "packing": "100 ML",
+    "mrp": 116.0,
+    "category": "Syrup",
+    "distributor": 14.5
+  },
+  {
+    "sno": 221,
+    "name": "IBUFOL PLUS SUSPENTION",
+    "composition": "IBUPROFEN IP 100 MG PARACETAMOL IP 125 MG",
+    "packing": "60 ML",
+    "mrp": 70.31,
+    "category": "Syrup",
+    "distributor": 12.5
+  },
+  {
+    "sno": 222,
+    "name": "KILLHEL COLD SUSPENTION",
+    "composition": "Paracetasmol,Phenylephrine Hcl.& Chlorpheramine Maleate Oral Suspention",
+    "packing": "60 ML",
+    "mrp": 89.06,
+    "category": "Syrup",
+    "distributor": 12.25
+  },
+  {
+    "sno": 223,
+    "name": "KILLHEL COLD DS SUSPENTION",
+    "composition": "Paracetasmol,Phenylephrine Hcl.& Chlorpheramine Maleate Oral Suspention",
+    "packing": "60 ML",
+    "mrp": 125.0,
+    "category": "Syrup",
+    "distributor": 12.5
   },
   {
     "sno": 224,
-    "category": "Ayurvedic Drops",
-    "name": "TULSI DROPS",
-    "composition": "PANCH TULSI EXTRACTS",
-    "packing": "30ML",
-    "mrp": "225.00"
+    "name": "MEFEHEL-P SUSPENSION",
+    "composition": "Mefenamic Acid 50 MG & Paracetamol 125MG Suspension",
+    "packing": "60 ML",
+    "mrp": 51.56,
+    "category": "Syrup",
+    "distributor": 9.5
   },
   {
     "sno": 225,
-    "category": "Ayurvedic Juice",
-    "name": "ALOE- VERA",
-    "composition": "Pure Aloe vera Juice",
-    "packing": "500 ml",
-    "mrp": "240.00"
+    "name": "MEFEHEL-P DS SUSPENSION",
+    "composition": "Mefenamic Acid 100MG & Paracetamol 250 MG Suspension",
+    "packing": "60 ML",
+    "mrp": 55.0,
+    "category": "Syrup",
+    "distributor": 11.5
   },
   {
     "sno": 226,
-    "category": "Ayurvedic Juice",
-    "name": "AMLA",
-    "composition": "Pure Amla Juice",
-    "packing": "500 ml",
-    "mrp": "240.00"
+    "name": "OFLACID-M SUSPENSION",
+    "composition": "Oflaoxacin 50MG , Metronidazole 120MG & Simethicone 10MGSuspension",
+    "packing": "30ML",
+    "mrp": 80.0,
+    "category": "Syrup",
+    "distributor": 10.0
   },
   {
     "sno": 227,
-    "category": "Ayurvedic Juice",
-    "name": "PYN RELIEF ORTHO RAS",
-    "composition": "Ortho ras",
-    "packing": "500 ml",
-    "mrp": "240.00"
+    "name": "OFLACID 50 SUSPENSION",
+    "composition": "Oflaoxacin 50MG",
+    "packing": "30ML",
+    "mrp": 65.0,
+    "category": "Syrup",
+    "distributor": 9.5
   },
   {
     "sno": 228,
-    "category": "Ayurvedic Juice",
-    "name": "STONE CRUSH",
-    "composition": "Relief from kidney stone",
-    "packing": "500 ml",
-    "mrp": "240.00"
+    "name": "STOMSPAS SUSPENTION",
+    "composition": "Dicyclomine HCL 5 mg with Paracetamol 125mg suspention",
+    "packing": "60ML",
+    "mrp": 70.31,
+    "category": "Syrup",
+    "distributor": 13.5
   },
   {
     "sno": 229,
-    "category": "Ayurvedic Juice",
-    "name": "TRIPHALA",
-    "composition": "Pure Triphala Juice",
-    "packing": "500 ml",
-    "mrp": "240.00"
+    "name": "WIKOHEL-DS ORAL SUSPENSION",
+    "composition": "Paracetamol 250mg + Phenylephrine Hydrochloride 5mg+ Chlorpheniramine 2 mg oral suspention",
+    "packing": "60ML",
+    "mrp": 65.63,
+    "category": "Syrup",
+    "distributor": 12.0
   },
   {
     "sno": 230,
-    "category": "Ayurvedic Juice",
-    "name": "NEEM KARELA JUICE",
-    "composition": "Manage Blood Sugar Naturally",
-    "packing": "500 ml",
-    "mrp": "240.00"
-  },
-  {
-    "sno": 231,
-    "category": "Ayurvedic Juice",
-    "name": "GILOY RAS",
-    "composition": "Pure Giloy Juice",
-    "packing": "500 ml",
-    "mrp": "240.00"
+    "name": "ZINCORAL ORAL SUSPENSION",
+    "composition": "Zinc Gluconate Oral Solution 20MG",
+    "packing": "100 ML",
+    "mrp": 145.31,
+    "category": "Syrup",
+    "distributor": 14.0
   },
   {
     "sno": 232,
-    "category": "Ayurvedic Juice",
-    "name": "PANCHRAS",
-    "composition": "Aloe vera+ Amla +Karela+Punarva+ Jamun",
-    "packing": "500 ml",
-    "mrp": "240.00"
+    "name": "KAFFDRYLCOUGH SYRUP (WITHOUT CARTON)",
+    "composition": "Diphenhydramine (14.08mg/5ml) + Ammonium Chloride (138mg/5ml) + Sodium Citrate (57.03mg/5ml) Menthol ip 1.14mg",
+    "packing": "100 ML",
+    "mrp": 125.0,
+    "category": "Syrup",
+    "distributor": 8.0
   },
   {
     "sno": 233,
-    "category": "Ayurvedic Janam Ghutti",
-    "name": "JANAM GHUTTI",
-    "composition": "AYUVEDIC JANAM GHUTTI FOR BABIES",
-    "packing": "60ML",
-    "mrp": "75.00"
+    "name": "KAFFDRYL LS COUGH SYRUP (WITHOUT CARTON)",
+    "composition": "AmbroxolHCL I.P. 30mg + Levosalbutamol Sulphate I.P. 1mg + Guaiphenesin I.P. 50mg",
+    "packing": "100 ML",
+    "mrp": 117.19,
+    "category": "Syrup",
+    "distributor": 13.5
   },
   {
     "sno": 234,
-    "category": "Ayurvedic Balm /Oil",
-    "name": "PYN RELIEF BALM",
-    "composition": "Pain Relief Ayurvedic Balm",
-    "packing": "10GM",
-    "mrp": "40.00"
+    "name": "ROXIHEL DX COUGH SYRUP (WITHOUT CARTON)",
+    "composition": "Dextromethorphan Hydrobromide I.P. 10mg + Chlorpheniramine Maleate I.P. 4mg.",
+    "packing": "100 ML",
+    "mrp": 140.63,
+    "category": "Syrup",
+    "distributor": 11.0
   },
   {
     "sno": 235,
-    "category": "Ayurvedic Balm /Oil",
-    "name": "PYN RELIEF OIL",
-    "composition": "Pain Relief Ayurvedic Oil",
-    "packing": "60ML",
-    "mrp": "250.00"
+    "name": "ROXIHEL AT COUGH SYRUP (WITHOUT CARTON)",
+    "composition": "AmbroxolHCL I.P. 15mg + Terbutaline Sulphate I.P. 1.25mg + Guaiphenesin I.P. 50mg + Menthol I.P. 2.5mg",
+    "packing": "100 ML",
+    "mrp": 117.19,
+    "category": "Syrup",
+    "distributor": 11.0
   },
   {
     "sno": 236,
-    "category": "Ayurvedic Balm /Oil",
-    "name": "PYN RELIEF ROLL ON",
-    "composition": "Pain Relief Ayurvedic Oil",
-    "packing": "10ML",
-    "mrp": "50.00"
+    "name": "ROXEKOF-DX COUGH SYRUP",
+    "composition": "Dextromethorphan Hydrobromide I.P. 10mg + Chlorpheniramine Maleate I.P. 4mg.",
+    "packing": "100ML",
+    "mrp": 117.19,
+    "category": "Syrup",
+    "distributor": 11.0
   },
   {
     "sno": 237,
-    "category": "Ayurvedic Balm /Oil",
-    "name": "BOSOM OIL",
-    "composition": "Breast Enhancement and Enlargement OIL",
-    "packing": "60ML",
-    "mrp": "490.00"
+    "name": "ROXIHEL-BT COUGH SYRUP (WITHOUT CARTON)",
+    "composition": "BROMHEXINE HCL. IP 2MG TERBUTALINE SULPHATE IP 1.25MG GUAIPHENESIN IP 50 MG MENTHOL IP 0.5MG",
+    "packing": "100ML",
+    "mrp": 125.0,
+    "category": "Syrup",
+    "distributor": 0
   },
   {
     "sno": 238,
-    "category": "Ayurvedic Balm /Oil",
-    "name": "JAPANEE OIL",
-    "composition": "Sexual disorders Ayurvedic Oil",
-    "packing": "15ML",
-    "mrp": "375.00"
-  },
-  {
-    "sno": 239,
-    "category": "Ayurvedic Balm /Oil",
-    "name": "SANDA OIL",
-    "composition": "Sexual disorders Ayurvedic Oil",
-    "packing": "15ML",
-    "mrp": "375.00"
+    "name": "ROXIHEL-P COUGH SYRUP (WITHOUT CARTON)",
+    "composition": "Dextromethorphan Hydrobromide I.P. 10mg + Phenylephrine Hcl I.P. 5mg.+Chlorpheniramine Maleate IP 2 mg",
+    "packing": "100ML",
+    "mrp": 117.19,
+    "category": "Syrup",
+    "distributor": 9.5
   },
   {
     "sno": 240,
-    "category": "Ayurvedic Balm /Oil",
-    "name": "SULTAN OIL",
-    "composition": "Sexual disorders Ayurvedic Oil",
-    "packing": "15ML",
-    "mrp": "375.00"
+    "name": "BEECOM PLEX SYRUP",
+    "composition": "B COMPLEX SYRUP",
+    "packing": "200 ML",
+    "mrp": 195.0,
+    "category": "Syrup",
+    "distributor": 18.5
   },
   {
     "sno": 241,
-    "category": "Ayurvedic Balm /Oil",
-    "name": "MUSLI OIL",
-    "composition": "Sexual disorders Ayurvedic Oil",
-    "packing": "15ML",
-    "mrp": "375.00"
+    "name": "CALMA D SYRUP",
+    "composition": "Calcium,Magnesium,Zinc & Vitamin D3 Suspension",
+    "packing": "200ML",
+    "mrp": 195.0,
+    "category": "Syrup",
+    "distributor": 18.5
   },
   {
     "sno": 242,
-    "category": "Ayurvedic Balm /Oil",
-    "name": "KESH VARDHAN OIL",
-    "composition": "Hair oil",
-    "packing": "120 ML",
-    "mrp": "250.00"
+    "name": "CALCIHEL D SYRUP",
+    "composition": "Calcium,Magnesium,Zinc & Vitamin D3 Suspension",
+    "packing": "200ML",
+    "mrp": 125.0,
+    "category": "Syrup",
+    "distributor": 18.5
   },
   {
     "sno": 243,
-    "category": "Ayurvedic Balm /Oil",
-    "name": "KESH VARDHAN ONION OIL",
-    "composition": "Hair oil",
-    "packing": "100 ML",
-    "mrp": "250.00"
+    "name": "EN-ZYMOVIT SYRUP (PINEAPPLE & MIX FRUIT FLAVOUR)",
+    "composition": "Digestive Enzyme & Multivitamins with L-Lysine Syrup",
+    "packing": "200ML",
+    "mrp": 195.0,
+    "category": "Syrup",
+    "distributor": 18.5
   },
   {
     "sno": 244,
-    "category": "Ayurvedic Balm /Oil",
-    "name": "OLIVHEL OIL",
-    "composition": "BABY MASSAGE OIL FOR BONES ,HEALTHY SKIN AND MUSCLES STRONG",
-    "packing": "100ML",
-    "mrp": "150.00"
+    "name": "EN-ZYMOVIT SYRUP (PINEAPPLE & MIX FRUIT FLAVOUR)",
+    "composition": "Digestive Enzyme & Multivitamins with L-Lysine Syrup",
+    "packing": "100 ML",
+    "mrp": 110.0,
+    "category": "Syrup",
+    "distributor": 12.0
   },
   {
     "sno": 245,
-    "category": "Ayurvedic Balm /Oil",
-    "name": "GLYCERIN",
-    "composition": "GLYCERIN 99.9% PURE AND NATURAL",
-    "packing": "50ML",
-    "mrp": "40.00"
-  },
-  {
-    "sno": 246,
-    "category": "Ayurvedic Balm /Oil",
-    "name": "GLYCERIN",
-    "composition": "GLYCERIN 99.9% PURE AND NATURAL",
-    "packing": "100 ML",
-    "mrp": "70.00"
+    "name": "FERIHEL SYRUP",
+    "composition": "FERROUS ASCORBATE & FOLIC ACID SYRUP",
+    "packing": "200 ml",
+    "mrp": 125.0,
+    "category": "Syrup",
+    "distributor": 18.5
   },
   {
     "sno": 247,
-    "category": "Ayurvedic Balm /Oil",
-    "name": "CASTOR OIL",
-    "composition": "CASTOR OIL 100% PURE AND NATURAL",
-    "packing": "50ML",
-    "mrp": "60.00"
+    "name": "HEAM UP SYRUP",
+    "composition": "FERROUS ASCORBATE & FOLIC ACID SYRUP",
+    "packing": "200 ML",
+    "mrp": 195.0,
+    "category": "Syrup",
+    "distributor": 18.5
   },
   {
     "sno": 248,
-    "category": "Ayurvedic Balm /Oil",
-    "name": "CASTOR OIL",
-    "composition": "CASTOR OIL 100% PURE AND NATURAL",
-    "packing": "100 ML",
-    "mrp": "90.00"
+    "name": "HELZYME (PINEAPPLE & MIX FRUIT FLAVOUR)",
+    "composition": "Fungal Diastase + Papain",
+    "packing": "200 ML",
+    "mrp": 195.0,
+    "category": "Syrup",
+    "distributor": 18.5
   },
   {
     "sno": 249,
-    "category": "Ayurvedic Balm /Oil",
-    "name": "GRIPE WATER",
-    "composition": "GENTLE RELIEVES STOMACH DISCOMFORT FROM GAS,COLIC & HICCUPS",
-    "packing": "150ML",
-    "mrp": "75.00"
+    "name": "HELZYME (PINEAPPLE)",
+    "composition": "Fungal Diastase + Papain",
+    "packing": "100 ML",
+    "mrp": 110.0,
+    "category": "Syrup",
+    "distributor": 12.0
   },
   {
     "sno": 250,
-    "category": "Ayurvedic Balm /Oil",
-    "name": "PETROLEUM JELLY",
-    "composition": "PETROLEUM JELLY",
-    "packing": "25 GM",
-    "mrp": "55.00"
+    "name": "HEMORICH GOLD SYRUP",
+    "composition": "Multivitamin + Multimineral & Antioxidants",
+    "packing": "200 ML",
+    "mrp": 195.0,
+    "category": "Syrup",
+    "distributor": 18.5
   },
   {
     "sno": 251,
-    "category": "Ayurvedic Balm /Oil",
-    "name": "PETROLEUM JELLY",
-    "composition": "PETROLEUM JELLY",
-    "packing": "50 GM",
-    "mrp": "95.00"
+    "name": "LUCOZIN GOLD",
+    "composition": "Lycopene, multivitamin",
+    "packing": "200 ML",
+    "mrp": 195.0,
+    "category": "Syrup",
+    "distributor": 18.5
   },
   {
     "sno": 252,
-    "category": "Shampoo",
-    "name": "KAT KIT DANDRUFF TREATMENT SHAMPOO",
-    "composition": "Ketoconazole 2% WITH ZPTO",
-    "packing": "100 ml",
-    "mrp": "190.00"
+    "name": "MAXI VIT SYRUP",
+    "composition": "Multivitamin + Multimineral & Antioxidants",
+    "packing": "200ML",
+    "mrp": 195.0,
+    "category": "Syrup",
+    "distributor": 18.5
+  },
+  {
+    "sno": 253,
+    "name": "MAXI VIT SYRUP",
+    "composition": "Multivitamin + Multimineral & Antioxidants",
+    "packing": "100 ML",
+    "mrp": 110.0,
+    "category": "Syrup",
+    "distributor": 12.0
   },
   {
     "sno": 254,
-    "category": "External Lotion/Antiseptic Liquid",
-    "name": "MICROBIC LOTION",
-    "composition": "Permethrin 5%w/v+Certrimide I.p 0.01%w/v",
-    "packing": "120ml",
-    "mrp": "225.00"
+    "name": "MORE HB SYRUP",
+    "composition": "Haematinic Syrup of Iron Folic Acid Vitamin b12 Fortified with Minerals",
+    "packing": "200 ML",
+    "mrp": 195.0,
+    "category": "Syrup",
+    "distributor": 18.5
   },
   {
     "sno": 255,
-    "category": "External Lotion/Antiseptic Liquid",
-    "name": "CLOT LOTION",
-    "composition": "Coal Tar Solution 4.25% v/v , Salicylic Acid 2% w/v",
-    "packing": "15ml",
-    "mrp": "58.00"
+    "name": "MORE HB SYRUP",
+    "composition": "Haematinic Syrup of Iron Folic Acid Vitamin b12 Fortified with Minerals",
+    "packing": "100 ML",
+    "mrp": 110.0,
+    "category": "Syrup",
+    "distributor": 12.0
   },
   {
     "sno": 256,
-    "category": "External Lotion/Antiseptic Liquid",
-    "name": "CLOT B LOTION",
-    "composition": "Clotrimazole 1.0%",
-    "packing": "15ml",
-    "mrp": "85.00"
+    "name": "MULTITALENT SYRUP",
+    "composition": "Multivitamin & Multiminerals syrup",
+    "packing": "200 ML",
+    "mrp": 195.0,
+    "category": "Syrup",
+    "distributor": 18.5
   },
   {
     "sno": 257,
-    "category": "External Lotion/Antiseptic Liquid",
-    "name": "CLOBEMATE GM LOTION",
-    "composition": "Clotrimazole 1.0%& Becomethasone Dipropionate 0.025%",
-    "packing": "25 ML",
-    "mrp": "85.00"
+    "name": "PEPOZYME SYRUP (PINEAPPLE)",
+    "composition": "Fungal Diastase + Papain",
+    "packing": "200 ML",
+    "mrp": 195.0,
+    "category": "Syrup",
+    "distributor": 18.5
   },
   {
     "sno": 258,
-    "category": "External Lotion/Antiseptic Liquid",
-    "name": "CLOBEMATE LOTION",
-    "composition": "Clobetasol Propionate 0.05% w/w + Gentamycin Sulphate +Miconazole Nitrate & Zinc oxide Lotion",
-    "packing": "25 ML",
-    "mrp": "85.00"
+    "name": "SILYCOM SUSPENSION",
+    "composition": "Lecithin,Silymarin and Vitamin B-Complex Suspension",
+    "packing": "200ML",
+    "mrp": 195.0,
+    "category": "Syrup",
+    "distributor": 18.5
   },
   {
     "sno": 259,
-    "category": "External Lotion/Antiseptic Liquid",
-    "name": "NOCK OUT LOTION",
-    "composition": "Clobetasol Propionate 0.05% w/w Lotion",
-    "packing": "12 ML",
-    "mrp": "55.00"
+    "name": "WE VIT SYRUP",
+    "composition": "Vitamin B-Complex with Vitamin C",
+    "packing": "200ML",
+    "mrp": 195.0,
+    "category": "Syrup",
+    "distributor": 18.5
   },
   {
     "sno": 260,
-    "category": "External Lotion/Antiseptic Liquid",
-    "name": "LULIFORT LOTION",
-    "composition": "Luliconazole 1%w/w",
-    "packing": "15ml",
-    "mrp": "225.00"
+    "name": "WE VIT SYRUP",
+    "composition": "Vitamin B-Complex with Vitamin C",
+    "packing": "100 ML",
+    "mrp": 110.0,
+    "category": "Syrup",
+    "distributor": 11.0
   },
   {
     "sno": 261,
-    "category": "External Lotion/Antiseptic Liquid",
-    "name": "HELSALIC LOTION",
-    "composition": "Clobetasol Propionate 0.05% w/w, Salicylic Acid 6.0% w/w",
-    "packing": "30ml",
-    "mrp": "125.00"
+    "name": "ZINGYTAL SYRUP",
+    "composition": "GINSENG,MULTIVITAMIN & MULTIMINERAL SYRUP",
+    "packing": "200 ML",
+    "mrp": 125.0,
+    "category": "Syrup",
+    "distributor": 18.5
   },
   {
     "sno": 262,
-    "category": "External Lotion/Antiseptic Liquid",
-    "name": "SCABHEL LOTION",
-    "composition": "Gamma benzene Hexachloride 1.00% w/v & cetrimide lotion 0.10% w/v",
-    "packing": "100ML",
-    "mrp": "125.00"
+    "name": "ZEYNCOVIT SYRUP",
+    "composition": "Multivitamin & Multiminerals syrup",
+    "packing": "200ML",
+    "mrp": 195.0,
+    "category": "Syrup",
+    "distributor": 18.5
   },
   {
     "sno": 263,
-    "category": "External Lotion/Antiseptic Liquid",
-    "name": "GAMASCAB LOTION",
-    "composition": "Gamma benzene Hexachloride 0.10% w/v & cetrimide lotion 0.10% w/v",
-    "packing": "100 ml",
-    "mrp": "125.00"
-  },
-  {
-    "sno": 264,
-    "category": "External Lotion/Antiseptic Liquid",
-    "name": "LACTOHEL LOTION",
-    "composition": "CALAMINE LOTION",
-    "packing": "100 ml",
-    "mrp": "125.00"
+    "name": "ZEAMCOVIT SYRUP",
+    "composition": "Multivitamin & Multiminerals syrup",
+    "packing": "200 ML",
+    "mrp": 195.0,
+    "category": "Syrup",
+    "distributor": 18.5
   },
   {
     "sno": 265,
-    "category": "External Lotion/Antiseptic Liquid",
-    "name": "KAT KIT LOTION",
-    "composition": "Ketoconazole 2%",
-    "packing": "60 ml",
-    "mrp": "125.00"
+    "name": "ASHOKA CORDIAL",
+    "composition": "Menstrual irregularities and Leucorrhea",
+    "packing": "450 ML",
+    "mrp": 360.0,
+    "category": "Syrup",
+    "distributor": 39.0
   },
   {
     "sno": 266,
-    "category": "External Lotion/Antiseptic Liquid",
-    "name": "HELSEPTIC ANTISEPTIC LIQUID",
-    "composition": "CHORHEXADINE GLUCONATE IP STRONG CETRIMIDE SOLUTION IP SOLUTION BASE",
-    "packing": "100 ml",
-    "mrp": "125.00"
+    "name": "GOOD HEALTH SYRUP",
+    "composition": "COMPLETE TONIC FOR FAMILY",
+    "packing": "450 ML",
+    "mrp": 360.0,
+    "category": "Syrup",
+    "distributor": 39.0
   },
   {
     "sno": 267,
-    "category": "External Lotion/Antiseptic Liquid",
-    "name": "HELSEPTIC ANTISEPTIC LIQUID",
-    "composition": "CHORHEXADINE GLUCONATE IP STRONG CETRIMIDE SOLUTION IP SOLUTION BASE",
-    "packing": "500ML",
-    "mrp": "250.00"
+    "name": "PLATOMORE SYRUP",
+    "composition": "Help in Increasing Platelet count",
+    "packing": "450 ML",
+    "mrp": 360.0,
+    "category": "Syrup",
+    "distributor": 39.0
   },
   {
     "sno": 268,
-    "category": "External Lotion/Antiseptic Liquid",
-    "name": "HELSEPTIC ANTISEPTIC LIQUID",
-    "composition": "CHORHEXADINE GLUCONATE IP STRONG CETRIMIDE SOLUTION IP SOLUTION BASE",
-    "packing": "1LTR",
-    "mrp": "425.00"
+    "name": "ANZYLIV SYRUP",
+    "composition": "Liver Tonic",
+    "packing": "225ML",
+    "mrp": 190.0,
+    "category": "Syrup",
+    "distributor": 23.0
   },
   {
     "sno": 269,
-    "category": "Dusting Powder",
-    "name": "KAT KIT POWDER",
-    "composition": "Ketoconazole 2% w/w",
-    "packing": "75GM",
-    "mrp": "195.00"
+    "name": "ANZYLIV-12G",
+    "composition": "LIVER & DIGESTIVE TONIC",
+    "packing": "225 ML",
+    "mrp": 275.0,
+    "category": "Syrup",
+    "distributor": 23.0
   },
   {
     "sno": 270,
-    "category": "Dusting Powder",
-    "name": "ITRAHEL POWDER",
-    "composition": "itraconasole USP 1.00% w/w",
-    "packing": "75GM",
-    "mrp": "195.00"
+    "name": "ANZYLIV-4G",
+    "composition": "Liver Tonic Double Strength",
+    "packing": "225ML",
+    "mrp": 260.0,
+    "category": "Syrup",
+    "distributor": 23.0
   },
   {
     "sno": 271,
-    "category": "Dusting Powder",
-    "name": "CLOT POWDER",
-    "composition": "Clotrimazole 1.0% w/w",
-    "packing": "75GM",
-    "mrp": "90.00"
+    "name": "ANZYLIV COOL",
+    "composition": "Liver Tonic+Enzyme+Antacid",
+    "packing": "225ML",
+    "mrp": 260.0,
+    "category": "Syrup",
+    "distributor": 23.0
   },
   {
     "sno": 272,
-    "category": "Dusting Powder",
-    "name": "TERBHEL POWDER",
-    "composition": "Terbinafine HCL 1%w/w",
-    "packing": "75GM",
-    "mrp": "195.00"
+    "name": "ANZYLIV-DS",
+    "composition": "Liver Tonic Double Strength",
+    "packing": "225ML",
+    "mrp": 225.0,
+    "category": "Syrup",
+    "distributor": 23.0
   },
   {
     "sno": 273,
-    "category": "Dusting Powder",
-    "name": "HELSALIC POWDER",
-    "composition": "Salicylic Acid,Bezoic acid, Menthol & starch Powder",
-    "packing": "100 GM",
-    "mrp": "221.00"
+    "name": "ASHOKA CORDIAL",
+    "composition": "Menstrual irregularities and Leucorrhea",
+    "packing": "225ML",
+    "mrp": 225.0,
+    "category": "Syrup",
+    "distributor": 23.0
   },
   {
     "sno": 274,
-    "category": "Dusting Powder",
-    "name": "HELDINE POWDER",
-    "composition": "Povidone-Iodine I.P. 5% w/w",
-    "packing": "10 GM",
-    "mrp": "70.00"
+    "name": "CHANAKYA BUDHI SYRUP",
+    "composition": "COMPLETE TONIC FOR BRAIN",
+    "packing": "225 ML",
+    "mrp": 225.0,
+    "category": "Syrup",
+    "distributor": 23.0
   },
   {
     "sno": 275,
-    "category": "Dusting Powder",
-    "name": "NEO-HELSPOR ANTIBIOTIC POWDER",
-    "composition": "Neomycin Sulphate 5g,Bacitracin Zinc 250 unity,Sulfacetamide Sodium 60mg",
-    "packing": "10 GM",
-    "mrp": "80.00"
+    "name": "FAROLIV-4G SYRUP",
+    "composition": "LIVER & DIGESTIVE TONIC",
+    "packing": "225 ML",
+    "mrp": 225.0,
+    "category": "Syrup",
+    "distributor": 23.0
   },
   {
     "sno": 276,
-    "category": "Solutions",
-    "name": "HELDINE SOLUTION",
-    "composition": "POVIDONE IODINE SOLUTION USP",
-    "packing": "500 ML",
-    "mrp": "195.00"
+    "name": "GAS A RELAX SYRUP (LEMON+ORANGE)",
+    "composition": "ACIDITY RELIEF",
+    "packing": "225 ML",
+    "mrp": 225.0,
+    "category": "Syrup",
+    "distributor": 23.0
   },
   {
     "sno": 277,
-    "category": "Solutions",
-    "name": "HELDINE SOLUTION",
-    "composition": "POVIDONE IODINE SOLUTION USP",
-    "packing": "100 ML",
-    "mrp": "39.00"
+    "name": "RAKT SUDHI",
+    "composition": "Herbal blood purifier",
+    "packing": "225ML",
+    "mrp": 190.0,
+    "category": "Syrup",
+    "distributor": 23.0
   },
   {
     "sno": 278,
-    "category": "Personal Care",
-    "name": "Lady Wash",
-    "composition": "Lactic Acid 1.2% w/w (Enriched with Sea Buckthorm Oil & Tea Tree Oil)",
-    "packing": "100 ML",
-    "mrp": "150.00"
+    "name": "RAKT SAFA",
+    "composition": "Herbal blood purifier",
+    "packing": "225ML",
+    "mrp": 225.0,
+    "category": "Syrup",
+    "distributor": 23.0
   },
   {
     "sno": 279,
-    "category": "Personal Care",
-    "name": "First Wish Pregnancy Test Card",
-    "composition": "Pregnancy Test Card",
-    "packing": "50 strip",
-    "mrp": "50.00"
+    "name": "SHE-MOOD SYRUP",
+    "composition": "Remedy for Reproductive System of Female",
+    "packing": "225ML",
+    "mrp": 260.0,
+    "category": "Syrup",
+    "distributor": 23.0
   },
   {
     "sno": 280,
-    "category": "Mouth Wash",
-    "name": "SANSO FRESH MOUTH WASH",
-    "composition": "CHLORHEXIDINE GLUCONATE SOLUTION IP 0.2%",
-    "packing": "100 ML",
-    "mrp": "99.00"
+    "name": "STONIL SYRUP",
+    "composition": "Relief from kidney stone",
+    "packing": "225ML",
+    "mrp": 260.0,
+    "category": "Syrup",
+    "distributor": 23.0
   },
   {
     "sno": 281,
-    "category": "Mouth Wash",
-    "name": "SANSO COOL MOUTH WASH",
-    "composition": "CHLORHEXIDINE GLUCONATE SOLUTION IP 0.2%",
-    "packing": "100 ML",
-    "mrp": "99.00"
+    "name": "STONE FALL SYRUP",
+    "composition": "Relief from kidney stone",
+    "packing": "225ML",
+    "mrp": 225.0,
+    "category": "Syrup",
+    "distributor": 23.0
   },
   {
     "sno": 282,
-    "category": "Soap",
-    "name": "ACNE GOLD",
-    "composition": "Acne & Pimple soap",
-    "packing": "75gm",
-    "mrp": "95.00"
+    "name": "SACHI SAKHI SYRUP",
+    "composition": "Remedy for Reproductive System of Female",
+    "packing": "225 ML",
+    "mrp": 260.0,
+    "category": "Syrup",
+    "distributor": 23.0
   },
   {
     "sno": 283,
-    "category": "Soap",
-    "name": "KAT KIT SOAP",
-    "composition": "Dandruff treatment soap",
-    "packing": "75gm",
-    "mrp": "95.00"
+    "name": "SHANKH PUSHPI",
+    "composition": "BRAIN TONIC",
+    "packing": "225 ML",
+    "mrp": 175.0,
+    "category": "Syrup",
+    "distributor": 23.0
   },
   {
     "sno": 284,
-    "category": "Soap",
-    "name": "MICROBIC SOAP",
-    "composition": "Permethrin 1 % soap",
-    "packing": "75gm",
-    "mrp": "95.00"
-  },
-  {
-    "sno": 285,
-    "category": "Soap",
-    "name": "SHINY SKIN SOAP",
-    "composition": "WHITENING AND FAIRNESS SOAP",
-    "packing": "75gm",
-    "mrp": "95.00"
+    "name": "SWARN LATA SYRUP (WITH CAPSULE)",
+    "composition": "Menstrual irregularities,Leucorrhea and Dysfunctional Uterine Bleeding",
+    "packing": "225ML",
+    "mrp": 360.0,
+    "category": "Syrup",
+    "distributor": 38.0
   },
   {
     "sno": 286,
-    "category": "Soap",
-    "name": "SHINY SKIN GYLCERIN SOAP",
-    "composition": "Glycerin bathing soap",
-    "packing": "75gm",
-    "mrp": "95.00"
+    "name": "ASHOKA CORDIAL",
+    "composition": "Menstrual irregularities and Leucorrhea",
+    "packing": "200ml",
+    "mrp": 195.0,
+    "category": "Syrup",
+    "distributor": 19.0
   },
   {
     "sno": 287,
-    "category": "Soap",
-    "name": "SHINY SKIN NEEM SOAP",
-    "composition": "NEEM AND ALOEVERA SOAP",
-    "packing": "75gm",
-    "mrp": "95.00"
+    "name": "ANZYLIV 12G",
+    "composition": "A Natural care for Liver & digestive system (liver-ds+Alkaliser+Enzyme+Antacid Syrup)",
+    "packing": "200 ML",
+    "mrp": 250.0,
+    "category": "Syrup",
+    "distributor": 19.0
   },
   {
     "sno": 288,
-    "category": "Soap",
-    "name": "BABY CARE SOAP",
-    "composition": "BABY BATH SOAP",
-    "packing": "75gm",
-    "mrp": "95.00"
+    "name": "CALCI-KO",
+    "composition": "Calcium,Magnesium,Zink & Vit.-D syrup",
+    "packing": "200 ML",
+    "mrp": 195.0,
+    "category": "Syrup",
+    "distributor": 19.0
   },
   {
     "sno": 289,
-    "category": "Soap",
-    "name": "DOG CARE SOAP",
-    "composition": "DOG ANTI LICE SOAP",
-    "packing": "75gm",
-    "mrp": "95.00"
+    "name": "CHATPAT HAZAM",
+    "composition": "DIGESTIVE TASTY SYRUP OF GASTRITIS,CONSTIPATION ,INDIGESTION ,LOSS OF APPETITE.",
+    "packing": "200ML",
+    "mrp": 299.0,
+    "category": "Syrup",
+    "distributor": 24.0
   },
   {
     "sno": 290,
-    "category": "Soap",
-    "name": "SAFFRON SOAP",
-    "composition": "Natural Fairness Saffron Soap",
-    "packing": "75gm",
-    "mrp": "95.00"
+    "name": "GOOD HEALTH SYRUP",
+    "composition": "MULTI VITAMIN SYRUP",
+    "packing": "200 ML",
+    "mrp": 195.0,
+    "category": "Syrup",
+    "distributor": 19.0
   },
   {
     "sno": 291,
-    "category": "Soap",
-    "name": "TURMERIC SOAP",
-    "composition": "Turmeric skin exfoliant herbal Bathing soap",
-    "packing": "75gm",
-    "mrp": "95.00"
+    "name": "IRON RICH GOLD",
+    "composition": "Complete Iron Tonic",
+    "packing": "200ML",
+    "mrp": 195.0,
+    "category": "Syrup",
+    "distributor": 19.0
   },
   {
     "sno": 292,
-    "category": "Soap",
-    "name": "SANDAL SOAP",
-    "composition": "Sandal wood oil soap",
-    "packing": "75gm",
-    "mrp": "95.00"
+    "name": "IRON GOLD",
+    "composition": "Complete Iron Tonic",
+    "packing": "200ML",
+    "mrp": 195.0,
+    "category": "Syrup",
+    "distributor": 19.0
   },
   {
-    "sno": 293,
-    "category": "Soap",
-    "name": "MULTANI MITTI SOAP",
-    "composition": "Multani mitti cleansing soap",
-    "packing": "75gm",
-    "mrp": "95.00"
+    "sno": 269,
+    "name": "JWARNASHAK SYRUP",
+    "composition": "Fortified with Giloy & Brahm",
+    "packing": "200ML",
+    "mrp": 350.0,
+    "category": "Syrup",
+    "distributor": 19.0
   },
   {
     "sno": 294,
-    "category": "Soap",
-    "name": "NO MORE MARKS SOAP",
-    "composition": "Ayurvedic anti marks cream",
-    "packing": "75gm",
-    "mrp": "95.00"
+    "name": "LIVOHEL",
+    "composition": "Liver Tonic",
+    "packing": "200ml",
+    "mrp": 195.0,
+    "category": "Syrup",
+    "distributor": 19.0
   },
   {
     "sno": 295,
-    "category": "Soap",
-    "name": "FOXY SOAP",
-    "composition": "body moisturizing beauty bar",
-    "packing": "75gm",
-    "mrp": "95.00"
+    "name": "LIVOHEL-DS SYRUP",
+    "composition": "Liver Tonic",
+    "packing": "200ml",
+    "mrp": 175.0,
+    "category": "Syrup",
+    "distributor": 19.0
   },
   {
     "sno": 296,
-    "category": "Soap",
-    "name": "LEMON SOAP",
-    "composition": "lemon bacterial soap",
-    "packing": "75gm",
-    "mrp": "95.00"
+    "name": "LIVO DIGEST-DS SYRUP",
+    "composition": "Liver Tonic",
+    "packing": "200 ML",
+    "mrp": 195.0,
+    "category": "Syrup",
+    "distributor": 19.0
   },
   {
     "sno": 297,
-    "category": "Soap",
-    "name": "ITCH SAFE GUARD SOAP",
-    "composition": "DFungus &bacteria soap",
-    "packing": "75gm",
-    "mrp": "95.00"
+    "name": "MUSLI PLUS SYRUP",
+    "composition": "MUSLI PLUS SYRUP",
+    "packing": "200 ML",
+    "mrp": 195.0,
+    "category": "Syrup",
+    "distributor": 19.0
   },
   {
     "sno": 298,
-    "category": "Soap",
-    "name": "LICE KILL SOAP",
-    "composition": "Anti lice ayurvedic soap",
-    "packing": "75gm",
-    "mrp": "95.00"
+    "name": "PLATO HEL SYRUP",
+    "composition": "Help in Increasing Platelet count",
+    "packing": "200ML",
+    "mrp": 225.0,
+    "category": "Syrup",
+    "distributor": 19.0
   },
   {
     "sno": 299,
-    "category": "Soap",
-    "name": "MEDISEPTIC SOAP",
-    "composition": "Antiseptic ayurvedic soap",
-    "packing": "75gm",
-    "mrp": "95.00"
+    "name": "PLATOGAIN SYRUP",
+    "composition": "Help in Increasing Platelet count",
+    "packing": "200ML",
+    "mrp": 225.0,
+    "category": "Syrup",
+    "distributor": 19.0
   },
   {
     "sno": 300,
-    "category": "Soap",
-    "name": "DE TAN SOAP",
-    "composition": "Sun tan Remover soap",
-    "packing": "75gm",
-    "mrp": "95.00"
+    "name": "RAKT SUDHI",
+    "composition": "Herbal blood purifier",
+    "packing": "200ML",
+    "mrp": 195.0,
+    "category": "Syrup",
+    "distributor": 19.0
   },
   {
     "sno": 301,
-    "category": "Soap",
-    "name": "CHARCOAL SOAP",
-    "composition": "Charcoap soap",
-    "packing": "75gm",
-    "mrp": "95.00"
-  },
-  {
-    "sno": 302,
-    "category": "Soap",
-    "name": "FOOT KNEE ELBOW SCRUB",
-    "composition": "FOOT CRACK , KNEE & ELBOW SCRUB SOAP",
-    "packing": "75gm",
-    "mrp": "95.00"
+    "name": "SHANKH PUSHPI",
+    "composition": "BRAIN TONIC",
+    "packing": "200ML",
+    "mrp": 195.0,
+    "category": "Syrup",
+    "distributor": 19.0
   },
   {
     "sno": 303,
-    "category": "Soap",
-    "name": "LACTOHEL SOAP",
-    "composition": "calamine Soap",
-    "packing": "75gm",
-    "mrp": "95.00"
+    "name": "COUGHERB SYRUP",
+    "composition": "Herbel Cough Syrup",
+    "packing": "100 ML",
+    "mrp": 135.0,
+    "category": "Syrup",
+    "distributor": 11.5
   },
   {
     "sno": 304,
-    "category": "Soap",
-    "name": "AYURVEDIC SOAP",
-    "composition": "Ayurvedic soap for all skin problems",
-    "packing": "75gm",
-    "mrp": "95.00"
+    "name": "COUGHERB-SF SYRUP",
+    "composition": "Herbel Cough Syrup",
+    "packing": "100 ML",
+    "mrp": 135.0,
+    "category": "Syrup",
+    "distributor": 11.5
   },
   {
     "sno": 305,
-    "category": "Soap",
-    "name": "ROSE SOAP",
-    "composition": "Rose fragrance soap",
-    "packing": "75gm",
-    "mrp": "95.00"
+    "name": "LIVOHEL-DS SYRUP",
+    "composition": "Liver Tonic",
+    "packing": "100ML",
+    "mrp": 95.0,
+    "category": "Syrup",
+    "distributor": 11.5
   },
   {
     "sno": 306,
-    "category": "Protein Powder/Malt",
-    "name": "PROTOHEL POWDER (CHOCOLATE FLAVOUR)",
-    "composition": "Protein powder Vitamins,Minerls & Iron for whole family",
-    "packing": "200gm",
-    "mrp": "325.00"
+    "name": "MITHAS HONEY COUGH SYRUP",
+    "composition": "Herbel Cough Syrup",
+    "packing": "100ML",
+    "mrp": 90.0,
+    "category": "Syrup",
+    "distributor": 13.0
   },
   {
     "sno": 307,
-    "category": "Protein Powder/Malt",
-    "name": "PROTOHEL DHA PROTEIN POWDER",
-    "composition": "Protein powder Vitamins,Minerls & Iron for whole family",
-    "packing": "200gm",
-    "mrp": "375.00"
+    "name": "JANAM GHUTTI",
+    "composition": "AYUVEDIC JANAM GHUTTI FOR BABIES",
+    "packing": "60ML",
+    "mrp": 70.0,
+    "category": "Syrup",
+    "distributor": 10.5
   },
   {
     "sno": 308,
-    "category": "Protein Powder/Malt",
-    "name": "PROTOHEL KAJU PISTA BADAM PROTIEN POWDER",
-    "composition": "Kaju pista badam and walnut Protein powder Vitamins,Minerls & Iron for whole familyy",
-    "packing": "200gm",
-    "mrp": "375.00"
+    "name": "GRIPE WATER",
+    "composition": "GENTLE RELIEVES STOMACH DISCOMFORT FROM GAS,COLIC & HICCUPS",
+    "packing": "150ML",
+    "mrp": 70.0,
+    "category": "Syrup",
+    "distributor": 17.5
   },
   {
     "sno": 309,
-    "category": "Protein Powder/Malt",
-    "name": "BODY GROW PROTIEN POWDER",
-    "composition": "Protein powder Vitamins,Minerls & Iron for whole family",
-    "packing": "300gm",
-    "mrp": "375.00"
+    "name": "BABY GRIPE WATER (F)",
+    "composition": "GENTLE RELIEVES STOMACH DISCOMFORT FROM GAS,COLIC & HICCUPS",
+    "packing": "150ML",
+    "mrp": 75.0,
+    "category": "Syrup",
+    "distributor": 17.5
   },
   {
     "sno": 310,
-    "category": "Protein Powder/Malt",
-    "name": "PROTOHEL MALT",
-    "composition": "A COMPLETE NUTRITIONAL FOR ALL AGES AYURVEDIC MALT",
-    "packing": "400gm",
-    "mrp": "350.00"
+    "name": "GLYCERINE (DPCO)",
+    "composition": "GLYCERINE 99%",
+    "packing": "50 GM",
+    "mrp": 0,
+    "category": "Ointment/Cream",
+    "distributor": 18.0
   },
   {
     "sno": 311,
-    "category": "New Syrup",
-    "name": "ACIHEL SUSPENSION",
-    "composition": "\"Aceclofenac 50 MG & Paracetamol Suspension 125MG \"",
-    "packing": "60 ML",
-    "mrp": "65.00"
-  },
-  {
-    "sno": 312,
-    "category": "New Syrup",
-    "name": "MEFEHEL-P SUSPENSION",
-    "composition": "\"Mefenamic Acid 50 MG & Paracetamol 125MG Suspension\"",
-    "packing": "60 ML",
-    "mrp": "55.00"
+    "name": "GLYCERINE (DPCO)",
+    "composition": "GLYCERINE 99%",
+    "packing": "100 GM",
+    "mrp": 65.0,
+    "category": "Ointment/Cream",
+    "distributor": 26.0
   },
   {
     "sno": 313,
-    "category": "New Syrup",
-    "name": "MEFEHEL-P SUSPENSION",
-    "composition": "\"Mefenamic Acid 100MG & Paracetamol 250 MG Suspension\"",
-    "packing": "60 ML",
-    "mrp": "75.00"
+    "name": "ALOE- VERA",
+    "composition": "Pure Aloe vera Juice",
+    "packing": "500 ml",
+    "mrp": 240.0,
+    "category": "Syrup",
+    "distributor": 65.0
   },
   {
     "sno": 314,
-    "category": "New Syrup",
-    "name": "OFLACID-M SUSPENSION",
-    "composition": "\"O\uf002oxacin 50MG , Metronidazole 120MG & Simethicone 10MG Suspension\"",
-    "packing": "30 ML",
-    "mrp": "95.00"
+    "name": "AMLA JUICE",
+    "composition": "AMLA JUICE",
+    "packing": "500 ml",
+    "mrp": 325.0,
+    "category": "Ayurvedic Juice",
+    "distributor": 65.0
   },
   {
     "sno": 315,
-    "category": "New Syrup",
-    "name": "OFLACID M SUSPENSION",
-    "composition": "\"O\uf002oxacin 50MG , Metronidazole 120MG & Simethicone 10MG Suspension\"",
-    "packing": "60 ML",
-    "mrp": "95.00"
+    "name": "DR.CARE ORTHO RAS",
+    "composition": "Ortho ras",
+    "packing": "500 ml",
+    "mrp": 240.0,
+    "category": "Syrup",
+    "distributor": 65.0
   },
   {
     "sno": 316,
-    "category": "New Syrup",
-    "name": "ZINCORAL ORAL SUSPENSION",
-    "composition": "Zinc Gluconate Oral Solution 20 GM",
-    "packing": "100 ML",
-    "mrp": "155.00"
+    "name": "GILOY RAS",
+    "composition": "Pure Giloy Juice",
+    "packing": "500ml",
+    "mrp": 240.0,
+    "category": "Syrup",
+    "distributor": 65.0
   },
   {
     "sno": 317,
-    "category": "New Syrup",
-    "name": "LACTUHEL SYRUP",
-    "composition": "Lactulose Oral Solution USP 10GM",
-    "packing": "200 ML",
-    "mrp": "195.00"
+    "name": "NEEM KARELA JUICE",
+    "composition": "Manage Blood Sugar Naturally",
+    "packing": "500 ml",
+    "mrp": 240.0,
+    "category": "Ayurvedic Juice",
+    "distributor": 65.0
   },
   {
     "sno": 318,
-    "category": "New Syrup",
-    "name": "WIKOHEL DS ORAL SUSPENSION",
-    "composition": "Paracetamol 250mg + Phenylephrine Hydrochloride 5mg+ Chlorpheniramine 2 mg oral suspention",
-    "packing": "60 ML",
-    "mrp": "125.00"
+    "name": "PANCHRAS",
+    "composition": "Aloe vera+ Amla +Karela+Punarva+ Jamun",
+    "packing": "500 ml",
+    "mrp": 240.0,
+    "category": "Syrup",
+    "distributor": 65.0
   },
   {
     "sno": 319,
-    "category": "New Syrup",
-    "name": "PICUCID LAXATIVE ORAL SOLUTION",
-    "composition": "Sodium Picosulfate 5 mg Oral solution",
-    "packing": "100 ML",
-    "mrp": "155.00"
+    "name": "PYN RELIEF ORTHO RAS",
+    "composition": "Ortho ras",
+    "packing": "500 ml",
+    "mrp": 240.0,
+    "category": "Syrup",
+    "distributor": 65.0
   },
   {
     "sno": 320,
-    "category": "New Syrup",
-    "name": "ALKAHEL SYRUP",
-    "composition": "Disodium Hydrogen citrate 1.53 gm",
-    "packing": "100 ML",
-    "mrp": "95.00"
+    "name": "STONE CRUSH",
+    "composition": "Relief from kidney stone",
+    "packing": "500 ml",
+    "mrp": 240.0,
+    "category": "Syrup",
+    "distributor": 65.0
   },
   {
     "sno": 321,
-    "category": "New Syrup",
-    "name": "CETHEL SYRUP",
-    "composition": "Cetirizine Dihydrochloride 5mg syrup IP",
-    "packing": "60 ML",
-    "mrp": "65.00"
-  },
-  {
-    "sno": 322,
-    "category": "New Syrup",
-    "name": "STOMSPAS",
-    "composition": "Dicyclomine HCL 5 mg with Paracetamol 125mg suspention",
-    "packing": "60 ML",
-    "mrp": "75.00"
+    "name": "TRIPHALA JUICE",
+    "composition": "Pure Triphala Juice",
+    "packing": "500 ml",
+    "mrp": 240.0,
+    "category": "Ayurvedic Juice",
+    "distributor": 65.0
   },
   {
     "sno": 323,
-    "category": "New Syrup",
-    "name": "PHARNRZAN PLUS",
-    "composition": "Promethazine Hydrochloride IP 5mg",
-    "packing": "100 ML",
-    "mrp": "65.00"
+    "name": "BOSOM OIL",
+    "composition": "Breast Enhancement and Enlargement OIL",
+    "packing": "60ML",
+    "mrp": 490.0,
+    "category": "Oil/Balm",
+    "distributor": 38.0
   },
   {
     "sno": 324,
-    "category": "New Syrup",
-    "name": "SUCRAHEL SUSPENTION",
-    "composition": "Sucralfate suspension",
-    "packing": "200 ML",
-    "mrp": "195.00"
+    "name": "DR. CARE PAIN RELIEF OIL",
+    "composition": "Pain Relief Ayurvedic Oil",
+    "packing": "60 ML",
+    "mrp": 150.0,
+    "category": "Oil/Balm",
+    "distributor": 32.0
   },
   {
     "sno": 325,
-    "category": "New Syrup",
-    "name": "DYZEHEL MPS SUSPENSION (Mint,mango,Elaichi and orange flavour)",
-    "composition": "Dried aluminium Hydroxide Gel IP 250 mg ,Magnesium Hydroxide 250mg,Activated Simethicone 50mg",
-    "packing": "170 ML",
-    "mrp": "125.00"
+    "name": "JAPANEE OIL",
+    "composition": "Sexual disorders Ayurvedic Oil",
+    "packing": "15ML",
+    "mrp": 375.0,
+    "category": "Oil/Balm",
+    "distributor": 18.0
   },
   {
     "sno": 326,
-    "category": "New Syrup",
-    "name": "CREMAHEL PLUS (Mint,mango,Elaichi and orange flavo)",
-    "composition": "Liquid paraffin 1.25ml,milk of magnesia 3.75ml,sodium Picosulphate bp 3.33 mg",
-    "packing": "170ml",
-    "mrp": "175.00"
+    "name": "JAPANEE SPRAY OIL",
+    "composition": "Sexual disorders Ayurvedic Oil",
+    "packing": "15ML",
+    "mrp": 475.0,
+    "category": "Oil/Balm",
+    "distributor": 35.0
   },
   {
     "sno": 327,
-    "category": "New Syrup",
-    "name": "FEVRELIEF SYRUP",
-    "composition": "Paracetamol 250mg",
-    "packing": "60 ML",
-    "mrp": "55.00"
+    "name": "KESH TAVAS HAIR OIL",
+    "composition": "Hair oil",
+    "packing": "120 ML",
+    "mrp": 250.0,
+    "category": "Oil/Balm",
+    "distributor": 60.0
   },
   {
     "sno": 328,
-    "category": "New Syrup",
-    "name": "MEGAHEL SUSPENSION",
-    "composition": "magaldrate and simethicone oral suspension",
-    "packing": "170 ML",
-    "mrp": "155.00"
+    "name": "KESH VARDHAN OIL",
+    "composition": "Hair oil",
+    "packing": "100 ML+20 ML",
+    "mrp": 250.0,
+    "category": "Oil/Balm",
+    "distributor": 57.0
   },
   {
     "sno": 329,
-    "category": "New Syrup",
-    "name": "ONDSET DROPS",
-    "composition": "ondansetron oral solution ip 2mg",
-    "packing": "30 ML",
-    "mrp": "750.00"
+    "name": "KESH VARDHAN ONION OIL",
+    "composition": "Hair oil",
+    "packing": "100 ML",
+    "mrp": 250.0,
+    "category": "Oil/Balm",
+    "distributor": 57.0
   },
   {
     "sno": 330,
-    "category": "New Syrup",
-    "name": "UROHEL B6 SYRUP",
-    "composition": "POTASSIUM CITRATE,VITAMIN B6 AND MAGNESIUM CITRATE",
-    "packing": "200 ML",
-    "mrp": "195.00"
+    "name": "OLIVE OIL 100 ML",
+    "composition": "OLIVE OIL",
+    "packing": "100 ML",
+    "mrp": 160.0,
+    "category": "Oil/Balm",
+    "distributor": 50.0
   },
   {
     "sno": 331,
-    "category": "New Syrup",
-    "name": "STOMSPAS DROPS",
-    "composition": "dicyclomine hydrochloride and activated dimeticone drops",
-    "packing": "15ML",
-    "mrp": "55.00"
+    "name": "PYN RELIEF OIL",
+    "composition": "Pain Relief Ayurvedic Oil",
+    "packing": "60ML",
+    "mrp": 150.0,
+    "category": "Oil/Balm",
+    "distributor": 33.0
   },
   {
     "sno": 332,
-    "category": "New Syrup",
-    "name": "IBUHELGESIC-PLUS SUSPENSION",
-    "composition": "ILUPROFEN AND PARACETAMOL SUSPENSION",
-    "packing": "60 ML",
-    "mrp": "75.00"
+    "name": "SANDA OIL",
+    "composition": "Sexual disorders Ayurvedic Oil",
+    "packing": "15ML",
+    "mrp": 375.0,
+    "category": "Oil/Balm",
+    "distributor": 20.0
   },
   {
     "sno": 333,
-    "category": "New Syrup",
-    "name": "METRONOR -PLUS SUSPENSION",
-    "composition": "NORFLOXACIN,METRONIDAZOLE BENZOATE & SIMETHICONE SUSPENSION",
-    "packing": "30 ML",
-    "mrp": "65.00"
+    "name": "PYN RELIEF BALM",
+    "composition": "Pain Relief Ayurvedic Balm",
+    "packing": "10GM",
+    "mrp": 55.0,
+    "category": "Oil/Balm",
+    "distributor": 11.5
   },
   {
-    "sno": 335,
-    "category": "New Syrup",
-    "name": "AMBROHEL DROPS",
-    "composition": "ambroxol hydochloride drops",
-    "packing": "15 ML",
-    "mrp": "125.00"
+    "sno": 334,
+    "name": "PYN RELIEF ROLLON",
+    "composition": "Pain Relief Ayurvedic Rollon",
+    "packing": "10 ML",
+    "mrp": 90.0,
+    "category": "Syrup",
+    "distributor": 17.0
   },
   {
     "sno": 336,
-    "category": "New Syrup",
-    "name": "AMBROHEL DS SUSPENSION",
-    "composition": "paracetamol,phenylephrine hyrochloride & chlorpheniramine Maleate oral suspension",
-    "packing": "60 ML",
-    "mrp": "125.00"
+    "name": "GAMAHEL LOTION",
+    "composition": "Gamma benzene Hexachloride 0.10% w/v & cetrimide lotion 0.10% w/v",
+    "packing": "100ML",
+    "mrp": 95.0,
+    "category": "Lotion",
+    "distributor": 10.5
   },
   {
     "sno": 337,
-    "category": "New Syrup",
-    "name": "FEVRELIEF -D SUSPENSION",
-    "composition": "paracetamol & domeperidone maleate suspension",
-    "packing": "60 ML",
-    "mrp": "95.00"
+    "name": "MICROBIC LOTION",
+    "composition": "Permethrin 5%w/v+Certrimide I.p 0.01%w/v",
+    "packing": "60ml",
+    "mrp": 125.0,
+    "category": "Lotion",
+    "distributor": 19.0
   },
   {
     "sno": 338,
-    "category": "New Syrup",
-    "name": "OFLACID -50 SUSPENSION",
-    "composition": "OFLOXACIN 50MG SUSPENSION",
-    "packing": "30 ML",
-    "mrp": "65.00"
+    "name": "SCABIFOL LOTION",
+    "composition": "Permethrin 5%w/v+Certrimide I.p 0.01%w/v",
+    "packing": "60 ML",
+    "mrp": 125.0,
+    "category": "Lotion",
+    "distributor": 19.0
   },
   {
     "sno": 339,
-    "category": "New Syrup",
-    "name": "OFLACID-OR SUSPENSION",
-    "composition": "OFLOXACIN,ORNIDAZOLE AND RACECADOTRIL ORAL SUSPENSION",
+    "name": "HELSALIC LOTION",
+    "composition": "CLOBITASOLE & SALICYLIC ACID LOTION",
     "packing": "30 ML",
-    "mrp": "102.00"
+    "mrp": 95.0,
+    "category": "Lotion",
+    "distributor": 0
   },
   {
     "sno": 340,
-    "category": "New Syrup",
-    "name": "OFLACID -100 SUSPENSION",
-    "composition": "OFLOXACIN 100MG SUSPENSION",
-    "packing": "60 ML",
-    "mrp": "95.00"
+    "name": "CLOT-B LOTION",
+    "composition": "CLOTRIMAZOLE & BACLOMETHASONE LOTION",
+    "packing": "15 ML",
+    "mrp": 85.0,
+    "category": "Lotion",
+    "distributor": 0
   },
   {
     "sno": 341,
-    "category": "New Syrup",
-    "name": "ADZOL ORAL SUSPENSION",
-    "composition": "ALBENDAZOLE ORAL SUSPENSION 200MG",
-    "packing": "10ml",
-    "mrp": "55.00"
+    "name": "LACTOHEL LOTION",
+    "composition": "CALAMINE LOTION",
+    "packing": "120 ML",
+    "mrp": 225.0,
+    "category": "Lotion",
+    "distributor": 26.0
   },
   {
     "sno": 342,
-    "category": "New Syrup",
-    "name": "OFLACID -100 SUSPENSION",
-    "composition": "OFLOXACIN 100MG SUSPENSION",
-    "packing": "60 ML",
-    "mrp": "95.00"
+    "name": "LULIFORT LOTION",
+    "composition": "Luliconazole 1%w/w",
+    "packing": "15ml",
+    "mrp": 225.0,
+    "category": "Lotion",
+    "distributor": 16.0
   },
   {
     "sno": 343,
-    "category": "New Syrup",
-    "name": "ADZOL PLUS SUSPENSION",
-    "composition": "IVERMECTINS 3MG AND ALBENDAZOLE 200MG",
-    "packing": "10 ML",
-    "mrp": "75.00"
+    "name": "HELDINE SOLUTION (DPCO)",
+    "composition": "POVIDONE IODINE SOLUTION 5&",
+    "packing": "100 ML",
+    "mrp": 43.0,
+    "category": "Syrup",
+    "distributor": 18.0
   },
   {
     "sno": 344,
-    "category": "New Syrup",
-    "name": "ZEECORT SUSPENSION",
-    "composition": "DEFLAZACORT ORAL SUSPENSION",
-    "packing": "30 ML",
-    "mrp": "75.00"
+    "name": "HELDINE SOLUTION (DPCO)",
+    "composition": "POVIDONE IODINE SOLUTION 5&",
+    "packing": "500 ML",
+    "mrp": 215.0,
+    "category": "Syrup",
+    "distributor": 80.0
   },
   {
     "sno": 345,
-    "category": "New Syrup",
-    "name": "LIVOHEL SUSPENSION",
-    "composition": "LEVOCETIRIZINE DIHYDROCHLORIDE SYRUP",
-    "packing": "30 ML",
-    "mrp": "75.00"
-  },
-  {
-    "sno": 346,
-    "category": "New Syrup",
-    "name": "DOMIHEL SUSPENSION",
-    "composition": "domperidone suspension",
-    "packing": "60 ML",
-    "mrp": "95.00"
+    "name": "KAT KIT SHAMPOO",
+    "composition": "Ketoconazole 2% WITH ZPTO",
+    "packing": "100 ml",
+    "mrp": 190.0,
+    "category": "Shampoo",
+    "distributor": 32.0
   },
   {
     "sno": 347,
-    "category": "New Syrup",
-    "name": "MUACANE GEL",
-    "composition": "magnesium hydroxide,dried aluminium & oxcetacaine hydroxide",
-    "packing": "17 ML",
-    "mrp": "190.00"
+    "name": "CLOT POWDER",
+    "composition": "Clotrimazole 1.0% w/w",
+    "packing": "75GM",
+    "mrp": 90.0,
+    "category": "Powder",
+    "distributor": 19.0
   },
   {
     "sno": 348,
-    "category": "New Syrup",
-    "name": "FEVRELIEF -DS SUSPENSION",
-    "composition": "paracetamol 250 MG suspension",
-    "packing": "60 ML",
-    "mrp": "95.00"
+    "name": "CLOTRIFOL POWDER",
+    "composition": "Clotrimazole 1.0% w/w",
+    "packing": "75GM",
+    "mrp": 90.0,
+    "category": "Powder",
+    "distributor": 19.0
   },
   {
     "sno": 349,
-    "category": "New Syrup",
-    "name": "ATRAHEL SYRUP",
-    "composition": "hydroxyzine hydrochloride oral solution",
-    "packing": "100 ML",
-    "mrp": "75.00"
+    "name": "HELSALIC POWDER",
+    "composition": "CLOBITASOLE & SALICYLIC ACID LOTION",
+    "packing": "100 GM",
+    "mrp": 220.0,
+    "category": "Powder",
+    "distributor": 24.0
   },
   {
     "sno": 350,
-    "category": "New Syrup",
-    "name": "GASOKILL SUSPENSION",
-    "composition": "magnesium hydroxide,simethicone,dried aluminium & sodium carboxymethlcellulose suspension",
-    "packing": "170 ML",
-    "mrp": "190.00"
+    "name": "TERBHEL POWDER",
+    "composition": "Terbinafine powder",
+    "packing": "75 GM",
+    "mrp": 195.0,
+    "category": "Powder",
+    "distributor": 19.0
+  },
+  {
+    "sno": 351,
+    "name": "HELDINE POWDER",
+    "composition": "Povidone-Iodine I.P. 5% w/w",
+    "packing": "10 GM",
+    "mrp": 70.0,
+    "category": "Powder",
+    "distributor": 10.0
   },
   {
     "sno": 352,
-    "category": "New Syrup",
-    "name": "TRYCOLIV SYRUP",
-    "composition": "tricholine citrate and sorbitol solution",
-    "packing": "200 ML",
-    "mrp": "195.00"
+    "name": "NEO-HELSPOR POWDER",
+    "composition": "Neomycin Sulphate 5g,Bacitracin Zinc 250 unity,Sulfacetamide Sodium 60mg",
+    "packing": "10 GM",
+    "mrp": 80.0,
+    "category": "Powder",
+    "distributor": 15.0
   },
   {
     "sno": 353,
-    "category": "New Syrup",
-    "name": "AZIHEL 100 SUSPENSION",
-    "composition": "azithromycin oral suspension",
-    "packing": "15 ML",
-    "mrp": "65.00"
+    "name": "Lady Wash",
+    "composition": "Lactic Acid 1.2% w/w (Enriched with Sea Buckthorm Oil & Tea Tree Oil)",
+    "packing": "100 ML",
+    "mrp": 150.0,
+    "category": "Syrup",
+    "distributor": 32.0
   },
   {
     "sno": 354,
-    "category": "New Syrup",
-    "name": "AZIHEL 200 SUSPENSION",
-    "composition": "azithromycin oral suspension",
-    "packing": "15 ML",
-    "mrp": "95.00"
+    "name": "VEE INTIMATE WASH",
+    "composition": "Lactic Acid 1.2% w/w (Enriched with Sea Buckthorm Oil & Tea Tree Oil)",
+    "packing": "100 ML",
+    "mrp": 150.0,
+    "category": "Syrup",
+    "distributor": 30.0
   },
   {
     "sno": 355,
-    "category": "New Syrup",
-    "name": "ATRAHEL DROPS",
-    "composition": "hydroxyzine hydrochloride drops",
-    "packing": "15 ML",
-    "mrp": "95.00"
+    "name": "NEO SANSODINE MOUTH FRESH",
+    "composition": "CHLORHEXIDINE GLUCONATE SOLUTION IP 0.2%",
+    "packing": "100 ML",
+    "mrp": 99.0,
+    "category": "Personal Care",
+    "distributor": 19.0
   },
   {
     "sno": 356,
-    "category": "New Syrup",
-    "name": "COLIACHE DROPS",
-    "composition": "dill oil,fennel oil with simethicone drops",
-    "packing": "15 ML",
-    "mrp": "95.00"
+    "name": "SANSO FRESH MOUTH WASH",
+    "composition": "CHLORHEXIDINE GLUCONATE SOLUTION IP 0.2%",
+    "packing": "100 ML",
+    "mrp": 99.0,
+    "category": "Personal Care",
+    "distributor": 19.0
   },
   {
     "sno": 357,
-    "category": "New Syrup",
-    "name": "TRIPRON DROPS",
-    "composition": "Cyproheptadine hydrochloride & tricholine citrate drops",
-    "packing": "15 ML",
-    "mrp": "75.00"
+    "name": "SHINY SKIN NEEM FACE WASH",
+    "composition": "WHITENING AND FAIRNESS FACEWASH",
+    "packing": "100GM",
+    "mrp": 150.0,
+    "category": "Ointment/Cream",
+    "distributor": 24.0
   },
   {
     "sno": 358,
-    "category": "New Syrup",
-    "name": "HELROX LS DROPS",
-    "composition": "levosalbutamole,ambroxal hydrochloride & guaiphenesin dr0ps",
-    "packing": "15 ML",
-    "mrp": "95.00"
+    "name": "SHINY SKIN PAPAYA FACE WASH",
+    "composition": "NEEM AND ALOEVERA FACEWASH",
+    "packing": "100GM",
+    "mrp": 150.0,
+    "category": "Ointment/Cream",
+    "distributor": 24.0
   },
   {
     "sno": 359,
-    "category": "New Syrup",
-    "name": "FEVRELIEF DROPS",
-    "composition": "paracetamol paediatric oral suspension",
-    "packing": "15 ML",
-    "mrp": "55.00"
-  },
-  {
-    "sno": 360,
-    "category": "New Syrup",
-    "name": "KILLCOLD DROPS",
-    "composition": "phenylephrine ,hydrochloride chlorpheniramine maleate & paracetamol drops",
-    "packing": "15 ML",
-    "mrp": "80.00"
+    "name": "SHINY SKIN MIX FRUIT FACE WASH",
+    "composition": "MIXFRUIT FACEWASH",
+    "packing": "100GM",
+    "mrp": 150.0,
+    "category": "Ointment/Cream",
+    "distributor": 24.0
   },
   {
     "sno": 361,
-    "category": "New Syrup",
-    "name": "BETAHEL DROPS",
-    "composition": "betamethasone sodium phosphate oral drops",
-    "packing": "15 ML",
-    "mrp": "75.00"
+    "name": "SHINY SKIN DE-TAN FACE WASH",
+    "composition": "DE-TANING FACE WASH",
+    "packing": "100GM",
+    "mrp": 150.0,
+    "category": "Ointment/Cream",
+    "distributor": 24.0
   },
   {
-    "sno": 362,
-    "category": "New Syrup",
-    "name": "DOMIHEL DROPS",
-    "composition": "domperidone drops",
-    "packing": "15 ML",
-    "mrp": "75.00"
+    "sno": 363,
+    "name": "ACNE GOLD",
+    "composition": "Acne & Pimple soap",
+    "packing": "75gm",
+    "mrp": 95.0,
+    "category": "Ointment/Cream",
+    "distributor": 19.0
+  },
+  {
+    "sno": 364,
+    "name": "BABY CARE SOAP",
+    "composition": "BABY BATH SOAP",
+    "packing": "75gm",
+    "mrp": 95.0,
+    "category": "Soap",
+    "distributor": 19.0
+  },
+  {
+    "sno": 365,
+    "name": "BABY SOFT SOAP",
+    "composition": "BABY BATH SOAP",
+    "packing": "75gm",
+    "mrp": 95.0,
+    "category": "Soap",
+    "distributor": 19.0
+  },
+  {
+    "sno": 366,
+    "name": "ACTIVATED CHARCOAL SOAP",
+    "composition": "Charcoap soap",
+    "packing": "75gm",
+    "mrp": 95.0,
+    "category": "Soap",
+    "distributor": 19.0
+  },
+  {
+    "sno": 367,
+    "name": "DOG CARE SOAP",
+    "composition": "DOG ANTI LICE SOAP",
+    "packing": "75gm",
+    "mrp": 95.0,
+    "category": "Soap",
+    "distributor": 19.0
+  },
+  {
+    "sno": 368,
+    "name": "FOXY SOAP",
+    "composition": "body moisturizing beauty bar",
+    "packing": "75gm",
+    "mrp": 95.0,
+    "category": "Soap",
+    "distributor": 20.0
+  },
+  {
+    "sno": 369,
+    "name": "KAT KIT SOAP",
+    "composition": "Dandruff treatment soap",
+    "packing": "75gm",
+    "mrp": 95.0,
+    "category": "Soap",
+    "distributor": 20.0
+  },
+  {
+    "sno": 370,
+    "name": "KETCO SOAP",
+    "composition": "Dandruff treatment soap",
+    "packing": "75 GM",
+    "mrp": 95.0,
+    "category": "Soap",
+    "distributor": 20.0
+  },
+  {
+    "sno": 371,
+    "name": "MICROBIC SOAP",
+    "composition": "Permethrin 1 % soap",
+    "packing": "75gm",
+    "mrp": 88.0,
+    "category": "Soap",
+    "distributor": 19.0
+  },
+  {
+    "sno": 372,
+    "name": "MULTANI MITTI SOAP",
+    "composition": "MULTANI MITI SOAP",
+    "packing": "75 GM",
+    "mrp": 95.0,
+    "category": "Soap",
+    "distributor": 19.0
+  },
+  {
+    "sno": 373,
+    "name": "NO MORE MARKS",
+    "composition": "ACNE AND PIMPLE OR SCAR SOAP",
+    "packing": "75 GM",
+    "mrp": 95.0,
+    "category": "Ointment/Cream",
+    "distributor": 19.0
+  },
+  {
+    "sno": 374,
+    "name": "SCABIFOL SOAP",
+    "composition": "WHITENING AND FAIRNESS SOAP",
+    "packing": "75 GM",
+    "mrp": 95.0,
+    "category": "Soap",
+    "distributor": 19.0
+  },
+  {
+    "sno": 375,
+    "name": "SHINY SKIN FAIRNESS SOAP",
+    "composition": "WHITENING AND FAIRNESS SOAP",
+    "packing": "75gm",
+    "mrp": 95.0,
+    "category": "Soap",
+    "distributor": 19.0
+  },
+  {
+    "sno": 376,
+    "name": "SHINY SKIN NEEM SOAP",
+    "composition": "NEEM AND ALOEVERA SOAP",
+    "packing": "75gm",
+    "mrp": 95.0,
+    "category": "Soap",
+    "distributor": 19.0
+  },
+  {
+    "sno": 377,
+    "name": "TURMERIC SOAP",
+    "composition": "TURMERIC SOAP",
+    "packing": "75 GM",
+    "mrp": 95.0,
+    "category": "Soap",
+    "distributor": 19.0
+  },
+  {
+    "sno": 379,
+    "name": "BODY GROW PROTIEN POWDER",
+    "composition": "Protein powder Vitamins,Minerls & Iron for whole family",
+    "packing": "300gm",
+    "mrp": 375.0,
+    "category": "Powder",
+    "distributor": 70.0
+  },
+  {
+    "sno": 380,
+    "name": "PROTOHEL POWDER (CHOCOLATE FLAVOUR)",
+    "composition": "Protein powder Vitamins,Minerls & Iron for whole family",
+    "packing": "200gm",
+    "mrp": 325.0,
+    "category": "Powder",
+    "distributor": 40.0
+  },
+  {
+    "sno": 381,
+    "name": "PROTOHEL DHA PROTEIN POWDER",
+    "composition": "Protein powder Vitamins,Minerls & Iron for whole family",
+    "packing": "200gm",
+    "mrp": 375.0,
+    "category": "Protein Powder",
+    "distributor": 40.0
+  },
+  {
+    "sno": 382,
+    "name": "PROTOHEL (KAJU PISTA BADAM PROTIEN POWDER)",
+    "composition": "Kaju pista badam and walnut Protein powder Vitamins,Minerls & Iron for whole family",
+    "packing": "200gm",
+    "mrp": 375.0,
+    "category": "Powder",
+    "distributor": 42.0
+  },
+  {
+    "sno": 383,
+    "name": "PROTOFOL POWDER (CHOCOLATE FLAVOUR)",
+    "composition": "Protein powder Vitamins,Minerls & Iron for whole family",
+    "packing": "200gm",
+    "mrp": 325.0,
+    "category": "Powder",
+    "distributor": 40.0
+  },
+  {
+    "sno": 384,
+    "name": "PROTOFOL DHA PROTEIN POWDER",
+    "composition": "Protein powder Vitamins,Minerls & Iron for whole family",
+    "packing": "200gm",
+    "mrp": 375.0,
+    "category": "Protein Powder",
+    "distributor": 40.0
+  },
+  {
+    "sno": 385,
+    "name": "PROTOFOL KAJU PISTA BADAM PROTIEN POWDER",
+    "composition": "Kaju pista badam and walnut Protein powder Vitamins,Minerls & Iron for whole family",
+    "packing": "200gm",
+    "mrp": 375.0,
+    "category": "Powder",
+    "distributor": 42.0
+  },
+  {
+    "sno": 386,
+    "name": "PROTOHEL MALT",
+    "composition": "A COMPLETE NUTRITIONAL FOR ALL AGES AYURVEDIC MALT",
+    "packing": "400 GM",
+    "mrp": 550.0,
+    "category": "Protein Powder",
+    "distributor": 55.0
+  },
+  {
+    "sno": 387,
+    "name": "KABZ ANTT (GRANUALS)",
+    "composition": "Relives From Gas Constipation & Acidity",
+    "packing": "100 GM",
+    "mrp": 175.0,
+    "category": "Ointment/Cream",
+    "distributor": 40.0
   }
 ]

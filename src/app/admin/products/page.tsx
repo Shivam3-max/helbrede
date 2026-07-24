@@ -295,10 +295,10 @@ export default function AdminProducts() {
 
               {/* per-role trade pricing */}
               <div className="sm:col-span-2 rounded-xl border border-line bg-paper p-4">
-                <p className="text-[13px] font-black">Trade Pricing — custom rate per role</p>
+                <p className="text-[13px] font-black">Trade Pricing — fixed rate per role</p>
                 <p className="mt-0.5 text-[11.5px] text-graphite">
-                  Leave blank to use the platform default. Slab discounts (50/200/500 units) apply
-                  on top of whichever rate is active.
+                  Each buyer role pays this fixed rate. Seeded from the distributor list
+                  (stockist = +20%, chemist &amp; doctor = +44%). Edit any value to override.
                 </p>
                 <div className="mt-3 grid gap-3 sm:grid-cols-2">
                   {PRICE_FIELDS.map(({ key, role }) => {

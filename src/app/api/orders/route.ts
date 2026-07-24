@@ -60,7 +60,7 @@ export async function POST(req: NextRequest) {
     subtotal,
     gst,
     total: round2(subtotal + gst),
-    savingsVsMrp: round2(mrpTotal - subtotal),
+    savingsVsMrp: Math.max(0, round2(mrpTotal - subtotal)),
   };
   await insertOrder(order);
   return NextResponse.json({ order });

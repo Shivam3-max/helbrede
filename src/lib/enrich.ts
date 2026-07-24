@@ -56,21 +56,38 @@ export function slugify(name: string, packing: string, sno: number): string {
   );
 }
 
+/** Role markups over the net distributor rate. */
+export const ROLE_MARKUP = {
+  distributor: 1, // net rate as-is
+  stockist: 1.2, // +20%
+  chemist: 1.44, // +20% over stockist
+  doctor: 1.44, // same as chemist
+} as const;
+
+function r2(n: number): number {
+  return Math.round(n * 100) / 100;
+}
+
 export function enrichRaw(p: RawProduct) {
+  const dist = Number(p.distributor) || 0;
   return {
     id: slugify(p.name, p.packing, p.sno),
     sno: p.sno,
     name: p.name.trim(),
     composition: p.composition.trim(),
     packing: p.packing.trim(),
-    mrp: parseFloat(p.mrp) || 0,
+    mrp: Number(p.mrp) || 0,
     category: p.category ?? "Other",
     grp: groupOf(p.category ?? ""),
     isRx: isRxCategory(p.category ?? "") ? 1 : 0,
-    schemeBuy: schemeOf(p.sno)?.buy ?? null,
-    schemeFree: schemeOf(p.sno)?.free ?? null,
+    schemeBuy: null as number | null,
+    schemeFree: null as number | null,
     movement: movementOf(p.sno, p.category ?? ""),
     stock: 500 + ((p.sno * 37) % 1500),
     image: null as string | null,
+    priceDistributor: dist > 0 ? r2(dist * ROLE_MARKUP.distributor) : null,
+    priceStockist: dist > 0 ? r2(dist * ROLE_MARKUP.stockist) : null,
+    priceChemist: dist > 0 ? r2(dist * ROLE_MARKUP.chemist) : null,
+    priceDoctor: dist > 0 ? r2(dist * ROLE_MARKUP.doctor) : null,
   };
 }

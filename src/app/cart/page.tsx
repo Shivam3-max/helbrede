@@ -8,7 +8,7 @@ import { useAuth } from "@/context/AuthContext";
 import { useCart } from "@/context/CartContext";
 import { useProducts } from "@/context/ProductsContext";
 import { inr } from "@/lib/format";
-import { freeUnits, GST_RATE, nextSlab, round2, slabFor, unitPrice } from "@/lib/pricing";
+import { GST_RATE, round2, unitPrice } from "@/lib/pricing";
 
 export default function CartPage() {
   const { user, ready } = useAuth();
@@ -63,8 +63,8 @@ export default function CartPage() {
     .map((i) => {
       const p = productById(i.productId);
       if (!p) return null;
-      const price = unitPrice(p, user.role, i.qty);
-      return { item: i, p, price, bonus: freeUnits(p.scheme, i.qty) };
+      const price = unitPrice(p, user.role);
+      return { item: i, p, price };
     })
     .filter((l): l is NonNullable<typeof l> => l !== null);
 
@@ -79,7 +79,7 @@ export default function CartPage() {
           <p className="eyebrow">Bulk cart</p>
           <h1 className="mt-2 text-3xl font-black">Your Cart</h1>
           <p className="mt-1 text-[14px] text-graphite">
-            Prices update live as you change quantities — bigger orders, deeper slabs.
+            Fixed trade rates for your role. Review quantities and place your bulk order.
           </p>
         </div>
       </section>
@@ -95,25 +95,17 @@ export default function CartPage() {
                 </Link>
               </div>
             )}
-            {lines.map(({ item, p, price, bonus }) => {
-              const next = nextSlab(item.qty);
+            {lines.map(({ item, p, price }) => {
               return (
                 <div key={p.id} className="card flex gap-4 p-4">
-                  <ProductImage className="h-24 w-24 shrink-0" label="" />
+                  <ProductImage src={p.image} alt={p.name} className="h-24 w-24 shrink-0" label="" />
                   <div className="min-w-0 flex-1">
                     <div className="flex items-start justify-between gap-3">
                       <div>
                         <Link href={`/products/${p.id}`} className="font-display text-[15px] font-black hover:underline">
                           {p.name}
                         </Link>
-                        <p className="text-[12px] text-graphite">
-                          {p.packing} · {slabFor(item.qty).label} slab
-                          {bonus > 0 && (
-                            <span className="ml-1 font-bold" style={{ color: "var(--gold)" }}>
-                              · +{bonus} free ({p.scheme!.buy}+{p.scheme!.free})
-                            </span>
-                          )}
-                        </p>
+                        <p className="text-[12px] text-graphite">{p.packing}</p>
                       </div>
                       <button
                         onClick={() => remove(p.id)}
@@ -135,16 +127,14 @@ export default function CartPage() {
                       </div>
                       <div className="text-right">
                         <p className="text-[12px] text-graphite">
-                          {inr(price)}/unit · MRP <span className="line-through">{inr(p.mrp)}</span>
+                          {inr(price)}/unit
+                          {p.mrp > price && (
+                            <> · MRP <span className="line-through">{inr(p.mrp)}</span></>
+                          )}
                         </p>
                         <p className="font-display text-[17px] font-black">{inr(round2(price * item.qty))}</p>
                       </div>
                     </div>
-                    {next && (
-                      <p className="mt-2 text-[11.5px] font-semibold" style={{ color: "var(--gold)" }}>
-                        +{next.min - item.qty} units → {next.label} slab unlocks a lower rate
-                      </p>
-                    )}
                   </div>
                 </div>
               );
@@ -157,11 +147,15 @@ export default function CartPage() {
               <div className="mt-4 space-y-2 text-[13.5px]">
                 <div className="flex justify-between"><span className="text-graphite">Subtotal (trade price)</span><span className="font-bold">{inr(subtotal)}</span></div>
                 <div className="flex justify-between"><span className="text-graphite">GST ({GST_RATE * 100}%)</span><span className="font-bold">{inr(gst)}</span></div>
-                <div className="flex justify-between text-graphite"><span>MRP value</span><span className="line-through">{inr(round2(mrpTotal))}</span></div>
-                <div className="flex justify-between" style={{ color: "var(--green)" }}>
-                  <span className="font-bold">Slab savings</span>
-                  <span className="font-bold">{inr(round2(mrpTotal - subtotal))}</span>
-                </div>
+                {mrpTotal > subtotal && (
+                  <>
+                    <div className="flex justify-between text-graphite"><span>MRP value</span><span className="line-through">{inr(round2(mrpTotal))}</span></div>
+                    <div className="flex justify-between" style={{ color: "var(--green)" }}>
+                      <span className="font-bold">You save vs MRP</span>
+                      <span className="font-bold">{inr(round2(mrpTotal - subtotal))}</span>
+                    </div>
+                  </>
+                )}
                 <div className="border-t border-line pt-2 flex justify-between font-display text-[17px] font-black">
                   <span>Total</span><span>{inr(round2(subtotal + gst))}</span>
                 </div>

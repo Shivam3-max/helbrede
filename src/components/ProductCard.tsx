@@ -20,11 +20,6 @@ export default function ProductCard({ product }: { product: Product }) {
         <ProductImage src={product.image} alt={product.name} className="aspect-[4/3] w-full" />
         <div className="absolute left-2 top-2 flex flex-wrap gap-1.5">
           {product.isRx && <span className="chip badge-steel !px-2 !py-0.5 !text-[10px]">Rx</span>}
-          {product.scheme && (
-            <span className="chip badge-gold !px-2 !py-0.5 !text-[10px]">
-              {product.scheme.buy}+{product.scheme.free} Free
-            </span>
-          )}
           {product.movement === "fast" && (
             <span className="chip badge-green !px-2 !py-0.5 !text-[10px]">Fast mover</span>
           )}
@@ -41,22 +36,27 @@ export default function ProductCard({ product }: { product: Product }) {
         <div className="mt-auto flex items-end justify-between pt-3">
           {price ? (
             <div>
-              <p className="text-[11px] text-graphite">
-                MRP <span className="line-through">{inr(product.mrp)}</span>
-              </p>
+              {product.mrp > price && (
+                <p className="text-[11px] text-graphite">
+                  MRP <span className="line-through">{inr(product.mrp)}</span>
+                </p>
+              )}
               <p className="font-display text-lg font-black" style={{ color: "var(--green)" }}>
                 {inr(price)}
                 <span className="ml-1 text-[11px] font-semibold text-graphite">/unit</span>
               </p>
               <p className="text-[11px] font-semibold" style={{ color: "var(--gold)" }}>
-                {marginPct(product.mrp, price)}% margin · bulk slabs inside
+                {product.mrp > price ? `${marginPct(product.mrp, price)}% margin at MRP` : "Your trade rate"}
               </p>
             </div>
           ) : (
             <div>
-              <p className="font-display text-lg font-black">{inr(product.mrp)}</p>
+              <p className="font-display text-lg font-black">
+                {product.mrp > 0 ? inr(product.mrp) : "—"}
+              </p>
               <p className="text-[11px] font-semibold text-graphite">
-                MRP · <span style={{ color: "var(--green)" }}>Login for your trade price</span>
+                {product.mrp > 0 ? "MRP · " : ""}
+                <span style={{ color: "var(--green)" }}>Login for your trade price</span>
               </p>
             </div>
           )}

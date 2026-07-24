@@ -19,7 +19,6 @@ export default function Catalog() {
   const [q, setQ] = useState(params.get("q") ?? "");
   const [group, setGroup] = useState(params.get("group") ?? "");
   const [sort, setSort] = useState<SortKey>("name");
-  const [schemesOnly, setSchemesOnly] = useState(false);
   const [page, setPage] = useState(1);
 
   const filtered = useMemo(() => {
@@ -27,7 +26,6 @@ export default function Catalog() {
     let list = PRODUCTS.filter(
       (p) =>
         (!group || p.group === group) &&
-        (!schemesOnly || p.scheme) &&
         (!t ||
           p.name.toLowerCase().includes(t) ||
           p.composition.toLowerCase().includes(t) ||
@@ -39,7 +37,7 @@ export default function Catalog() {
       return a.name.localeCompare(b.name);
     });
     return list;
-  }, [PRODUCTS, q, group, sort, schemesOnly]);
+  }, [PRODUCTS, q, group, sort]);
 
   const shown = filtered.slice(0, page * PAGE_SIZE);
 
@@ -61,7 +59,7 @@ export default function Catalog() {
           <div className="mt-5 flex flex-col gap-2 sm:flex-row">
             <input
               className="input flex-[2]"
-              placeholder="Search 355+ products by name, salt or category…"
+              placeholder="Search 360+ products by name, salt or category…"
               value={q}
               onChange={(e) => {
                 setQ(e.target.value);
@@ -94,15 +92,6 @@ export default function Catalog() {
             </select>
           </div>
           <div className="mt-3 flex flex-wrap items-center gap-2">
-            <button
-              onClick={() => {
-                setSchemesOnly(!schemesOnly);
-                setPage(1);
-              }}
-              className={`chip !cursor-pointer ${schemesOnly ? "badge-gold" : "hover:border-ink"}`}
-            >
-              🎁 Scheme deals only
-            </button>
             <span className="text-[12.5px] font-semibold text-graphite">
               {filtered.length} of {PRODUCTS.length} products
             </span>

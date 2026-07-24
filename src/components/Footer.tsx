@@ -18,7 +18,7 @@ export default function Footer() {
           </div>
           <p className="mt-4 text-[13.5px] leading-relaxed text-graphite">
             India&apos;s bulk pharma ordering platform for stockists, distributors, chemists and
-            doctors — live slab pricing on 350+ verified SKUs.
+            doctors — fixed role-based trade rates on 360+ verified SKUs.
           </p>
         </div>
         <div>

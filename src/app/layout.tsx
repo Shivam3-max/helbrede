@@ -11,11 +11,11 @@ const manrope = Manrope({ variable: "--font-manrope", subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: {
-    default: "HELBREDE HEALTHCARE — Bulk Pharma Ordering with Live Slab Pricing",
+    default: "HELBREDE HEALTHCARE — Bulk Pharma Ordering at Trade Rates",
     template: "%s | HELBREDE HEALTHCARE",
   },
   description:
-    "India's B2B pharma platform for stockists, distributors, chemists and doctors. 350+ SKUs, role-based trade pricing, live bulk slabs, schemes and business-starter tools.",
+    "India's B2B pharma platform for stockists, distributors, chemists and doctors. 360+ SKUs with fixed role-based trade rates, GST invoicing and business-starter tools.",
 };
 
 export default function RootLayout({

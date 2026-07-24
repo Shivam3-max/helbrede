@@ -56,7 +56,7 @@ export default function RegisterPage() {
           <p className="eyebrow">Free registration</p>
           <h1 className="mt-2 font-display text-2xl font-black">Register your business</h1>
           <p className="mt-1 text-[13.5px] text-graphite">
-            Verified partners see role-based slab prices on all 355+ SKUs.
+            Verified partners see fixed role-based trade rates on all 360+ SKUs.
           </p>
 
           <p className="label mt-6">I am a…</p>

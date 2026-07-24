@@ -74,7 +74,7 @@ async function doInit(): Promise<void> {
   if (Number(pc.rows[0].n) === 0) {
     const stmts = (rawProducts as RawProduct[])
       .map(enrichRaw)
-      .filter((e) => e.mrp > 0)
+      .filter((e) => e.mrp > 0 || (e.priceDistributor ?? 0) > 0)
       .map((e) => ({
         sql: `INSERT OR IGNORE INTO products
           (id, sno, name, composition, packing, mrp, category, grp, isRx, schemeBuy, schemeFree, movement, stock, image, priceDistributor, priceStockist, priceChemist, priceDoctor)
@@ -82,7 +82,7 @@ async function doInit(): Promise<void> {
         args: [
           e.id, e.sno, e.name, e.composition, e.packing, e.mrp, e.category, e.grp,
           e.isRx, e.schemeBuy, e.schemeFree, e.movement, e.stock, e.image,
-          null, null, null, null,
+          e.priceDistributor, e.priceStockist, e.priceChemist, e.priceDoctor,
         ] as InValue[],
       }));
     // libSQL caps statements per batch; chunk to be safe

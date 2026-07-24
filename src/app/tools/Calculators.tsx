@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { useProducts } from "@/context/ProductsContext";
 import { inr } from "@/lib/format";
-import { ladder, marginPct, round2, ROLES } from "@/lib/pricing";
+import { basePrice, marginPct, round2, ROLES } from "@/lib/pricing";
 import { Role } from "@/lib/types";
 
 const TABS = [
@@ -150,7 +150,7 @@ export default function Calculators() {
               <>
                 <h2 className="font-display text-lg font-black">Margin on a Real Product</h2>
                 <p className="mt-1 text-[13px] text-graphite">
-                  Pick any catalog product and see your margin at every bulk slab.
+                  Pick any catalog product and see the trade rate and margin for every role.
                 </p>
                 <div className="mt-5">
                   <label className="label">Search product</label>
@@ -179,19 +179,26 @@ export default function Calculators() {
                 {picked && (
                 <div className="mt-4 rounded-xl bg-paper p-4">
                   <p className="font-display text-[15px] font-black">
-                    {picked.name} <span className="text-[12px] font-semibold text-graphite">{picked.packing} · MRP {inr(picked.mrp)}</span>
+                    {picked.name}{" "}
+                    <span className="text-[12px] font-semibold text-graphite">
+                      {picked.packing}
+                      {picked.mrp > 0 ? ` · MRP ${inr(picked.mrp)}` : ""}
+                    </span>
                   </p>
                   <table className="mt-3 w-full text-[13px]">
                     <tbody>
-                      {ladder(picked, role).map((l) => (
-                        <tr key={l.min} className="border-t border-line">
-                          <td className="py-2 font-semibold">{l.label}</td>
-                          <td className="py-2 font-display font-black" style={{ color: "var(--green)" }}>{inr(l.price)}</td>
-                          <td className="py-2 text-right font-bold" style={{ color: "var(--gold)" }}>
-                            {marginPct(picked.mrp, l.price)}% margin
-                          </td>
-                        </tr>
-                      ))}
+                      {(Object.keys(ROLES) as Role[]).map((r) => {
+                        const pr = basePrice(picked, r);
+                        return (
+                          <tr key={r} className={`border-t border-line ${r === role ? "bg-green-soft" : ""}`}>
+                            <td className="py-2 font-semibold">{ROLES[r].label}</td>
+                            <td className="py-2 font-display font-black" style={{ color: "var(--green)" }}>{inr(pr)}</td>
+                            <td className="py-2 text-right font-bold" style={{ color: "var(--gold)" }}>
+                              {picked.mrp > pr ? `${marginPct(picked.mrp, pr)}% margin` : "—"}
+                            </td>
+                          </tr>
+                        );
+                      })}
                     </tbody>
                   </table>
                 </div>

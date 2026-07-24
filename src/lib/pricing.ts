@@ -1,5 +1,11 @@
-import { Product, Role, Scheme, Slab } from "./types";
+import { Role, Scheme } from "./types";
 
+/**
+ * Flat role-based pricing. Each product carries an explicit net rate per role,
+ * derived from the official distributor price list:
+ *   distributor = list rate · stockist = +20% · chemist = +20% more · doctor = chemist.
+ * `multiplier` is only a fallback for products added without explicit rates.
+ */
 export const ROLES: Record<
   Role,
   { label: string; multiplier: number; moq: number; blurb: string }
@@ -8,47 +14,29 @@ export const ROLES: Record<
     label: "Distributor",
     multiplier: 0.55,
     moq: 20,
-    blurb: "Deepest trade rates for territory-level distribution",
+    blurb: "Net distributor rates for territory-level distribution",
   },
   stockist: {
     label: "Stockist",
-    multiplier: 0.62,
+    multiplier: 0.66,
     moq: 10,
     blurb: "Wholesale rates for stock-and-supply operations",
   },
   chemist: {
     label: "Chemist / Retailer",
-    multiplier: 0.72,
+    multiplier: 0.79,
     moq: 5,
     blurb: "Retailer trade rates with healthy counter margins",
   },
   doctor: {
     label: "Doctor / Clinic",
-    multiplier: 0.8,
+    multiplier: 0.79,
     moq: 1,
     blurb: "Dispensing rates for clinics and practitioners",
   },
 };
 
-export const SLABS: Slab[] = [
-  { min: 1, max: 49, label: "1 – 49 units", discount: 0 },
-  { min: 50, max: 199, label: "50 – 199 units", discount: 0.05 },
-  { min: 200, max: 499, label: "200 – 499 units", discount: 0.1 },
-  { min: 500, max: null, label: "500+ units", discount: 0.16 },
-];
-
 export const GST_RATE = 0.12;
-
-export function slabFor(qty: number): Slab {
-  let current = SLABS[0];
-  for (const s of SLABS) if (qty >= s.min) current = s;
-  return current;
-}
-
-export function nextSlab(qty: number): Slab | null {
-  for (const s of SLABS) if (qty < s.min) return s;
-  return null;
-}
 
 /** Minimal shape the pricing engine needs — a full Product always satisfies it. */
 export interface Priceable {
@@ -57,25 +45,17 @@ export interface Priceable {
 }
 
 /**
- * Base (slab-0) unit price for a role.
- * Resolution: product's custom rate for the role → MRP × global role multiplier.
+ * Flat unit price for a role.
+ * Resolution: product's explicit rate for the role → MRP × fallback multiplier.
  */
 export function basePrice(p: Priceable, role: Role): number {
-  const custom = p.prices?.[role];
-  return round2(custom != null && custom > 0 ? custom : p.mrp * ROLES[role].multiplier);
+  const explicit = p.prices?.[role];
+  return round2(explicit != null && explicit > 0 ? explicit : p.mrp * ROLES[role].multiplier);
 }
 
-/** Live unit price for a role at a given quantity. */
-export function unitPrice(p: Priceable, role: Role, qty: number): number {
-  return round2(basePrice(p, role) * (1 - slabFor(qty).discount));
-}
-
-/** Full slab ladder for a product + role, for display tables. */
-export function ladder(p: Priceable, role: Role) {
-  return SLABS.map((s) => ({
-    ...s,
-    price: round2(basePrice(p, role) * (1 - s.discount)),
-  }));
+/** Unit price for a role. Quantity has no effect under flat pricing. */
+export function unitPrice(p: Priceable, role: Role, _qty?: number): number {
+  return basePrice(p, role);
 }
 
 /** Free units earned under a bonus scheme, trade style (e.g. 10+2). */

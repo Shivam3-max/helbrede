@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import Catalog from "./Catalog";
 
 export const metadata: Metadata = {
-  title: "Product Catalog — 355+ SKUs",
+  title: "Product Catalog — 360+ SKUs",
 };
 
 export default function ProductsPage() {

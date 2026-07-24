@@ -67,7 +67,7 @@ const TERRITORIES: Record<string, Territory[]> = {
 
 const PERKS = [
   { title: "District exclusivity", body: "One partner per district. Your area, your brand presence — zero intra-brand competition." },
-  { title: "Deepest price ladder", body: "Franchise partners buy below distributor rates, with custom negotiated slabs on volume." },
+  { title: "Deepest net rate", body: "Franchise partners buy at or below distributor rates, with custom pricing on volume." },
   { title: "Marketing kit included", body: "Visual aids, product cards, WhatsApp promo creatives and printable price lists for your territory." },
   { title: "Protected leads", body: "Every enquiry from your district on this platform routes to you, automatically." },
 ];
@@ -88,7 +88,7 @@ export default function Franchise() {
             Own Your District. Exclusively.
           </h1>
           <p className="mt-3 max-w-2xl text-[14.5px] text-graphite">
-            Helbrede Healthcare franchise partners get monopoly marketing rights for the full 355-SKU range
+            Helbrede Healthcare franchise partners get monopoly marketing rights for the full 360-SKU range
             in their district — see live availability below.
           </p>
           <div className="mt-5 flex flex-wrap gap-2 text-[12px] font-semibold">

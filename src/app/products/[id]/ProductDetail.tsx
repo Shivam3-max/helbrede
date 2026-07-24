@@ -6,15 +6,7 @@ import { useRouter } from "next/navigation";
 import ProductImage from "@/components/ProductImage";
 import ProductCard from "@/components/ProductCard";
 import { inr } from "@/lib/format";
-import {
-  freeUnits,
-  ladder,
-  marginPct,
-  nextSlab,
-  ROLES,
-  slabFor,
-  unitPrice,
-} from "@/lib/pricing";
+import { basePrice, GST_RATE, marginPct, ROLES, round2 } from "@/lib/pricing";
 import { Product } from "@/lib/types";
 import { useAuth } from "@/context/AuthContext";
 import { useCart } from "@/context/CartContext";
@@ -33,9 +25,8 @@ export default function ProductDetail({
   const moq = role ? ROLES[role].moq : 1;
   const [qty, setQty] = useState(Math.max(moq, 10));
   const [added, setAdded] = useState(false);
-  const price = role ? unitPrice(product, role, qty) : null;
-  const bonus = freeUnits(product.scheme, qty);
-  const next = role ? nextSlab(qty) : null;
+  const price = role ? basePrice(product, role) : null;
+  const showMrp = price != null && product.mrp > price;
 
   const canBuy = role && (!product.isRx || user?.drugLicense || user?.medicalRegNo);
 
@@ -94,51 +85,41 @@ export default function ProductDetail({
             </div>
             <h1 className="mt-3 text-3xl font-black sm:text-4xl">{product.name}</h1>
             <p className="mt-1 text-[15px] font-semibold text-graphite">
-              {product.packing} · MRP {inr(product.mrp)}
+              {product.packing}
+              {product.mrp > 0 ? ` · MRP ${inr(product.mrp)}` : ""}
             </p>
 
             {role ? (
               <>
-                {/* slab ladder */}
-                <div className="card mt-6 overflow-hidden">
-                  <div className="border-b border-line bg-paper px-5 py-3">
-                    <p className="text-[13px] font-bold">
-                      Your {ROLES[role].label} price ladder
-                    </p>
+                {/* your flat trade price */}
+                <div className="card mt-6 p-5">
+                  <p className="label">Your {ROLES[role].label} price</p>
+                  <div className="mt-1 flex flex-wrap items-end gap-3">
+                    <span className="font-display text-4xl font-black" style={{ color: "var(--green)" }}>
+                      {inr(price!)}
+                    </span>
+                    <span className="pb-1.5 text-[13px] font-semibold text-graphite">/ unit</span>
+                    {showMrp && (
+                      <span className="pb-1.5 text-[13px] text-graphite">
+                        MRP <span className="line-through">{inr(product.mrp)}</span>
+                      </span>
+                    )}
                   </div>
-                  <table className="w-full text-[13.5px]">
-                    <tbody>
-                      {ladder(product, role).map((l) => {
-                        const active = slabFor(qty).min === l.min;
-                        return (
-                          <tr
-                            key={l.min}
-                            className={`border-b border-line last:border-0 ${
-                              active ? "bg-green-soft" : ""
-                            }`}
-                          >
-                            <td className="px-5 py-2.5 font-semibold">{l.label}</td>
-                            <td className="px-5 py-2.5 font-display font-black" style={{ color: "var(--green)" }}>
-                              {inr(l.price)}/unit
-                            </td>
-                            <td className="px-5 py-2.5 text-graphite">
-                              {marginPct(product.mrp, l.price)}% margin
-                            </td>
-                            <td className="px-5 py-2.5 text-right">
-                              {active && <span className="chip badge-green !py-0.5 !text-[10px]">You&apos;re here</span>}
-                            </td>
-                          </tr>
-                        );
-                      })}
-                    </tbody>
-                  </table>
+                  {showMrp && (
+                    <p className="mt-1 text-[13px] font-bold" style={{ color: "var(--gold)" }}>
+                      {marginPct(product.mrp, price!)}% margin at MRP
+                    </p>
+                  )}
+                  <p className="mt-2 text-[12px] text-graphite">
+                    Fixed trade rate for your role · {GST_RATE * 100}% GST added at checkout.
+                  </p>
                 </div>
 
                 {/* qty & add */}
                 <div className="card mt-4 p-5">
                   <div className="flex flex-wrap items-end gap-4">
                     <div>
-                      <p className="label">Quantity (MOQ {moq})</p>
+                      <p className="label">Order quantity (MOQ {moq})</p>
                       <div className="flex items-center gap-2">
                         <button
                           className="btn-ghost !h-11 !w-11 !p-0"
@@ -165,25 +146,16 @@ export default function ProductDetail({
                     </div>
                     <div className="flex-1">
                       <p className="text-[12.5px] text-graphite">
-                        {qty} × {inr(price!)}{" "}
-                        {bonus > 0 && (
-                          <span className="font-bold" style={{ color: "var(--gold)" }}>
-                            + {bonus} free
-                          </span>
-                        )}
+                        {qty} units × {inr(price!)}
                       </p>
-                      <p className="font-display text-2xl font-black">{inr(price! * qty)}</p>
-                      <p className="text-[12px] font-semibold" style={{ color: "var(--green)" }}>
-                        You save {inr(Math.round((product.mrp - price!) * qty))} vs MRP
-                      </p>
+                      <p className="font-display text-2xl font-black">{inr(round2(price! * qty))}</p>
+                      {showMrp && (
+                        <p className="text-[12px] font-semibold" style={{ color: "var(--green)" }}>
+                          You save {inr(Math.round((product.mrp - price!) * qty))} vs MRP
+                        </p>
+                      )}
                     </div>
                   </div>
-                  {next && (
-                    <p className="mt-3 rounded-lg border border-dashed border-gold bg-gold-soft/60 px-3 py-2 text-[12.5px] font-semibold">
-                      Add {next.min - qty} more units → unlock {next.label} at{" "}
-                      {inr(ladder(product, role).find((l) => l.min === next.min)!.price)}/unit
-                    </p>
-                  )}
                   {canBuy ? (
                     <button
                       className="btn-primary mt-4 w-full"
@@ -209,8 +181,8 @@ export default function ProductDetail({
                   Trade prices are hidden for guests
                 </p>
                 <p className="mx-auto mt-2 max-w-md text-[13.5px] text-graphite">
-                  Stockists see up to 45% below MRP, distributors even deeper — plus bulk slabs
-                  that cut prices further at 50, 200 and 500 units.
+                  Distributors, stockists, chemists and doctors each see their own fixed trade
+                  rate here. Log in or register to view yours.
                 </p>
                 <div className="mt-5 flex flex-wrap justify-center gap-3">
                   <button className="btn-primary" onClick={() => router.push("/login")}>
