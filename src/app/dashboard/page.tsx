@@ -122,7 +122,7 @@ export default function DashboardPage() {
               { label: "Orders placed", value: String(myOrders.length) },
               { label: "Lifetime value", value: inr(Math.round(lifetime)) },
               { label: "Saved vs MRP", value: inr(Math.round(savings)) },
-              { label: "Your MOQ", value: `${ROLES[user.role].moq} units` },
+              { label: "Your tier", value: ROLES[user.role].label.split(" ")[0] },
             ].map((s) => (
               <div key={s.label} className="card p-4 text-center">
                 <p className="font-display text-xl font-black" style={{ color: "var(--green)" }}>

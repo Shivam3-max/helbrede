@@ -5,7 +5,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import ProductImage from "@/components/ProductImage";
 import ProductCard from "@/components/ProductCard";
-import { inr } from "@/lib/format";
+import { inr, packSummary } from "@/lib/format";
 import { basePrice, GST_RATE, marginPct, ROLES, round2 } from "@/lib/pricing";
 import { Product } from "@/lib/types";
 import { useAuth } from "@/context/AuthContext";
@@ -22,8 +22,7 @@ export default function ProductDetail({
   const { add } = useCart();
   const router = useRouter();
   const role = user && !user.isAdmin ? user.role : null;
-  const moq = role ? ROLES[role].moq : 1;
-  const [qty, setQty] = useState(Math.max(moq, 10));
+  const [qty, setQty] = useState(1);
   const [added, setAdded] = useState(false);
   const price = role ? basePrice(product, role) : null;
   const showMrp = price != null && product.mrp > price;
@@ -59,6 +58,9 @@ export default function ProductDetail({
                 <div>
                   <p className="label !mb-0.5">Pack size</p>
                   <p className="font-semibold">{product.packing}</p>
+                  {packSummary(product.packing) && (
+                    <p className="mt-0.5 text-[11.5px] text-graphite">{packSummary(product.packing)}</p>
+                  )}
                 </div>
                 <div>
                   <p className="label !mb-0.5">Type</p>
@@ -119,11 +121,11 @@ export default function ProductDetail({
                 <div className="card mt-4 p-5">
                   <div className="flex flex-wrap items-end gap-4">
                     <div>
-                      <p className="label">Order quantity (MOQ {moq})</p>
+                      <p className="label">Order quantity</p>
                       <div className="flex items-center gap-2">
                         <button
                           className="btn-ghost !h-11 !w-11 !p-0"
-                          onClick={() => setQty(Math.max(moq, qty - 10))}
+                          onClick={() => setQty(Math.max(1, qty - 1))}
                         >
                           −
                         </button>
@@ -131,14 +133,14 @@ export default function ProductDetail({
                           type="number"
                           className="input !w-24 text-center"
                           value={qty}
-                          min={moq}
+                          min={1}
                           onChange={(e) =>
-                            setQty(Math.max(moq, parseInt(e.target.value) || moq))
+                            setQty(Math.max(1, parseInt(e.target.value) || 1))
                           }
                         />
                         <button
                           className="btn-ghost !h-11 !w-11 !p-0"
-                          onClick={() => setQty(qty + 10)}
+                          onClick={() => setQty(qty + 1)}
                         >
                           +
                         </button>
@@ -146,7 +148,7 @@ export default function ProductDetail({
                     </div>
                     <div className="flex-1">
                       <p className="text-[12.5px] text-graphite">
-                        {qty} units × {inr(price!)}
+                        {qty} × {inr(price!)}
                       </p>
                       <p className="font-display text-2xl font-black">{inr(round2(price! * qty))}</p>
                       {showMrp && (

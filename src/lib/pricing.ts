@@ -13,25 +13,25 @@ export const ROLES: Record<
   distributor: {
     label: "Distributor",
     multiplier: 0.55,
-    moq: 20,
+    moq: 0,
     blurb: "Net distributor rates for territory-level distribution",
   },
   stockist: {
     label: "Stockist",
     multiplier: 0.66,
-    moq: 10,
+    moq: 0,
     blurb: "Wholesale rates for stock-and-supply operations",
   },
   chemist: {
     label: "Chemist / Retailer",
     multiplier: 0.79,
-    moq: 5,
+    moq: 0,
     blurb: "Retailer trade rates with healthy counter margins",
   },
   doctor: {
     label: "Doctor / Clinic",
     multiplier: 0.79,
-    moq: 1,
+    moq: 0,
     blurb: "Dispensing rates for clinics and practitioners",
   },
 };

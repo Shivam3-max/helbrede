@@ -195,6 +195,72 @@ export function HeroDemandMap() {
 }
 
 /* ------------------------------------------------------------------ */
+/* Static "distributors across India" reach map (franchise page)       */
+/* ------------------------------------------------------------------ */
+
+export function ReachMap() {
+  return (
+    <div className="card relative overflow-hidden">
+      <div className="relative bg-white">
+        <svg viewBox={`0 0 ${viewW} ${viewH}`} className="h-full w-full select-none" style={{ maxHeight: 460 }}>
+          <defs>
+            <linearGradient id="reachFill" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stopColor="#f3ecdd" />
+              <stop offset="100%" stopColor="#eef4f1" />
+            </linearGradient>
+            <radialGradient id="reachGlow" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stopColor="var(--gold)" stopOpacity="0.55" />
+              <stop offset="100%" stopColor="var(--gold)" stopOpacity="0" />
+            </radialGradient>
+            <filter id="reachShadow" x="-20%" y="-20%" width="140%" height="140%">
+              <feDropShadow dx="0" dy="0.6" stdDeviation="0.7" floodColor="#1b2320" floodOpacity="0.18" />
+            </filter>
+          </defs>
+
+          {paths.map((d, i) => (
+            <path
+              key={i}
+              d={d}
+              fill="url(#reachFill)"
+              stroke="var(--green)"
+              strokeWidth={0.35}
+              strokeLinejoin="round"
+              filter={i === 0 ? "url(#reachShadow)" : undefined}
+            />
+          ))}
+
+          {/* every city blinks — distributors all over India */}
+          {CITIES.map((c, i) => {
+            const dur = 1.6 + (i % 5) * 0.35;
+            const begin = `${(i % 7) * 0.28}s`;
+            return (
+              <g key={c.name} transform={`translate(${c.x} ${c.y})`}>
+                <circle r="2.2" fill="url(#reachGlow)">
+                  <animate attributeName="opacity" values="0.15;0.7;0.15" dur={`${dur}s`} begin={begin} repeatCount="indefinite" />
+                </circle>
+                <circle r="0.75" fill="var(--green)">
+                  <animate attributeName="r" values="0.6;0.95;0.6" dur={`${dur}s`} begin={begin} repeatCount="indefinite" />
+                  <animate attributeName="fill" values="var(--green);var(--gold);var(--green)" dur={`${dur}s`} begin={begin} repeatCount="indefinite" />
+                </circle>
+              </g>
+            );
+          })}
+        </svg>
+      </div>
+
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-white via-white/85 to-transparent p-5 pt-10 text-center">
+        <p className="eyebrow">Pan-India network</p>
+        <h3 className="mt-1 font-display text-2xl font-black">Expanding All Over India</h3>
+        <p className="mx-auto mt-1.5 max-w-sm text-[13px] text-graphite">
+          Verified Helbrede distributors, stockists and chemists across {CITIES.length}+ cities and
+          growing — join the network in your district.
+        </p>
+      </div>
+    </div>
+  );
+}
+
+/* ------------------------------------------------------------------ */
 /* Standalone feed (kept for reuse elsewhere; unused on the homepage)  */
 /* ------------------------------------------------------------------ */
 
