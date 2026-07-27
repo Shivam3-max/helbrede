@@ -8,6 +8,7 @@ const CART_KEY = "hb_cart";
 interface CartCtx {
   items: CartItem[];
   add: (productId: string, qty: number) => void;
+  addMany: (items: CartItem[]) => void;
   setQty: (productId: string, qty: number) => void;
   remove: (productId: string) => void;
   clear: () => void;
@@ -18,6 +19,7 @@ interface CartCtx {
 const Ctx = createContext<CartCtx>({
   items: [],
   add: () => {},
+  addMany: () => {},
   setQty: () => {},
   remove: () => {},
   clear: () => {},
@@ -48,6 +50,13 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     }
   };
 
+  /** Merge several items in one update — safe to call with a whole basket. */
+  const addMany = (incoming: CartItem[]) => {
+    const map = new Map(items.map((i) => [i.productId, i.qty]));
+    incoming.forEach((i) => map.set(i.productId, (map.get(i.productId) ?? 0) + i.qty));
+    persist(Array.from(map, ([productId, qty]) => ({ productId, qty })));
+  };
+
   const setQty = (productId: string, qty: number) => {
     if (qty <= 0) return remove(productId);
     persist(items.map((i) => (i.productId === productId ? { ...i, qty } : i)));
@@ -72,7 +81,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   const count = items.reduce((s, i) => s + i.qty, 0);
 
   return (
-    <Ctx.Provider value={{ items, add, setQty, remove, clear, placeOrder, count }}>
+    <Ctx.Provider value={{ items, add, addMany, setQty, remove, clear, placeOrder, count }}>
       {children}
     </Ctx.Provider>
   );

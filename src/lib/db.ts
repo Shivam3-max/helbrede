@@ -65,6 +65,10 @@ async function doInit(): Promise<void> {
       `CREATE TABLE IF NOT EXISTS sessions (
         token TEXT PRIMARY KEY, email TEXT NOT NULL, createdAt TEXT NOT NULL
       )`,
+      `CREATE TABLE IF NOT EXISTS leads (
+        id TEXT PRIMARY KEY, kind TEXT NOT NULL, name TEXT NOT NULL, phone TEXT,
+        city TEXT, goal TEXT, budget REAL, note TEXT, createdAt TEXT NOT NULL
+      )`,
     ],
     "write"
   );
@@ -365,6 +369,52 @@ export async function listOrders(userEmail?: string): Promise<Order[]> {
 export async function setOrderStatus(id: string, status: string): Promise<void> {
   const db = await ready();
   await db.execute({ sql: "UPDATE orders SET status=? WHERE id=?", args: [status, id] });
+}
+
+/* ---------- leads ---------- */
+
+export interface Lead {
+  id: string;
+  kind: string; // "plan" | "consultation"
+  name: string;
+  phone?: string | null;
+  city?: string | null;
+  goal?: string | null;
+  budget?: number | null;
+  note?: string | null;
+  createdAt: string;
+}
+
+export async function insertLead(l: Omit<Lead, "id" | "createdAt">): Promise<Lead> {
+  const db = await ready();
+  const id = "LD" + Date.now().toString(36).toUpperCase();
+  const createdAt = new Date().toISOString();
+  await db.execute({
+    sql: `INSERT INTO leads (id, kind, name, phone, city, goal, budget, note, createdAt)
+          VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+    args: [
+      id, l.kind, l.name, l.phone ?? null, l.city ?? null, l.goal ?? null,
+      l.budget ?? null, l.note ?? null, createdAt,
+    ],
+  });
+  return { id, createdAt, ...l };
+}
+
+export async function listLeads(): Promise<Lead[]> {
+  const db = await ready();
+  const res = await db.execute("SELECT * FROM leads ORDER BY createdAt DESC");
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  return res.rows.map((r: any) => ({
+    id: r.id,
+    kind: r.kind,
+    name: r.name,
+    phone: r.phone ?? null,
+    city: r.city ?? null,
+    goal: r.goal ?? null,
+    budget: r.budget != null ? Number(r.budget) : null,
+    note: r.note ?? null,
+    createdAt: r.createdAt,
+  }));
 }
 
 export async function recentOrdersForFeed(limit = 20) {
