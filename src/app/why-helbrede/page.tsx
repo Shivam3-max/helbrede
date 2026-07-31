@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import SectionHead from "@/components/SectionHead";
+import BrandName from "@/components/BrandName";
 
 export const metadata: Metadata = {
   title: "Why Helbrede Healthcare",
@@ -36,13 +37,13 @@ export default function WhyPage() {
     <>
       <section className="grid-bg border-b border-line py-14">
         <div className="container-x">
-          <p className="eyebrow">Why Helbrede Healthcare</p>
+          <p className="eyebrow">Why <BrandName /></p>
           <h1 className="mt-2 max-w-3xl text-3xl font-black leading-tight sm:text-4xl">
             The Pharma Trade Runs on Phone Calls and PDFs. We&apos;re Retiring Both.
           </h1>
           <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-graphite">
             Distribution in Indian pharma still works the way it did in 1995 — printed price
-            lists, WhatsApp forwards, rates that depend on who you know. Helbrede Healthcare replaces that
+            lists, WhatsApp forwards, rates that depend on who you know. <BrandName /> replaces that
             with something radically simple: <b>every verified buyer sees their true price,
             computed live from their role and order size.</b>
           </p>
@@ -64,7 +65,7 @@ export default function WhyPage() {
                   </div>
                   <div className="px-5 py-4">
                     <p className="text-[11px] font-bold uppercase tracking-wider" style={{ color: "var(--gold)" }}>
-                      On Helbrede
+                      On <BrandName full={false} />
                     </p>
                     <p className="mt-1 text-[13.5px] font-bold">{newWay}</p>
                   </div>

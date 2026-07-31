@@ -6,7 +6,7 @@ export default function SectionHead({
   sub,
 }: {
   eyebrow: string;
-  title: string;
+  title: React.ReactNode;
   sub?: string;
 }) {
   return (

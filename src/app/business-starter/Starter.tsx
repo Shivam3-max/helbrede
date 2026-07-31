@@ -6,6 +6,7 @@ import { useEffect, useMemo, useState } from "react";
 import { useProducts } from "@/context/ProductsContext";
 import { useAuth } from "@/context/AuthContext";
 import { useCart } from "@/context/CartContext";
+import BrandName from "@/components/BrandName";
 import { inr, inr0 } from "@/lib/format";
 import { basePrice, marginPct } from "@/lib/pricing";
 import { Product, Role } from "@/lib/types";
@@ -771,14 +772,14 @@ function Consultation() {
       <div className="card p-6 text-center">
         <span className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-green-soft text-xl">✓</span>
         <h3 className="mt-3 font-display text-lg font-black">Consultation booked</h3>
-        <p className="mt-2 text-[13px] text-graphite">A Helbrede business advisor will reach out to schedule your free call.</p>
+        <p className="mt-2 text-[13px] text-graphite">A <BrandName full={false} /> business advisor will reach out to schedule your free call.</p>
       </div>
     );
   return (
     <div className="card p-6">
       <h3 className="font-display text-lg font-black">Book a free consultation</h3>
       <p className="mt-1 text-[12.5px] text-graphite">
-        Talk to a Helbrede business advisor about licences, margins and getting started.
+        Talk to a <BrandName full={false} /> business advisor about licences, margins and getting started.
       </p>
       <form className="mt-4 space-y-3" onSubmit={submit}>
         <input className="input" required placeholder="Your name" value={f.name} onChange={(e) => setF({ ...f, name: e.target.value })} />

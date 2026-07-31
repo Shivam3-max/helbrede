@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useProducts } from "@/context/ProductsContext";
 import mapData from "@/data/india_map.json";
+import BrandName from "@/components/BrandName";
 
 /* ------------------------------------------------------------------ */
 /* Live activity engine — real recent orders mixed with simulated ones */
@@ -252,7 +253,7 @@ export function ReachMap() {
         <p className="eyebrow">Pan-India network</p>
         <h3 className="mt-1 font-display text-2xl font-black">Expanding All Over India</h3>
         <p className="mx-auto mt-1.5 max-w-sm text-[13px] text-graphite">
-          Verified Helbrede distributors, stockists and chemists across {CITIES.length}+ cities and
+          Verified <BrandName full={false} /> distributors, stockists and chemists across {CITIES.length}+ cities and
           growing — join the network in your district.
         </p>
       </div>

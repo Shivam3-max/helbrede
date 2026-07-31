@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import SectionHead from "@/components/SectionHead";
+import BrandName from "@/components/BrandName";
 import ProductImage from "@/components/ProductImage";
 import { HeroDemandMap } from "@/components/LiveActivity";
 import { groupsOf } from "@/lib/data";
@@ -72,12 +73,13 @@ export default async function Home() {
             <Reveal>
               <span className="chip badge-gold">
                 <span className="pulse-dot h-1.5 w-1.5 rounded-full bg-gold" />
-                A decade of Helbrede Healthcare · now online
+                A decade of <BrandName /> · now online
               </span>
             </Reveal>
             <Reveal delay={80}>
               <h1 className="mt-5 text-4xl font-black leading-[1.05] sm:text-5xl lg:text-[3.4rem]">
-                Helbrede Healthcare,{" "}
+                {/* Two-tone brand wordmark, matching the logo */}
+                <BrandName />,{" "}
                 <br className="hidden sm:block" />
                 now booking in{" "}
                 <span className="relative inline-block">
@@ -101,7 +103,7 @@ export default async function Home() {
             </Reveal>
             <Reveal delay={160}>
               <p className="mt-5 max-w-xl text-[15.5px] leading-relaxed text-graphite">
-                The complete Helbrede range — 360+ pharma, Ayurvedic and nutraceutical products —
+                The complete <BrandName full={false} /> range — 360+ pharma, Ayurvedic and nutraceutical products —
                 booked in bulk at transparent trade rates for stockists, distributors, chemists
                 and doctors. No phone calls, no PDF price lists, no haggling.
               </p>
@@ -210,7 +212,7 @@ export default async function Home() {
         <div className="container-x">
           <SectionHead
             eyebrow="The catalog"
-            title="Every Helbrede Range, Ready to Book"
+            title={<>Every <BrandName full={false} /> Range, Ready to Book</>}
             sub="Complete live catalog — allopathic, Ayurvedic, nutraceutical and personal care."
           />
           <div className="mt-10 grid grid-cols-2 gap-4 md:grid-cols-4">

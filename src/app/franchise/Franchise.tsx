@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { ReachMap } from "@/components/LiveActivity";
+import BrandName from "@/components/BrandName";
 
 const PERKS = [
   { title: "District exclusivity", body: "One partner per district. Your area, your brand presence — zero intra-brand competition." },
@@ -24,7 +25,7 @@ export default function Franchise() {
             Own Your District. Exclusively.
           </h1>
           <p className="mt-3 max-w-2xl text-[14.5px] text-graphite">
-            Helbrede Healthcare franchise partners get monopoly marketing rights for the full 360-SKU range
+            <BrandName /> franchise partners get monopoly marketing rights for the full 360-SKU range
             in their district — with a fast-growing network already spanning the country.
           </p>
         </div>
