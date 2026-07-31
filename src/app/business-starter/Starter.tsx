@@ -209,7 +209,7 @@ export default function Starter() {
             <p className="mx-auto mt-2 max-w-lg text-[13.5px] text-graphite">
               Register free, get verified, and turn your starter basket into your first bulk order.
             </p>
-            <div className="mt-5 flex justify-center gap-3">
+            <div className="mt-5 flex flex-wrap justify-center gap-3">
               <Link href="/register" className="btn-primary">Register my business</Link>
               <Link href="/franchise" className="btn-gold">Claim a monopoly territory</Link>
             </div>

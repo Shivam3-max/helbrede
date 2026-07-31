@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { useAuth } from "@/context/AuthContext";
 import { useCart } from "@/context/CartContext";
 import { ROLES } from "@/lib/pricing";
+import Brand from "@/components/Brand";
 
 const NAV = [
   { href: "/products", label: "Products" },
@@ -38,16 +39,8 @@ export default function Header() {
       }`}
     >
       <div className="container-x flex h-16 items-center justify-between gap-4">
-        <Link href="/" className="flex items-center gap-2.5">
-          <span className="relative flex h-8 w-8 items-center justify-center rounded-lg bg-ink">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-              <rect x="2" y="6.5" width="12" height="3" rx="1.5" fill="var(--gold)" transform="rotate(-45 8 8)" />
-              <rect x="2" y="6.5" width="6" height="3" rx="1.5" fill="#fff" transform="rotate(-45 8 8)" />
-            </svg>
-          </span>
-          <span className="font-display text-lg font-black uppercase tracking-tight">
-            Helbrede <span style={{ color: "var(--gold)" }}>Healthcare</span>
-          </span>
+        <Link href="/" aria-label="Helbrede Healthcare — home" className="flex items-center">
+          <Brand className="h-10" />
         </Link>
 
         <nav className="hidden items-center gap-5 lg:flex">

@@ -48,7 +48,7 @@ export default function Catalog() {
           <p className="eyebrow">Live catalog</p>
           <h1 className="mt-2 text-3xl font-black sm:text-4xl">Product Catalog</h1>
           <p className="mt-2 max-w-2xl text-[14.5px] text-graphite">
-            Search by brand name <em>or</em> composition — &quot;ofloxacin&quot; finds every SKU
+            Search by brand name <em>or</em>{" "}composition — &quot;ofloxacin&quot; finds every SKU
             containing it.{" "}
             {!user && (
               <span className="font-semibold" style={{ color: "var(--green)" }}>

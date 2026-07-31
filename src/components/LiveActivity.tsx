@@ -119,15 +119,15 @@ export function HeroDemandMap() {
         <svg viewBox={`0 0 ${viewW} ${viewH}`} className="h-full w-full select-none" style={{ maxHeight: 360 }}>
           <defs>
             <linearGradient id="indFill" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stopColor="#f3ecdd" />
-              <stop offset="100%" stopColor="#eef4f1" />
+              <stop offset="0%" stopColor="#dceffb" />
+              <stop offset="100%" stopColor="#eef6fc" />
             </linearGradient>
             <radialGradient id="cityGlow" cx="50%" cy="50%" r="50%">
               <stop offset="0%" stopColor="var(--gold)" stopOpacity="0.5" />
               <stop offset="100%" stopColor="var(--gold)" stopOpacity="0" />
             </radialGradient>
             <filter id="mapShadow" x="-20%" y="-20%" width="140%" height="140%">
-              <feDropShadow dx="0" dy="0.6" stdDeviation="0.7" floodColor="#1b2320" floodOpacity="0.18" />
+              <feDropShadow dx="0" dy="0.6" stdDeviation="0.7" floodColor="#0c2c4a" floodOpacity="0.18" />
             </filter>
           </defs>
 
@@ -185,7 +185,7 @@ export function HeroDemandMap() {
             style={{ opacity: 1 - i * 0.28 }}
           >
             <span className={`h-1.5 w-1.5 shrink-0 rounded-full ${e.kind === "order" ? "bg-green" : e.kind === "pool" ? "bg-gold" : "bg-steel"}`} />
-            <p className="truncate text-[12px] font-semibold text-slate">{eventText(e)}</p>
+            <p className="min-w-0 flex-1 truncate text-[12px] font-semibold text-slate">{eventText(e)}</p>
             <span className="ml-auto shrink-0 text-[10.5px] text-graphite">{AGES[i]}</span>
           </div>
         ))}
@@ -205,15 +205,15 @@ export function ReachMap() {
         <svg viewBox={`0 0 ${viewW} ${viewH}`} className="h-full w-full select-none" style={{ maxHeight: 460 }}>
           <defs>
             <linearGradient id="reachFill" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stopColor="#f3ecdd" />
-              <stop offset="100%" stopColor="#eef4f1" />
+              <stop offset="0%" stopColor="#dceffb" />
+              <stop offset="100%" stopColor="#eef6fc" />
             </linearGradient>
             <radialGradient id="reachGlow" cx="50%" cy="50%" r="50%">
               <stop offset="0%" stopColor="var(--gold)" stopOpacity="0.55" />
               <stop offset="100%" stopColor="var(--gold)" stopOpacity="0" />
             </radialGradient>
             <filter id="reachShadow" x="-20%" y="-20%" width="140%" height="140%">
-              <feDropShadow dx="0" dy="0.6" stdDeviation="0.7" floodColor="#1b2320" floodOpacity="0.18" />
+              <feDropShadow dx="0" dy="0.6" stdDeviation="0.7" floodColor="#0c2c4a" floodOpacity="0.18" />
             </filter>
           </defs>
 

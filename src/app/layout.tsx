@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Manrope } from "next/font/google";
+import { Nunito_Sans } from "next/font/google";
 import "./globals.css";
 import { AuthProvider } from "@/context/AuthContext";
 import { CartProvider } from "@/context/CartContext";
@@ -7,7 +7,13 @@ import { ProductsProvider } from "@/context/ProductsContext";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-const manrope = Manrope({ variable: "--font-manrope", subsets: ["latin"] });
+// Nunito Sans — matches the Helbrede logo wordmark: humanist, round and open, with the
+// logo's straight tail-less "l", round double-story "a" and medium weight.
+const nunitoSans = Nunito_Sans({
+  variable: "--font-nunito",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800", "900"],
+});
 
 export const metadata: Metadata = {
   title: {
@@ -22,13 +28,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${manrope.variable} h-full antialiased`}>
-      <head>
-        <link
-          href="https://api.fontshare.com/v2/css?f[]=satoshi@500,700,900&display=swap"
-          rel="stylesheet"
-        />
-      </head>
+    <html lang="en" className={`${nunitoSans.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col">
         <AuthProvider>
           <ProductsProvider>

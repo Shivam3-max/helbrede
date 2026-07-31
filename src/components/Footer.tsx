@@ -1,21 +1,12 @@
 import Link from "next/link";
+import Brand from "@/components/Brand";
 
 export default function Footer() {
   return (
     <footer className="border-t border-line bg-paper">
       <div className="container-x grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4">
         <div>
-          <div className="flex items-center gap-2.5">
-            <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-ink">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <rect x="2" y="6.5" width="12" height="3" rx="1.5" fill="var(--gold)" transform="rotate(-45 8 8)" />
-                <rect x="2" y="6.5" width="6" height="3" rx="1.5" fill="#fff" transform="rotate(-45 8 8)" />
-              </svg>
-            </span>
-            <span className="font-display text-lg font-black uppercase">
-              Helbrede <span style={{ color: "var(--gold)" }}>Healthcare</span>
-            </span>
-          </div>
+          <Brand full className="h-16" />
           <p className="mt-4 text-[13.5px] leading-relaxed text-graphite">
             India&apos;s bulk pharma ordering platform for stockists, distributors, chemists and
             doctors — fixed role-based trade rates on 360+ verified SKUs.

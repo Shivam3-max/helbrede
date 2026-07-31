@@ -31,7 +31,7 @@ export default function CartPage() {
           <p className="mt-2 text-[14px] text-graphite">
             Your cart prices depend on your role — login or register to see them.
           </p>
-          <div className="mt-6 flex justify-center gap-3">
+          <div className="mt-6 flex flex-wrap justify-center gap-3">
             <Link href="/login" className="btn-primary">Login</Link>
             <Link href="/register" className="btn-ghost">Register free</Link>
           </div>
@@ -50,7 +50,7 @@ export default function CartPage() {
             Our team will confirm it shortly. Track status, download the GST invoice and reorder
             from your dashboard.
           </p>
-          <div className="mt-6 flex justify-center gap-3">
+          <div className="mt-6 flex flex-wrap justify-center gap-3">
             <Link href="/dashboard" className="btn-primary">Go to Dashboard</Link>
             <Link href="/products" className="btn-ghost">Keep browsing</Link>
           </div>

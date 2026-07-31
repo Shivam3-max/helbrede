@@ -67,7 +67,7 @@ export default async function Home() {
       <section className="grid-bg relative overflow-hidden">
         <div className="pointer-events-none absolute -right-40 -top-40 h-[480px] w-[480px] rounded-full bg-gold-soft blur-3xl" />
         <div className="pointer-events-none absolute -left-40 top-64 h-[380px] w-[380px] rounded-full bg-green-soft blur-3xl" />
-        <div className="container-x relative grid items-center gap-10 py-16 lg:grid-cols-[1.05fr_0.95fr] lg:py-20">
+        <div className="container-x relative grid grid-cols-1 items-center gap-10 py-16 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:py-20">
           <div>
             <Reveal>
               <span className="chip badge-gold">

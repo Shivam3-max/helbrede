@@ -1,18 +1,26 @@
 @import "tailwindcss";
 
+/*
+  Helbrede Healthcare brand palette — sampled directly from the logo.
+  Two brand blues: deep #005ca9 ("Helbrede") + bright sky #009fe3 ("Healthcare"/petals).
+  Token names are kept from the original theme to avoid churn; roles are:
+    --green  -> primary brand blue  (#005ca9)  readable accent: links, prices, positive
+    --gold   -> bright sky accent   (#009fe3)  decorative/large: numbers, glows, highlights
+    --steel  -> deep support blue   (#124a80)  Rx / franchise chips
+*/
 :root {
   --bg: #ffffff;
-  --paper: #f8f9f8;
-  --warm: #edefee;
-  --line: #e3e6e4;
-  --ink: #101413;
-  --slate: #1b2320;
-  --graphite: #5c6662;
-  --gold: #b99657;
-  --gold-soft: #f3ecdd;
-  --green: #16694e;
-  --green-soft: #e6f1ec;
-  --steel: #2e465c;
+  --paper: #f3f8fc;
+  --warm: #e7f1f9;
+  --line: #dbe7f1;
+  --ink: #0c1c2e;
+  --slate: #123152;
+  --graphite: #5a6b7c;
+  --gold: #009fe3;
+  --gold-soft: #e2f4fd;
+  --green: #005ca9;
+  --green-soft: #e2eef9;
+  --steel: #124a80;
   --red: #c0392b;
   --red-soft: #faeae7;
 }
@@ -30,8 +38,8 @@
   --color-green: var(--green);
   --color-green-soft: var(--green-soft);
   --color-steel: var(--steel);
-  --font-display: "Satoshi", "Helvetica Neue", sans-serif;
-  --font-body: var(--font-manrope), "Manrope", sans-serif;
+  --font-display: var(--font-nunito), "Nunito Sans", "Segoe UI", sans-serif;
+  --font-body: var(--font-nunito), "Nunito Sans", "Segoe UI", sans-serif;
 }
 
 html {
@@ -83,8 +91,8 @@ h1, h2, h3, h4, .font-display {
 }
 .btn-gold {
   color: #fff;
-  background: linear-gradient(135deg, #c9a768, var(--gold) 55%, #a3813f);
-  box-shadow: 0 8px 24px -10px rgba(185, 150, 87, 0.6);
+  background: linear-gradient(135deg, #33b4ec, var(--gold) 55%, #0079c2);
+  box-shadow: 0 8px 24px -10px rgba(0, 159, 227, 0.55);
 }
 .btn-gold:hover {
   filter: brightness(1.06);
@@ -120,15 +128,15 @@ h1, h2, h3, h4, .font-display {
   color: var(--slate);
 }
 
-.badge-gold { background: var(--gold-soft); color: #8a6b30; border-color: #e6d7b4; }
-.badge-green { background: var(--green-soft); color: var(--green); border-color: #c5dcd2; }
-.badge-steel { background: #e9eef3; color: var(--steel); border-color: #cfdae4; }
+.badge-gold { background: var(--gold-soft); color: #0270a8; border-color: #b6e4fa; }
+.badge-green { background: var(--green-soft); color: var(--green); border-color: #bcd8f1; }
+.badge-steel { background: #e5eef7; color: var(--steel); border-color: #c8dbee; }
 .badge-red { background: var(--red-soft); color: var(--red); border-color: #eccfc9; }
 
 .eyebrow {
   @apply text-xs font-bold uppercase;
   letter-spacing: 0.22em;
-  color: var(--gold);
+  color: var(--green);
 }
 
 .input {
@@ -136,7 +144,7 @@ h1, h2, h3, h4, .font-display {
   border: 1px solid var(--line);
   color: var(--ink);
 }
-.input:focus { border-color: var(--gold); box-shadow: 0 0 0 3px rgba(185, 150, 87, 0.15); }
+.input:focus { border-color: var(--gold); box-shadow: 0 0 0 3px rgba(0, 159, 227, 0.18); }
 .label {
   @apply block text-xs font-bold uppercase mb-1.5;
   letter-spacing: 0.14em;
@@ -169,8 +177,8 @@ h1, h2, h3, h4, .font-display {
 }
 
 @keyframes pulse-dot {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(185, 150, 87, 0.5); }
-  50% { box-shadow: 0 0 0 7px rgba(185, 150, 87, 0); }
+  0%, 100% { box-shadow: 0 0 0 0 rgba(0, 159, 227, 0.5); }
+  50% { box-shadow: 0 0 0 7px rgba(0, 159, 227, 0); }
 }
 .pulse-dot { animation: pulse-dot 2.2s infinite; }
 

@@ -31,7 +31,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   }
 
   return (
-    <div className="container-x grid gap-6 py-8 lg:grid-cols-[220px_1fr]">
+    <div className="container-x grid grid-cols-1 gap-6 py-8 lg:grid-cols-[220px_minmax(0,1fr)]">
       <aside>
         <div className="card sticky top-24 overflow-hidden">
           <div className="border-b border-line bg-paper px-4 py-3">

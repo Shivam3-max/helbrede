@@ -3,14 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack -p 3480",
+    "dev": "next dev -p 3480",
     "build": "next build",
     "start": "next start -p 3480"
   },
   "dependencies": {
     "@libsql/client": "^0.17.4",
     "@vercel/blob": "^2.6.1",
-    "next": "^16.2.10",
+    "next": "^16.2.12",
     "react": "^19.2.7",
     "react-dom": "^19.2.7"
   },
