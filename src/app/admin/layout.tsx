@@ -9,6 +9,7 @@ const NAV = [
   { href: "/admin/products", label: "Products", icon: "M20 7l-8-4-8 4v10l8 4 8-4V7zM12 3v18M4 7l8 4 8-4" },
   { href: "/admin/users", label: "Users & Accounts", icon: "M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM22 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" },
   { href: "/admin/orders", label: "Orders", icon: "M6 2l1 5h10l1-5M4 7h16l-1.5 12.5a2 2 0 01-2 1.5h-9a2 2 0 01-2-1.5L4 7z" },
+  { href: "/admin/leads", label: "Business Leads", icon: "M22 12h-4l-3 9L9 3l-3 9H2" },
 ];
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
