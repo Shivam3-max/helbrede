@@ -191,16 +191,44 @@ function rowToOrder(r: any): Order {
 
 /* ---------- products ---------- */
 
+/**
+ * Read-only fallback to the bundled catalog (src/data/products.json), built once.
+ * Lets the public homepage / catalog / product pages render even when the database
+ * is unreachable — e.g. deployed without TURSO_DATABASE_URL on a read-only host.
+ * Writes (auth, orders, admin edits) still require a real database.
+ */
+let fallbackCache: Product[] | null = null;
+function fallbackProducts(): Product[] {
+  if (!fallbackCache) {
+    fallbackCache = (rawProducts as RawProduct[])
+      .map(enrichRaw)
+      .filter((e) => e.mrp > 0 || (e.priceDistributor ?? 0) > 0)
+      .map(rowToProduct)
+      .sort((a, b) => a.name.localeCompare(b.name));
+  }
+  return fallbackCache;
+}
+
 export async function listProducts(): Promise<Product[]> {
-  const db = await ready();
-  const res = await db.execute("SELECT * FROM products ORDER BY name");
-  return res.rows.map(rowToProduct);
+  try {
+    const db = await ready();
+    const res = await db.execute("SELECT * FROM products ORDER BY name");
+    return res.rows.map(rowToProduct);
+  } catch (e) {
+    console.error("[db] listProducts: database unavailable, serving bundled catalog.", e);
+    return fallbackProducts();
+  }
 }
 
 export async function getProduct(id: string): Promise<Product | null> {
-  const db = await ready();
-  const res = await db.execute({ sql: "SELECT * FROM products WHERE id = ?", args: [id] });
-  return res.rows[0] ? rowToProduct(res.rows[0]) : null;
+  try {
+    const db = await ready();
+    const res = await db.execute({ sql: "SELECT * FROM products WHERE id = ?", args: [id] });
+    return res.rows[0] ? rowToProduct(res.rows[0]) : null;
+  } catch (e) {
+    console.error("[db] getProduct: database unavailable, serving bundled catalog.", e);
+    return fallbackProducts().find((p) => p.id === id) ?? null;
+  }
 }
 
 export interface ProductInput {
@@ -333,10 +361,16 @@ export async function createSession(email: string): Promise<string> {
 
 export async function getSessionUser(token: string | undefined): Promise<User | null> {
   if (!token) return null;
-  const db = await ready();
-  const res = await db.execute({ sql: "SELECT email FROM sessions WHERE token = ?", args: [token] });
-  const email = res.rows[0]?.email as string | undefined;
-  return email ? getUser(email) : null;
+  try {
+    const db = await ready();
+    const res = await db.execute({ sql: "SELECT email FROM sessions WHERE token = ?", args: [token] });
+    const email = res.rows[0]?.email as string | undefined;
+    return email ? getUser(email) : null;
+  } catch (e) {
+    // DB unavailable — treat as logged-out rather than 500-ing every page's auth check.
+    console.error("[db] getSessionUser: database unavailable.", e);
+    return null;
+  }
 }
 
 export async function deleteSession(token: string): Promise<void> {
