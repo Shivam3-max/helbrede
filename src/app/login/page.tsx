@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import PageTitle from "@/components/PageTitle";
 import { useAuth } from "@/context/AuthContext";
 
 const DEMOS = [
@@ -28,6 +29,7 @@ export default function LoginPage() {
 
   return (
     <section className="grid-bg py-16">
+      <PageTitle title="Partner Login | HELBREDE HEALTHCARE" />
       <div className="container-x">
         <div className="card mx-auto max-w-md p-7">
           <p className="eyebrow">Partner login</p>

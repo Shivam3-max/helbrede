@@ -452,8 +452,8 @@ export default function Starter() {
               )}
             </div>
 
-            <div className="mt-4 overflow-x-auto">
-              <table className="w-full min-w-[680px] text-[13px]">
+            <div className="mt-4 max-w-full overflow-x-auto">
+              <table className="w-max min-w-[680px] text-[13px]">
                 <thead>
                   <tr className="border-b border-line text-left text-[11px] uppercase tracking-wider text-graphite">
                     <th className="py-2 pr-3">Product</th>
@@ -523,7 +523,7 @@ export default function Starter() {
                 value={saveName}
                 onChange={(e) => setSaveName(e.target.value)}
               />
-              <button className="btn-ghost !px-4 !py-2 !text-[12.5px]" onClick={saveBasket}>💾 Save plan</button>
+              <button className="btn-ghost !px-4 !py-2 !text-[12.5px]" onClick={saveBasket}>Save plan</button>
               {notice && <span className="text-[12.5px] font-bold" style={{ color: "var(--green)" }}>{notice}</span>}
               <span className="ml-auto text-[11.5px] text-graphite">
                 {user ? "Progress auto-saved to your account." : "Progress saved on this device."}
@@ -618,8 +618,8 @@ export default function Starter() {
           {savedBaskets.length > 0 && (
             <div className="card p-6">
               <h2 className="font-display text-lg font-black">4 · Compare your saved plans</h2>
-              <div className="mt-4 overflow-x-auto">
-                <table className="w-full min-w-[560px] text-[13px]">
+              <div className="mt-4 max-w-full overflow-x-auto">
+                <table className="w-max min-w-[560px] text-[13px]">
                   <thead>
                     <tr className="border-b border-line text-left text-[11px] uppercase tracking-wider text-graphite">
                       <th className="py-2 pr-3">Plan</th>

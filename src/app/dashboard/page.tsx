@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import PageTitle from "@/components/PageTitle";
 import { useAuth } from "@/context/AuthContext";
 import { useCart } from "@/context/CartContext";
 import { dateShort, inr } from "@/lib/format";
@@ -97,6 +98,7 @@ export default function DashboardPage() {
 
   return (
     <>
+      <PageTitle title="Order Dashboard | HELBREDE HEALTHCARE" />
       <section className="border-b border-line bg-paper py-10">
         <div className="container-x flex flex-wrap items-end justify-between gap-4">
           <div>

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import ProductImage from "@/components/ProductImage";
+import PageTitle from "@/components/PageTitle";
 import { useAuth } from "@/context/AuthContext";
 import { useCart } from "@/context/CartContext";
 import { useProducts } from "@/context/ProductsContext";
@@ -74,6 +75,13 @@ export default function CartPage() {
 
   return (
     <>
+      <PageTitle
+        title={
+          placedId
+            ? `Order ${placedId} Placed | HELBREDE HEALTHCARE`
+            : "Bulk Cart | HELBREDE HEALTHCARE"
+        }
+      />
       <section className="border-b border-line bg-paper py-10">
         <div className="container-x">
           <p className="eyebrow">Bulk cart</p>

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import PageTitle from "@/components/PageTitle";
 import ProductImage from "@/components/ProductImage";
 import ProductCard from "@/components/ProductCard";
 import { inr, packSummary } from "@/lib/format";
@@ -31,6 +32,7 @@ export default function ProductDetail({
 
   return (
     <>
+      <PageTitle title={`${product.name} (${product.packing}) | HELBREDE HEALTHCARE`} />
       <section className="border-b border-line bg-paper py-8">
         <div className="container-x text-[13px] font-semibold text-graphite">
           <Link href="/products" className="hover:text-ink">

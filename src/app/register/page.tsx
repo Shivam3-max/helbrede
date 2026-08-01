@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import PageTitle from "@/components/PageTitle";
 import { useAuth } from "@/context/AuthContext";
 import { ROLES } from "@/lib/pricing";
 import { Role } from "@/lib/types";
@@ -51,6 +52,7 @@ export default function RegisterPage() {
 
   return (
     <section className="grid-bg py-16">
+      <PageTitle title="Register Your Business | HELBREDE HEALTHCARE" />
       <div className="container-x">
         <div className="card mx-auto max-w-2xl p-7">
           <p className="eyebrow">Free registration</p>

@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import PageTitle from "@/components/PageTitle";
 import { useAuth } from "@/context/AuthContext";
 
 const NAV = [
@@ -15,6 +16,14 @@ const NAV = [
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
   const { user, ready } = useAuth();
   const pathname = usePathname();
+
+  const titles: Record<string, string> = {
+    "/admin": "Admin Overview",
+    "/admin/products": "Admin Products",
+    "/admin/users": "Admin Users",
+    "/admin/orders": "Admin Orders",
+    "/admin/leads": "Admin Leads",
+  };
 
   if (!ready) return <div className="container-x py-20" />;
   if (!user?.isAdmin) {
@@ -32,8 +41,10 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   }
 
   return (
-    <div className="container-x grid grid-cols-1 gap-6 py-8 lg:grid-cols-[220px_minmax(0,1fr)]">
-      <aside>
+    <>
+      <PageTitle title={`${titles[pathname] ?? "Admin Panel"} | HELBREDE HEALTHCARE`} />
+      <div className="container-x grid grid-cols-1 gap-6 py-8 lg:grid-cols-[220px_minmax(0,1fr)]">
+        <aside>
         <div className="card sticky top-24 overflow-hidden">
           <div className="border-b border-line bg-paper px-4 py-3">
             <p className="text-[11px] font-black uppercase tracking-wider text-graphite">Control room</p>
@@ -59,8 +70,9 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
             })}
           </nav>
         </div>
-      </aside>
-      <div className="min-w-0">{children}</div>
-    </div>
+        </aside>
+        <div className="min-w-0">{children}</div>
+      </div>
+    </>
   );
 }
