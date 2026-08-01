@@ -1,10 +1,15 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createProduct, listProducts } from "@/lib/db";
 import { currentUser } from "@/lib/api-auth";
+import { sampleImageForProduct } from "@/lib/product-images";
 import { parseRolePrices } from "../role-prices";
 
 export async function GET() {
-  return NextResponse.json({ products: await listProducts() });
+  const products = (await listProducts()).map((product) => ({
+    ...product,
+    image: sampleImageForProduct(product),
+  }));
+  return NextResponse.json({ products });
 }
 
 export async function POST(req: NextRequest) {

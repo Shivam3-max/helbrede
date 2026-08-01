@@ -24,52 +24,64 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
     "/admin/orders": "Admin Orders",
     "/admin/leads": "Admin Leads",
   };
+  const pageTitle = `${titles[pathname] ?? "Admin Panel"} | HELBREDE HEALTHCARE`;
 
-  if (!ready) return <div className="container-x py-20" />;
+  if (!ready) {
+    return (
+      <>
+        <PageTitle title={pageTitle} />
+        <div className="container-x py-20" />
+      </>
+    );
+  }
+
   if (!user?.isAdmin) {
     return (
-      <div className="container-x py-20 text-center">
-        <p className="text-graphite">
-          Admin access only.{" "}
-          <Link href="/login" className="font-bold" style={{ color: "var(--green)" }}>
-            Login as admin →
-          </Link>{" "}
-          (admin@helbrede.com / admin123)
-        </p>
-      </div>
+      <>
+        <PageTitle title={pageTitle} />
+        <div className="container-x py-20 text-center">
+          <p className="text-graphite">
+            Admin access only.{" "}
+            <Link href="/login" className="font-bold" style={{ color: "var(--green)" }}>
+              Login as admin →
+            </Link>{" "}
+            (admin@helbrede.com / admin123)
+          </p>
+        </div>
+      </>
     );
   }
 
   return (
     <>
-      <PageTitle title={`${titles[pathname] ?? "Admin Panel"} | HELBREDE HEALTHCARE`} />
+      <PageTitle title={pageTitle} />
       <div className="container-x grid grid-cols-1 gap-6 py-8 lg:grid-cols-[220px_minmax(0,1fr)]">
         <aside>
-        <div className="card sticky top-24 overflow-hidden">
-          <div className="border-b border-line bg-paper px-4 py-3">
-            <p className="text-[11px] font-black uppercase tracking-wider text-graphite">Control room</p>
-            <p className="font-display text-[15px] font-black">Admin Panel</p>
+          <div className="card sticky top-24 overflow-hidden">
+            <div className="border-b border-line bg-paper px-4 py-3">
+              <p className="text-[11px] font-black uppercase tracking-wider text-graphite">Control room</p>
+              <p className="font-display text-[15px] font-black">Admin Panel</p>
+            </div>
+            <nav className="flex flex-row gap-1 overflow-x-auto p-2 lg:flex-col">
+              {NAV.map((n) => {
+                const active = pathname === n.href;
+                return (
+                  <Link
+                    key={n.href}
+                    href={n.href}
+                    className={`flex shrink-0 items-center gap-2.5 rounded-xl px-3 py-2.5 text-[13px] font-bold transition-colors ${
+                      active ? "bg-green-soft text-[var(--green)]" : "text-graphite hover:bg-paper hover:text-ink"
+                    }`}
+                  >
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                      <path d={n.icon} />
+                    </svg>
+                    {n.label}
+                  </Link>
+                );
+              })}
+            </nav>
           </div>
-          <nav className="flex flex-row gap-1 overflow-x-auto p-2 lg:flex-col">
-            {NAV.map((n) => {
-              const active = pathname === n.href;
-              return (
-                <Link
-                  key={n.href}
-                  href={n.href}
-                  className={`flex shrink-0 items-center gap-2.5 rounded-xl px-3 py-2.5 text-[13px] font-bold transition-colors ${
-                    active ? "bg-green-soft text-[var(--green)]" : "text-graphite hover:bg-paper hover:text-ink"
-                  }`}
-                >
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                    <path d={n.icon} />
-                  </svg>
-                  {n.label}
-                </Link>
-              );
-            })}
-          </nav>
-        </div>
         </aside>
         <div className="min-w-0">{children}</div>
       </div>

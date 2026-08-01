@@ -5,6 +5,7 @@ import { Product } from "@/lib/types";
 import { useAuth } from "@/context/AuthContext";
 import { basePrice, marginPct } from "@/lib/pricing";
 import { inr } from "@/lib/format";
+import { sampleImageForProduct } from "@/lib/product-images";
 import ProductImage from "./ProductImage";
 
 export default function ProductCard({ product }: { product: Product }) {
@@ -17,7 +18,7 @@ export default function ProductCard({ product }: { product: Product }) {
       className="card card-hover flex flex-col overflow-hidden p-3"
     >
       <div className="relative">
-        <ProductImage src={product.image} alt={product.name} className="aspect-[4/3] w-full" />
+        <ProductImage src={sampleImageForProduct(product)} alt={product.name} className="aspect-[4/3] w-full" />
         <div className="absolute left-2 top-2 flex flex-wrap gap-1.5">
           {product.isRx && <span className="chip badge-steel !px-2 !py-0.5 !text-[10px]">Rx</span>}
           {product.movement === "fast" && (

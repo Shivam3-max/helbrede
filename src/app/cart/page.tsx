@@ -9,6 +9,7 @@ import { useAuth } from "@/context/AuthContext";
 import { useCart } from "@/context/CartContext";
 import { useProducts } from "@/context/ProductsContext";
 import { inr } from "@/lib/format";
+import { sampleImageForProduct } from "@/lib/product-images";
 import { GST_RATE, round2, unitPrice } from "@/lib/pricing";
 
 export default function CartPage() {
@@ -117,7 +118,7 @@ export default function CartPage() {
             )}
             {lines.map(({ item, p, price }) => (
               <div key={p.id} className="card flex gap-4 p-4">
-                <ProductImage src={p.image} alt={p.name} className="h-24 w-24 shrink-0" label="" />
+                <ProductImage src={sampleImageForProduct(p)} alt={p.name} className="h-24 w-24 shrink-0" label="" />
                 <div className="min-w-0 flex-1">
                   <div className="flex items-start justify-between gap-3">
                     <div>

@@ -4,6 +4,7 @@ import fs from "fs";
 import crypto from "crypto";
 import rawProducts from "@/data/products.json";
 import { enrichRaw, groupOf } from "./enrich";
+import { sampleImageForGroup } from "./product-images";
 import { Order, Product, RawProduct, Role, User, UserStatus } from "./types";
 
 /**
@@ -128,6 +129,7 @@ async function ready(): Promise<Client> {
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 function rowToProduct(r: any): Product {
+  const group = r.grp;
   return {
     id: r.id,
     sno: Number(r.sno),
@@ -136,12 +138,12 @@ function rowToProduct(r: any): Product {
     packing: r.packing,
     mrp: Number(r.mrp),
     category: r.category,
-    group: r.grp,
+    group,
     isRx: !!Number(r.isRx),
     scheme: r.schemeBuy && r.schemeFree ? { buy: Number(r.schemeBuy), free: Number(r.schemeFree) } : null,
     movement: r.movement,
     stock: Number(r.stock),
-    image: r.image ?? null,
+    image: r.image ?? sampleImageForGroup(group),
     prices: {
       distributor: r.priceDistributor != null ? Number(r.priceDistributor) : null,
       stockist: r.priceStockist != null ? Number(r.priceStockist) : null,

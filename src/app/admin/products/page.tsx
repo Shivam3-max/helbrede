@@ -5,6 +5,7 @@ import ProductImage from "@/components/ProductImage";
 import { useProducts } from "@/context/ProductsContext";
 import { categoriesOf, groupsOf } from "@/lib/data";
 import { inr } from "@/lib/format";
+import { sampleImageForProduct } from "@/lib/product-images";
 import { marginPct, ROLES, round2 } from "@/lib/pricing";
 import { Product, Role } from "@/lib/types";
 
@@ -175,7 +176,7 @@ export default function AdminProducts() {
           {filtered.slice(0, 60).map((p) => (
             <div key={p.id} className="card flex flex-wrap items-center gap-4 p-4">
               <div className="relative">
-                <ProductImage src={p.image} alt={p.name} label="" className="h-20 w-20 shrink-0" />
+                <ProductImage src={sampleImageForProduct(p)} alt={p.name} label="" className="h-20 w-20 shrink-0" />
                 {uploadingId === p.id && (
                   <span className="absolute inset-0 flex items-center justify-center rounded-xl bg-white/70 text-[10px] font-bold">
                     Uploading…

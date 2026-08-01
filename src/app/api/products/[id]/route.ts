@@ -4,6 +4,7 @@ import path from "path";
 import { del } from "@vercel/blob";
 import { deleteProduct, getProduct, updateProduct } from "@/lib/db";
 import { currentUser } from "@/lib/api-auth";
+import { sampleImageForProduct } from "@/lib/product-images";
 import { parseRolePrices } from "../../role-prices";
 
 type Params = { params: Promise<{ id: string }> };
@@ -12,7 +13,12 @@ export async function GET(_req: NextRequest, { params }: Params) {
   const { id } = await params;
   const product = await getProduct(id);
   if (!product) return NextResponse.json({ error: "Not found." }, { status: 404 });
-  return NextResponse.json({ product });
+  return NextResponse.json({
+    product: {
+      ...product,
+      image: sampleImageForProduct(product),
+    },
+  });
 }
 
 export async function PUT(req: NextRequest, { params }: Params) {

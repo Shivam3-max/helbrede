@@ -7,6 +7,7 @@ import PageTitle from "@/components/PageTitle";
 import ProductImage from "@/components/ProductImage";
 import ProductCard from "@/components/ProductCard";
 import { inr, packSummary } from "@/lib/format";
+import { sampleImageForProduct } from "@/lib/product-images";
 import { basePrice, GST_RATE, marginPct, ROLES, round2 } from "@/lib/pricing";
 import { Product } from "@/lib/types";
 import { useAuth } from "@/context/AuthContext";
@@ -47,7 +48,7 @@ export default function ProductDetail({
           {/* left: image + composition */}
           <div>
             <div className="card p-3">
-              <ProductImage src={product.image} alt={product.name} className="aspect-square w-full" />
+              <ProductImage src={sampleImageForProduct(product)} alt={product.name} className="aspect-square w-full" />
             </div>
             <div className="card mt-4 p-5">
               <p className="label">Composition</p>
