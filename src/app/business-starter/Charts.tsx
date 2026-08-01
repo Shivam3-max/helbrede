@@ -62,8 +62,13 @@ export function Donut({
   let offset = 0;
 
   return (
-    <div className="flex items-center gap-4">
-      <svg viewBox="0 0 140 140" width={size} height={size} className="shrink-0 -rotate-90">
+    <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center">
+      <svg
+        viewBox="0 0 140 140"
+        width={size}
+        height={size}
+        className="mx-auto shrink-0 -rotate-90 sm:mx-0"
+      >
         <circle cx="70" cy="70" r={r} fill="none" stroke="var(--warm)" strokeWidth="16" />
         {data.map((d, i) => {
           const frac = d.value / total;
@@ -86,7 +91,7 @@ export function Donut({
           return el;
         })}
       </svg>
-      <div className="min-w-0 flex-1 space-y-1.5">
+      <div className="min-w-0 w-full flex-1 space-y-1.5">
         {data.map((d, i) => (
           <div key={i} className="flex items-center gap-2 text-[12px]">
             <span className="h-2.5 w-2.5 shrink-0 rounded-sm" style={{ background: d.color }} />

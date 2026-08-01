@@ -35,8 +35,9 @@ function StatusTimeline({ status }: { status: OrderStatus }) {
 
 function tierOf(total: number): { name: string; cls: string; next: string | null } {
   if (total >= 100000) return { name: "Gold Partner", cls: "badge-gold", next: null };
-  if (total >= 25000)
+  if (total >= 25000) {
     return { name: "Silver Partner", cls: "badge-steel", next: `${inr(100000 - total)} more for Gold` };
+  }
   return { name: "Bronze Partner", cls: "badge-green", next: `${inr(25000 - total)} more for Silver` };
 }
 
@@ -44,6 +45,7 @@ export default function DashboardPage() {
   const { user, ready } = useAuth();
   const { add } = useCart();
   const [orders, setOrders] = useState<Order[]>([]);
+  const pageTitle = "Order Dashboard | HELBREDE HEALTHCARE";
 
   useEffect(() => {
     if (!user || user.isAdmin) return;
@@ -53,18 +55,29 @@ export default function DashboardPage() {
       .catch(() => {});
   }, [user]);
 
-  if (!ready) return <div className="container-x py-20" />;
+  if (!ready) {
+    return (
+      <>
+        <PageTitle title={pageTitle} />
+        <div className="container-x py-20" />
+      </>
+    );
+  }
+
   if (!user || user.isAdmin) {
     return (
-      <div className="container-x py-20 text-center">
-        <p className="text-graphite">
-          Please{" "}
-          <Link href="/login" className="font-bold" style={{ color: "var(--green)" }}>
-            login
-          </Link>{" "}
-          with a buyer account to view your dashboard.
-        </p>
-      </div>
+      <>
+        <PageTitle title={pageTitle} />
+        <div className="container-x py-20 text-center">
+          <p className="text-graphite">
+            Please{" "}
+            <Link href="/login" className="font-bold" style={{ color: "var(--green)" }}>
+              login
+            </Link>{" "}
+            with a buyer account to view your dashboard.
+          </p>
+        </div>
+      </>
     );
   }
 
@@ -84,21 +97,21 @@ export default function DashboardPage() {
       <html><head><title>Invoice ${o.id}</title>
       <style>body{font-family:sans-serif;padding:40px;color:#111}table{width:100%;border-collapse:collapse;margin-top:16px}td,th{border:1px solid #ddd;padding:8px;text-align:left;font-size:13px}h1{font-size:20px}</style>
       </head><body>
-      <h1>HELBREDE HEALTHCARE — Tax Invoice</h1>
+      <h1>HELBREDE HEALTHCARE - Tax Invoice</h1>
       <p><b>Order:</b> ${o.id} · <b>Date:</b> ${dateShort(o.placedAt)}<br/>
       <b>Billed to:</b> ${o.userName} (${ROLES[o.role].label})</p>
       <table><tr><th>Product</th><th>Pack</th><th>Qty</th><th>Free</th><th>Rate</th><th>Amount</th></tr>
-      ${o.lines.map((l) => `<tr><td>${l.name}</td><td>${l.packing}</td><td>${l.qty}</td><td>${l.freeUnits}</td><td>₹${l.unitPrice}</td><td>₹${l.lineTotal}</td></tr>`).join("")}
+      ${o.lines.map((l) => `<tr><td>${l.name}</td><td>${l.packing}</td><td>${l.qty}</td><td>${l.freeUnits}</td><td>Rs${l.unitPrice}</td><td>Rs${l.lineTotal}</td></tr>`).join("")}
       </table>
-      <p style="text-align:right">Subtotal: ₹${o.subtotal}<br/>GST (12%): ₹${o.gst}<br/><b>Total: ₹${o.total}</b></p>
-      <p style="font-size:11px;color:#666">Demo invoice — batch numbers & expiry will appear here once inventory goes live.</p>
+      <p style="text-align:right">Subtotal: Rs${o.subtotal}<br/>GST (12%): Rs${o.gst}<br/><b>Total: Rs${o.total}</b></p>
+      <p style="font-size:11px;color:#666">Demo invoice - batch numbers and expiry will appear here once inventory goes live.</p>
       <script>window.print()</script></body></html>`);
     w.document.close();
   };
 
   return (
     <>
-      <PageTitle title="Order Dashboard | HELBREDE HEALTHCARE" />
+      <PageTitle title={pageTitle} />
       <section className="border-b border-line bg-paper py-10">
         <div className="container-x flex flex-wrap items-end justify-between gap-4">
           <div>
@@ -168,15 +181,15 @@ export default function DashboardPage() {
                   </div>
                   <div className="mt-3 border-t border-line pt-3 text-[12.5px] text-graphite">
                     {o.lines
-                      .map((l) => `${l.name} ×${l.qty}${l.freeUnits ? ` (+${l.freeUnits} free)` : ""}`)
+                      .map((l) => `${l.name} x${l.qty}${l.freeUnits ? ` (+${l.freeUnits} free)` : ""}`)
                       .join(" · ")}
                   </div>
                   <div className="mt-3 flex gap-2">
                     <button className="btn-ghost !px-4 !py-1.5 !text-[12px]" onClick={() => reorder(o)}>
-                      ↺ Reorder all
+                      Reorder all
                     </button>
                     <button className="btn-ghost !px-4 !py-1.5 !text-[12px]" onClick={() => printInvoice(o)}>
-                      ⬇ GST Invoice
+                      GST Invoice
                     </button>
                   </div>
                 </div>

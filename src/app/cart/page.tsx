@@ -19,44 +19,62 @@ export default function CartPage() {
   const [placedId, setPlacedId] = useState<string | null>(null);
   const [placing, setPlacing] = useState(false);
   const [orderError, setOrderError] = useState<string | null>(null);
+  const pageTitle = placedId
+    ? `Order ${placedId} Placed | HELBREDE HEALTHCARE`
+    : "Bulk Cart | HELBREDE HEALTHCARE";
 
   const productById = (id: string) => products.find((p) => p.id === id);
 
-  if (!ready) return <div className="container-x py-20" />;
+  if (!ready) {
+    return (
+      <>
+        <PageTitle title={pageTitle} />
+        <div className="container-x py-20" />
+      </>
+    );
+  }
 
   if (!user || user.isAdmin) {
     return (
-      <div className="container-x py-20">
-        <div className="card mx-auto max-w-lg p-8 text-center">
-          <h1 className="font-display text-2xl font-black">Login to build your bulk cart</h1>
-          <p className="mt-2 text-[14px] text-graphite">
-            Your cart prices depend on your role — login or register to see them.
-          </p>
-          <div className="mt-6 flex flex-wrap justify-center gap-3">
-            <Link href="/login" className="btn-primary">Login</Link>
-            <Link href="/register" className="btn-ghost">Register free</Link>
+      <>
+        <PageTitle title={pageTitle} />
+        <div className="container-x py-20">
+          <div className="card mx-auto max-w-lg p-8 text-center">
+            <h1 className="font-display text-2xl font-black">Login to build your bulk cart</h1>
+            <p className="mt-2 text-[14px] text-graphite">
+              Your cart prices depend on your role. Login or register to see them.
+            </p>
+            <div className="mt-6 flex flex-wrap justify-center gap-3">
+              <Link href="/login" className="btn-primary">Login</Link>
+              <Link href="/register" className="btn-ghost">Register free</Link>
+            </div>
           </div>
         </div>
-      </div>
+      </>
     );
   }
 
   if (placedId) {
     return (
-      <div className="container-x py-20">
-        <div className="card mx-auto max-w-lg p-8 text-center">
-          <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-green-soft text-2xl">✓</span>
-          <h1 className="mt-4 font-display text-2xl font-black">Order {placedId} placed!</h1>
-          <p className="mt-2 text-[14px] text-graphite">
-            Our team will confirm it shortly. Track status, download the GST invoice and reorder
-            from your dashboard.
-          </p>
-          <div className="mt-6 flex flex-wrap justify-center gap-3">
-            <Link href="/dashboard" className="btn-primary">Go to Dashboard</Link>
-            <Link href="/products" className="btn-ghost">Keep browsing</Link>
+      <>
+        <PageTitle title={pageTitle} />
+        <div className="container-x py-20">
+          <div className="card mx-auto max-w-lg p-8 text-center">
+            <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-green-soft text-2xl">
+              ✓
+            </span>
+            <h1 className="mt-4 font-display text-2xl font-black">Order {placedId} placed!</h1>
+            <p className="mt-2 text-[14px] text-graphite">
+              Our team will confirm it shortly. Track status, download the GST invoice and reorder
+              from your dashboard.
+            </p>
+            <div className="mt-6 flex flex-wrap justify-center gap-3">
+              <Link href="/dashboard" className="btn-primary">Go to Dashboard</Link>
+              <Link href="/products" className="btn-ghost">Keep browsing</Link>
+            </div>
           </div>
         </div>
-      </div>
+      </>
     );
   }
 
@@ -75,13 +93,7 @@ export default function CartPage() {
 
   return (
     <>
-      <PageTitle
-        title={
-          placedId
-            ? `Order ${placedId} Placed | HELBREDE HEALTHCARE`
-            : "Bulk Cart | HELBREDE HEALTHCARE"
-        }
-      />
+      <PageTitle title={pageTitle} />
       <section className="border-b border-line bg-paper py-10">
         <div className="container-x">
           <p className="eyebrow">Bulk cart</p>
@@ -103,50 +115,52 @@ export default function CartPage() {
                 </Link>
               </div>
             )}
-            {lines.map(({ item, p, price }) => {
-              return (
-                <div key={p.id} className="card flex gap-4 p-4">
-                  <ProductImage src={p.image} alt={p.name} className="h-24 w-24 shrink-0" label="" />
-                  <div className="min-w-0 flex-1">
-                    <div className="flex items-start justify-between gap-3">
-                      <div>
-                        <Link href={`/products/${p.id}`} className="font-display text-[15px] font-black hover:underline">
-                          {p.name}
-                        </Link>
-                        <p className="text-[12px] text-graphite">{p.packing}</p>
-                      </div>
-                      <button
-                        onClick={() => remove(p.id)}
-                        className="text-[12px] font-bold text-graphite hover:text-red-600"
-                      >
-                        Remove
+            {lines.map(({ item, p, price }) => (
+              <div key={p.id} className="card flex gap-4 p-4">
+                <ProductImage src={p.image} alt={p.name} className="h-24 w-24 shrink-0" label="" />
+                <div className="min-w-0 flex-1">
+                  <div className="flex items-start justify-between gap-3">
+                    <div>
+                      <Link href={`/products/${p.id}`} className="font-display text-[15px] font-black hover:underline">
+                        {p.name}
+                      </Link>
+                      <p className="text-[12px] text-graphite">{p.packing}</p>
+                    </div>
+                    <button
+                      onClick={() => remove(p.id)}
+                      className="text-[12px] font-bold text-graphite hover:text-red-600"
+                    >
+                      Remove
+                    </button>
+                  </div>
+                  <div className="mt-2 flex flex-wrap items-center justify-between gap-3">
+                    <div className="flex items-center gap-1.5">
+                      <button className="btn-ghost !h-8 !w-8 !p-0 !text-[13px]" onClick={() => setQty(p.id, item.qty - 10)}>
+                        -
+                      </button>
+                      <input
+                        type="number"
+                        className="input !w-20 !py-1.5 text-center"
+                        value={item.qty}
+                        onChange={(e) => setQty(p.id, parseInt(e.target.value) || 1)}
+                      />
+                      <button className="btn-ghost !h-8 !w-8 !p-0 !text-[13px]" onClick={() => setQty(p.id, item.qty + 10)}>
+                        +
                       </button>
                     </div>
-                    <div className="mt-2 flex flex-wrap items-center justify-between gap-3">
-                      <div className="flex items-center gap-1.5">
-                        <button className="btn-ghost !h-8 !w-8 !p-0 !text-[13px]" onClick={() => setQty(p.id, item.qty - 10)}>−</button>
-                        <input
-                          type="number"
-                          className="input !w-20 !py-1.5 text-center"
-                          value={item.qty}
-                          onChange={(e) => setQty(p.id, parseInt(e.target.value) || 1)}
-                        />
-                        <button className="btn-ghost !h-8 !w-8 !p-0 !text-[13px]" onClick={() => setQty(p.id, item.qty + 10)}>+</button>
-                      </div>
-                      <div className="text-right">
-                        <p className="text-[12px] text-graphite">
-                          {inr(price)}/unit
-                          {p.mrp > price && (
-                            <> · MRP <span className="line-through">{inr(p.mrp)}</span></>
-                          )}
-                        </p>
-                        <p className="font-display text-[17px] font-black">{inr(round2(price * item.qty))}</p>
-                      </div>
+                    <div className="text-right">
+                      <p className="text-[12px] text-graphite">
+                        {inr(price)}/unit
+                        {p.mrp > price && (
+                          <> · MRP <span className="line-through">{inr(p.mrp)}</span></>
+                        )}
+                      </p>
+                      <p className="font-display text-[17px] font-black">{inr(round2(price * item.qty))}</p>
                     </div>
                   </div>
                 </div>
-              );
-            })}
+              </div>
+            ))}
           </div>
 
           <div>
@@ -185,10 +199,10 @@ export default function CartPage() {
                   else if (order) setPlacedId(order.id);
                 }}
               >
-                {placing ? "Placing order…" : "Place Bulk Order"}
+                {placing ? "Placing order..." : "Place Bulk Order"}
               </button>
               <p className="mt-3 text-center text-[11.5px] text-graphite">
-                Payment on credit terms / delivery — gateway coming in a later phase.
+                Payment on credit terms / delivery. Gateway coming in a later phase.
               </p>
             </div>
           </div>

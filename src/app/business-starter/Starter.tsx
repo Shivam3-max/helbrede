@@ -533,17 +533,17 @@ export default function Starter() {
 
           {/* CHARTS */}
           <div className="grid gap-6 lg:grid-cols-2">
-            <div className="card p-6">
+            <div className="card min-w-0 overflow-hidden p-6">
               <h3 className="font-display text-[15px] font-black">Basket composition</h3>
               <p className="text-[12px] text-graphite">Where your investment goes, by segment.</p>
-              <div className="mt-4">
+              <div className="mt-4 min-w-0 overflow-hidden">
                 {segCost.length ? <Donut data={segCost} /> : <p className="text-[13px] text-graphite">No data yet.</p>}
               </div>
             </div>
-            <div className="card p-6">
+            <div className="card min-w-0 overflow-hidden p-6">
               <h3 className="font-display text-[15px] font-black">Margin by segment</h3>
               <p className="text-[12px] text-graphite">Gross margin % at MRP for each segment in your basket.</p>
-              <div className="mt-4">
+              <div className="mt-4 min-w-0">
                 {segMargin.length ? <BarChart data={segMargin} suffix="%" /> : <p className="text-[13px] text-graphite">No data yet.</p>}
               </div>
             </div>
@@ -571,12 +571,12 @@ export default function Starter() {
             </div>
 
             <div className="mt-6 grid gap-6 lg:grid-cols-2">
-              <div>
+              <div className="min-w-0 overflow-hidden">
                 <h3 className="font-display text-[14px] font-black">Break-even</h3>
                 <p className="text-[11.5px] text-graphite">
                   Break-even at ~{inr0(breakevenSales)}/month in sales (where revenue meets total cost).
                 </p>
-                <div className="mt-2">
+                <div className="mt-2 min-w-0 overflow-hidden">
                   <LineChart
                     series={[
                       { name: "Revenue", color: "var(--green)", points: revenueSeries },
@@ -589,12 +589,12 @@ export default function Starter() {
                   <Legend items={[["Revenue", "var(--green)"], ["Total cost", "var(--gold)"]]} />
                 </div>
               </div>
-              <div>
+              <div className="min-w-0 overflow-hidden">
                 <h3 className="font-display text-[14px] font-black">Cumulative profit &amp; payback</h3>
                 <p className="text-[11.5px] text-graphite">
                   {isFinite(paybackMonths) ? `Investment recovered in ~${paybackMonths.toFixed(1)} months.` : "Increase sales or margin to reach payback."}
                 </p>
-                <div className="mt-2">
+                <div className="mt-2 min-w-0 overflow-hidden">
                   <LineChart
                     series={[
                       { name: "Cumulative net profit", color: "var(--green)", points: roiPoints },
