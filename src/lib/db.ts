@@ -390,7 +390,8 @@ export interface UserInput {
   name: string;
   password: string;
   phone: string;
-  role: Role;
+  /** Empty string means "not yet assigned" — set by an admin at approval time. */
+  role: Role | "";
   firmName?: string | null;
   drugLicense?: string | null;
   gstNumber?: string | null;
@@ -422,6 +423,11 @@ export async function createUser(input: UserInput): Promise<User> {
 export async function setUserStatus(email: string, status: UserStatus): Promise<void> {
   await ready();
   await execute({ sql: "UPDATE users SET status=? WHERE email=?", args: [status, email.toLowerCase()] });
+}
+
+export async function setUserRole(email: string, role: Role): Promise<void> {
+  await ready();
+  await execute({ sql: "UPDATE users SET role=? WHERE email=?", args: [role, email.toLowerCase()] });
 }
 
 export async function setUserDegree(email: string, degreeUrl: string | null): Promise<void> {

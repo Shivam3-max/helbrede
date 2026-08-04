@@ -43,6 +43,7 @@ export default function AdminUsers() {
   const [saving, setSaving] = useState(false);
   const [actionError, setActionError] = useState<string | null>(null);
   const [busyEmail, setBusyEmail] = useState<string | null>(null);
+  const [roleDraft, setRoleDraft] = useState<Record<string, Role>>({});
 
   const load = () =>
     fetch("/api/users").then((r) => r.json()).then((d) => setUsers(d.users ?? [])).catch(() => {});
@@ -51,14 +52,16 @@ export default function AdminUsers() {
     load();
   }, []);
 
-  const setStatus = async (email: string, status: UserStatus) => {
+  const roleFor = (u: PublicUser): Role => roleDraft[u.email] ?? (u.role in ROLES ? (u.role as Role) : "chemist");
+
+  const putUser = async (email: string, body: { role?: Role; status?: UserStatus }) => {
     setActionError(null);
     setBusyEmail(email);
     try {
       const res = await fetch(`/api/users/${encodeURIComponent(email)}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ status }),
+        body: JSON.stringify(body),
       });
       if (!res.ok) {
         const data = await res.json().catch(() => ({}));
@@ -72,6 +75,11 @@ export default function AdminUsers() {
       setBusyEmail(null);
     }
   };
+
+  const setStatus = (email: string, status: UserStatus) => putUser(email, { status });
+  // Approving a pending applicant assigns the role picked in the queue in the same call.
+  const approve = (u: PublicUser) => putUser(u.email, { role: roleFor(u), status: "active" });
+  const changeRole = (email: string, role: Role) => putUser(email, { role });
 
   const removeUser = async (u: PublicUser) => {
     if (!confirm(`Delete account "${u.firmName || u.name}" (${u.email})? Their orders stay on record.`)) return;
@@ -142,7 +150,9 @@ export default function AdminUsers() {
               <div>
                 <p className="font-display text-[15px] font-black">
                   {u.firmName || u.name}{" "}
-                  <span className="chip badge-steel !py-0.5 !text-[10px]">{ROLES[u.role].label}</span>
+                  <span className="chip badge-steel !py-0.5 !text-[10px]">
+                    {u.role in ROLES ? ROLES[u.role as Role].label : "No role yet"}
+                  </span>
                   {businessTypeLabel(u.businessType) && u.businessType !== u.role && (
                     <span className="chip !py-0.5 !text-[10px]">{businessTypeLabel(u.businessType)}</span>
                   )}
@@ -157,11 +167,20 @@ export default function AdminUsers() {
                   applied {dateShort(u.createdAt)}
                 </p>
               </div>
-              <div className="flex gap-2">
+              <div className="flex flex-wrap items-center gap-2">
+                <select
+                  className="input !w-auto !py-2 !text-[12.5px]"
+                  value={roleFor(u)}
+                  onChange={(e) => setRoleDraft({ ...roleDraft, [u.email]: e.target.value as Role })}
+                >
+                  {(Object.keys(ROLES) as Role[]).map((r) => (
+                    <option key={r} value={r}>{ROLES[r].label}</option>
+                  ))}
+                </select>
                 <button
                   className="btn-primary !px-4 !py-2 !text-[13px] disabled:opacity-40"
                   disabled={busyEmail === u.email}
-                  onClick={() => setStatus(u.email, "active")}
+                  onClick={() => approve(u)}
                 >
                   {busyEmail === u.email ? "…" : "Approve"}
                 </button>
@@ -203,12 +222,16 @@ export default function AdminUsers() {
                   {u.isAdmin ? (
                     <span className="chip badge-gold !py-0.5 !text-[10px]">Admin</span>
                   ) : (
-                    <>
-                      {ROLES[u.role].label}
-                      {businessTypeLabel(u.businessType) && u.businessType !== u.role && (
-                        <span className="ml-1 text-graphite">({businessTypeLabel(u.businessType)})</span>
-                      )}
-                    </>
+                    <select
+                      className="input !w-auto !py-1 !text-[12.5px]"
+                      value={roleFor(u)}
+                      disabled={busyEmail === u.email}
+                      onChange={(e) => changeRole(u.email, e.target.value as Role)}
+                    >
+                      {(Object.keys(ROLES) as Role[]).map((r) => (
+                        <option key={r} value={r}>{ROLES[r].label}</option>
+                      ))}
+                    </select>
                   )}
                 </td>
                 <td className="px-4 py-2.5 text-graphite">{u.city || "—"}{u.state ? `, ${u.state}` : ""}</td>

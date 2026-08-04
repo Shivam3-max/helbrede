@@ -1,7 +1,7 @@
 "use client";
 
 import { createContext, useContext, useEffect, useState } from "react";
-import { Role, User } from "@/lib/types";
+import { User } from "@/lib/types";
 
 export type PublicUser = Omit<User, "password">;
 
@@ -10,14 +10,12 @@ export interface RegisterInput {
   email: string;
   password: string;
   phone: string;
-  role: Role;
   firmName?: string;
   drugLicense?: string;
   gstNumber?: string;
   medicalRegNo?: string;
   city?: string;
   state?: string;
-  turnoverBand?: string;
   businessType?: string;
 }
 
@@ -82,7 +80,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     });
     const data = await res.json();
     if (!res.ok) return data.error || "Registration failed.";
-    setUser(data.user);
+    // Pending accounts get no session — the applicant logs in once an admin approves them.
     return null;
   };
 
