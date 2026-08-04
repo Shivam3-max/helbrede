@@ -33,6 +33,29 @@ If deployed somewhere with a writable filesystem (a VPS, cPanel/Node hosting, et
 `BLOB_READ_WRITE_TOKEN` can be left unset — uploads then fall back to writing into
 `public/uploads/`.
 
+### Vercel + Hostinger MySQL
+
+Hostinger's shared/business MySQL can be used from Vercel, with a few things to get right:
+
+1. **Allow remote access.** In hPanel → Databases → Remote MySQL, add host `%` (Any Host).
+   Vercel serverless functions don't have a fixed outbound IP, so a specific-IP
+   allowlist won't work.
+2. **Set env vars on Vercel** (Project Settings → Environment Variables) — the discrete
+   `MYSQL_HOST`/`MYSQL_USER`/`MYSQL_PASSWORD`/`MYSQL_DATABASE` vars from the table above,
+   using the values from hPanel → Databases → Management (Hostinger db users/names are
+   usually prefixed like `u123456789_dbname`).
+3. **Keep `MYSQL_CONNECTION_LIMIT` low** (default is `3`). Shared hosting plans cap total
+   concurrent MySQL connections (often 20-30), and every warm Vercel function instance
+   opens its own pool — a high per-instance limit can exhaust the cap under real traffic.
+4. **Enable SSL only if Hostinger requires it** for remote connections — set `MYSQL_SSL=true`,
+   and `MYSQL_SSL_REJECT_UNAUTHORIZED=false` if it presents a self-signed certificate.
+5. Expect extra latency per query if the Hostinger server's region is far from where
+   Vercel runs your functions — there's no connection pooling proxy in front of it.
+
+If this turns out to be too limiting under real traffic (connection errors, slow
+queries), a serverless-native MySQL host (e.g. PlanetScale) is a drop-in swap — same
+`mysql2` pool code, just point `MYSQL_URL` at it instead.
+
 ## 3. Deploy
 
 On the first request, the app **auto-creates the tables and seeds** all products

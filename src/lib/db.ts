@@ -31,9 +31,31 @@ interface ExecResult {
   rows: any[];
 }
 
+// Remote hosts (Hostinger, etc.) are typically capped at a low concurrent-connection
+// count on shared plans. Vercel runs each warm serverless instance with its own pool,
+// so keep the per-instance limit small — override with MYSQL_CONNECTION_LIMIT if needed.
+const CONNECTION_LIMIT = Number(process.env.MYSQL_CONNECTION_LIMIT ?? 3);
+
+// Some remote MySQL providers require/prefer SSL for external connections.
+// Set MYSQL_SSL=true to enable it; MYSQL_SSL_REJECT_UNAUTHORIZED=false to accept
+// a provider's self-signed cert (common on shared hosting) instead of a CA-signed one.
+function sslConfig(): mysql.PoolOptions["ssl"] {
+  if (process.env.MYSQL_SSL !== "true") return undefined;
+  return { rejectUnauthorized: process.env.MYSQL_SSL_REJECT_UNAUTHORIZED !== "false" };
+}
+
 function makePool(): Pool {
   const url = process.env.MYSQL_URL;
-  if (url) return mysql.createPool(url);
+  if (url) {
+    return mysql.createPool({
+      uri: url,
+      waitForConnections: true,
+      connectionLimit: CONNECTION_LIMIT,
+      connectTimeout: 10_000,
+      dateStrings: true,
+      ssl: sslConfig(),
+    });
+  }
 
   return mysql.createPool({
     host: process.env.MYSQL_HOST ?? "127.0.0.1",
@@ -42,8 +64,10 @@ function makePool(): Pool {
     password: process.env.MYSQL_PASSWORD ?? "",
     database: process.env.MYSQL_DATABASE ?? "helbrede",
     waitForConnections: true,
-    connectionLimit: 10,
+    connectionLimit: CONNECTION_LIMIT,
+    connectTimeout: 10_000,
     dateStrings: true,
+    ssl: sslConfig(),
   });
 }
 
