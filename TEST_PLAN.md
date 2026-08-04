@@ -7,13 +7,14 @@
 
 ## 1. Scope & context
 
-Helbrede Healthcare is a **B2B pharma ordering platform** (India). Buyers register with a
-role (Distributor / Stockist / Chemist / Doctor), get verified, then see **fixed role-based
-trade prices** on ~359 SKUs, add to a bulk cart, and place orders. There is an **admin panel**
+Helbrede Healthcare is a **B2B pharma ordering platform** (India). Buyers register by
+picking an annual turnover band (which maps to Distributor / Stockist / Chemist / Doctor /
+Retailer / PCD / Hospital), are logged in **instantly** — no verification wait — and see
+**fixed role-based trade prices** on ~359 SKUs, add to a bulk cart, and place orders. There is an **admin panel**
 for managing products, users, and orders. Public marketing pages, trade calculators, a
 business-starter planner, and a franchise section round it out.
 
-**Tech:** Next.js (App Router) on Vercel, Turso (libSQL) database, role-based pricing, cookie sessions.
+**Tech:** Next.js (App Router) on Vercel, MySQL database, role-based pricing, cookie sessions.
 
 ---
 
@@ -33,7 +34,7 @@ business-starter planner, and a franchise section round it out.
 | Stockist | `stockist@demo.in` | `demo123` | Distributor **+20%** |
 | Chemist | `chemist@demo.in` | `demo123` | Distributor **+44%** |
 | Doctor | `doctor@demo.in` | `demo123` | Clinic/doctor rate (= chemist rate) |
-| Pending (unverified) | `pending@demo.in` | `demo123` | **Verification gate** — no prices, "pending approval" |
+| Pending (legacy/manually-suspended) | `pending@demo.in` | `demo123` | **Verification gate** — no prices, "pending approval" (self-registration no longer creates this state; admins can still set it) |
 
 > ⚠️ These are demo credentials in a live DB. Do **not** delete/modify real data; if a test
 > creates data (orders, registrations, products), note it so it can be cleaned up.
@@ -131,10 +132,11 @@ Legend for steps: *→* = navigate/click, **bold** = expected result.
 | AUTH-01 | `/login` → enter admin creds → submit | Redirects to `/admin`; header shows admin chip + Logout |
 | AUTH-02 | `/login` → **one-click demo chips** (Distributor/Stockist/Chemist/Doctor/Admin) | Each logs in and redirects (`/dashboard` or `/admin`) |
 | AUTH-03 | Wrong password | Inline error message; not logged in |
-| AUTH-04 | `/register` → fill valid details (unique email), pick a role, submit | Success / pending-verification message; account created |
+| AUTH-04 | `/register` → pick a **turnover band** (Up to ₹25L / ₹25–75L / Above ₹75L) — the ≤25L band also asks a business-type dropdown (Doctor/Chemist/Retailer/PCD/Hospital) — fill contact/email/password (everything else is optional), submit | Account is created **active** and the applicant is **logged in immediately** — no pending-verification wait. Shows a "You're in!" screen with the email/password just set, then auto-redirects to `/dashboard` |
 | AUTH-05 | Register with an existing email | Clear error (duplicate) |
-| AUTH-06 | Register form validation | Required fields enforced; email format checked |
-| AUTH-07 | Login as **`pending@demo.in`** | Logs in but sees **verification gate** (no trade prices, "awaiting approval") |
+| AUTH-06 | Register form validation | Only contact person, email, and password are required; GST/drug license/medical reg. no./degree upload/city/state/phone/firm name are all optional and never block submission |
+| AUTH-06b | ≤25L band → Doctor business type | Shows an optional degree-certificate file upload; uploads in the background after login (never blocks registration/login if it fails) |
+| AUTH-07 | Login as **`pending@demo.in`** (a manually-suspended/legacy account — self-registration no longer produces pending accounts) | Logs in but sees **verification gate** (no trade prices, "awaiting approval") |
 | AUTH-08 | Logout | Returns to guest state; protected pages redirect/deny |
 | AUTH-09 | Session persistence | Refresh page while logged in → still logged in |
 

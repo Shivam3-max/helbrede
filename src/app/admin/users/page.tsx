@@ -1,8 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import PasswordInput from "@/components/PasswordInput";
 import { dateShort } from "@/lib/format";
 import { ROLES } from "@/lib/pricing";
+import { businessTypeLabel } from "@/lib/registration";
 import { Role, User, UserStatus } from "@/lib/types";
 
 type PublicUser = Omit<User, "password">;
@@ -39,6 +41,8 @@ export default function AdminUsers() {
   const [form, setForm] = useState<NewAccount>(EMPTY);
   const [error, setError] = useState<string | null>(null);
   const [saving, setSaving] = useState(false);
+  const [actionError, setActionError] = useState<string | null>(null);
+  const [busyEmail, setBusyEmail] = useState<string | null>(null);
 
   const load = () =>
     fetch("/api/users").then((r) => r.json()).then((d) => setUsers(d.users ?? [])).catch(() => {});
@@ -48,18 +52,44 @@ export default function AdminUsers() {
   }, []);
 
   const setStatus = async (email: string, status: UserStatus) => {
-    await fetch(`/api/users/${encodeURIComponent(email)}`, {
-      method: "PUT",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ status }),
-    });
-    load();
+    setActionError(null);
+    setBusyEmail(email);
+    try {
+      const res = await fetch(`/api/users/${encodeURIComponent(email)}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ status }),
+      });
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        setActionError(data.error || "Could not update this account.");
+        return;
+      }
+      await load();
+    } catch {
+      setActionError("Network error — could not reach the server.");
+    } finally {
+      setBusyEmail(null);
+    }
   };
 
   const removeUser = async (u: PublicUser) => {
     if (!confirm(`Delete account "${u.firmName || u.name}" (${u.email})? Their orders stay on record.`)) return;
-    await fetch(`/api/users/${encodeURIComponent(u.email)}`, { method: "DELETE" });
-    load();
+    setActionError(null);
+    setBusyEmail(u.email);
+    try {
+      const res = await fetch(`/api/users/${encodeURIComponent(u.email)}`, { method: "DELETE" });
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        setActionError(data.error || "Could not delete this account.");
+        return;
+      }
+      await load();
+    } catch {
+      setActionError("Network error — could not reach the server.");
+    } finally {
+      setBusyEmail(null);
+    }
   };
 
   const createAccount = async () => {
@@ -95,6 +125,12 @@ export default function AdminUsers() {
         </button>
       </div>
 
+      {actionError && (
+        <p className="mt-4 rounded-lg bg-[var(--red-soft)] px-3 py-2 text-[13px] font-semibold text-[var(--red)]">
+          {actionError}
+        </p>
+      )}
+
       {/* pending queue */}
       <h2 className="mt-6 font-display text-[15px] font-black">Verification queue</h2>
       {pending.length === 0 ? (
@@ -107,9 +143,12 @@ export default function AdminUsers() {
                 <p className="font-display text-[15px] font-black">
                   {u.firmName || u.name}{" "}
                   <span className="chip badge-steel !py-0.5 !text-[10px]">{ROLES[u.role].label}</span>
+                  {businessTypeLabel(u.businessType) && u.businessType !== u.role && (
+                    <span className="chip !py-0.5 !text-[10px]">{businessTypeLabel(u.businessType)}</span>
+                  )}
                 </p>
                 <p className="mt-1 text-[12.5px] text-graphite">
-                  {u.name} · {u.email} · {u.phone} · {u.city}, {u.state}
+                  {[u.name, u.email, u.phone, [u.city, u.state].filter(Boolean).join(", ")].filter(Boolean).join(" · ")}
                 </p>
                 <p className="text-[12.5px] font-semibold">
                   {u.drugLicense && <>DL: {u.drugLicense} · </>}
@@ -119,10 +158,18 @@ export default function AdminUsers() {
                 </p>
               </div>
               <div className="flex gap-2">
-                <button className="btn-primary !px-4 !py-2 !text-[13px]" onClick={() => setStatus(u.email, "active")}>
-                  Approve
+                <button
+                  className="btn-primary !px-4 !py-2 !text-[13px] disabled:opacity-40"
+                  disabled={busyEmail === u.email}
+                  onClick={() => setStatus(u.email, "active")}
+                >
+                  {busyEmail === u.email ? "…" : "Approve"}
                 </button>
-                <button className="btn-ghost !px-4 !py-2 !text-[13px]" onClick={() => setStatus(u.email, "rejected")}>
+                <button
+                  className="btn-ghost !px-4 !py-2 !text-[13px] disabled:opacity-40"
+                  disabled={busyEmail === u.email}
+                  onClick={() => setStatus(u.email, "rejected")}
+                >
                   Reject
                 </button>
               </div>
@@ -153,7 +200,16 @@ export default function AdminUsers() {
                   <p className="text-graphite">{u.email}</p>
                 </td>
                 <td className="px-4 py-2.5">
-                  {u.isAdmin ? <span className="chip badge-gold !py-0.5 !text-[10px]">Admin</span> : ROLES[u.role].label}
+                  {u.isAdmin ? (
+                    <span className="chip badge-gold !py-0.5 !text-[10px]">Admin</span>
+                  ) : (
+                    <>
+                      {ROLES[u.role].label}
+                      {businessTypeLabel(u.businessType) && u.businessType !== u.role && (
+                        <span className="ml-1 text-graphite">({businessTypeLabel(u.businessType)})</span>
+                      )}
+                    </>
+                  )}
                 </td>
                 <td className="px-4 py-2.5 text-graphite">{u.city || "—"}{u.state ? `, ${u.state}` : ""}</td>
                 <td className="px-4 py-2.5 text-graphite">{u.drugLicense || u.medicalRegNo || "—"}</td>
@@ -166,16 +222,25 @@ export default function AdminUsers() {
                   {!u.isAdmin && (
                     <div className="flex justify-end gap-1.5">
                       {u.status === "active" ? (
-                        <button className="btn-ghost !px-3 !py-1 !text-[11px]" onClick={() => setStatus(u.email, "rejected")}>
+                        <button
+                          className="btn-ghost !px-3 !py-1 !text-[11px] disabled:opacity-40"
+                          disabled={busyEmail === u.email}
+                          onClick={() => setStatus(u.email, "rejected")}
+                        >
                           Suspend
                         </button>
                       ) : (
-                        <button className="btn-ghost !px-3 !py-1 !text-[11px]" onClick={() => setStatus(u.email, "active")}>
+                        <button
+                          className="btn-ghost !px-3 !py-1 !text-[11px] disabled:opacity-40"
+                          disabled={busyEmail === u.email}
+                          onClick={() => setStatus(u.email, "active")}
+                        >
                           Activate
                         </button>
                       )}
                       <button
-                        className="btn-ghost !px-3 !py-1 !text-[11px] hover:!border-[var(--red)] hover:!text-[var(--red)]"
+                        className="btn-ghost !px-3 !py-1 !text-[11px] hover:!border-[var(--red)] hover:!text-[var(--red)] disabled:opacity-40"
+                        disabled={busyEmail === u.email}
                         onClick={() => removeUser(u)}
                       >
                         Delete
@@ -228,7 +293,7 @@ export default function AdminUsers() {
               </div>
               <div>
                 <label className="label">Password *</label>
-                <input className="input" value={form.password} onChange={(e) => setForm({ ...form, password: e.target.value })} />
+                <PasswordInput value={form.password} onChange={(e) => setForm({ ...form, password: e.target.value })} autoComplete="new-password" />
               </div>
               <div>
                 <label className="label">Phone</label>

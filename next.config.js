@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  serverExternalPackages: ["@libsql/client", "libsql"],
+  serverExternalPackages: ["mysql2"],
   turbopack: {
     root: __dirname,
   },

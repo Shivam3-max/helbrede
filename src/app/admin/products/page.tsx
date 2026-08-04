@@ -126,7 +126,12 @@ export default function AdminProducts() {
 
   const removeProduct = async (p: Product) => {
     if (!confirm(`Delete "${p.name} ${p.packing}" permanently?`)) return;
-    await fetch(`/api/products/${p.id}`, { method: "DELETE" });
+    const res = await fetch(`/api/products/${p.id}`, { method: "DELETE" });
+    if (!res.ok) {
+      const data = await res.json().catch(() => ({}));
+      alert(data.error || "Could not delete this product.");
+      return;
+    }
     await refresh();
   };
 
@@ -145,7 +150,12 @@ export default function AdminProducts() {
   };
 
   const removeImage = async (p: Product) => {
-    await fetch(`/api/products/${p.id}/image`, { method: "DELETE" });
+    const res = await fetch(`/api/products/${p.id}/image`, { method: "DELETE" });
+    if (!res.ok) {
+      const data = await res.json().catch(() => ({}));
+      alert(data.error || "Could not remove this image.");
+      return;
+    }
     await refresh();
   };
 

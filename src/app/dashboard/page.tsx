@@ -118,7 +118,7 @@ export default function DashboardPage() {
             <p className="eyebrow">{ROLES[user.role].label} account</p>
             <h1 className="mt-2 text-3xl font-black">{user.firmName || user.name}</h1>
             <p className="mt-1 text-[13.5px] text-graphite">
-              {user.city}, {user.state}
+              {[user.city, user.state].filter(Boolean).join(", ")}
               {user.drugLicense && <> · DL: {user.drugLicense}</>}
               {user.gstNumber && <> · GST: {user.gstNumber}</>}
             </p>

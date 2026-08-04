@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import PageTitle from "@/components/PageTitle";
+import PasswordInput from "@/components/PasswordInput";
 import { useAuth } from "@/context/AuthContext";
 
 const DEMOS = [
@@ -50,7 +51,7 @@ export default function LoginPage() {
             </div>
             <div>
               <label className="label">Password</label>
-              <input className="input" type="password" required value={password} onChange={(e) => setPassword(e.target.value)} />
+              <PasswordInput required value={password} onChange={(e) => setPassword(e.target.value)} autoComplete="current-password" />
             </div>
             {error && (
               <p className="rounded-lg bg-[var(--red-soft)] px-3 py-2 text-[13px] font-semibold text-[var(--red)]">
@@ -80,9 +81,6 @@ export default function LoginPage() {
                 </button>
               ))}
             </div>
-            <p className="mt-2 text-center text-[11px] text-graphite">
-              Try &quot;pending@demo.in / demo123&quot; to see the verification gate.
-            </p>
           </div>
         </div>
       </div>

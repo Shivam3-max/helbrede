@@ -15,9 +15,15 @@ interface Lead {
   createdAt: string;
 }
 
+const KIND_LABEL: Record<string, string> = {
+  plan: "Custom plan",
+  consultation: "Consultation",
+  franchise: "Franchise",
+};
+
 export default function AdminLeads() {
   const [leads, setLeads] = useState<Lead[]>([]);
-  const [filter, setFilter] = useState<"all" | "plan" | "consultation">("all");
+  const [filter, setFilter] = useState<"all" | "plan" | "consultation" | "franchise">("all");
 
   useEffect(() => {
     fetch("/api/leads").then((r) => r.json()).then((d) => setLeads(d.leads ?? [])).catch(() => {});
@@ -32,13 +38,13 @@ export default function AdminLeads() {
         Enquiries from the Start-a-Business planner — custom plan requests and consultation bookings.
       </p>
       <div className="mt-4 flex flex-wrap gap-2">
-        {(["all", "plan", "consultation"] as const).map((f) => (
+        {(["all", "plan", "consultation", "franchise"] as const).map((f) => (
           <button
             key={f}
             onClick={() => setFilter(f)}
             className={`chip !cursor-pointer ${filter === f ? "badge-green !border-green" : "hover:border-ink"}`}
           >
-            {f === "all" ? "All" : f === "plan" ? "Plan requests" : "Consultations"}{" "}
+            {f === "all" ? "All" : f === "plan" ? "Plan requests" : f === "consultation" ? "Consultations" : "Franchise"}{" "}
             ({f === "all" ? leads.length : leads.filter((l) => l.kind === f).length})
           </button>
         ))}
@@ -53,8 +59,8 @@ export default function AdminLeads() {
               <div>
                 <p className="font-display text-[15px] font-black">
                   {l.name}{" "}
-                  <span className={`chip !py-0.5 !text-[10px] ${l.kind === "plan" ? "badge-gold" : "badge-steel"}`}>
-                    {l.kind === "plan" ? "Custom plan" : "Consultation"}
+                  <span className={`chip !py-0.5 !text-[10px] ${l.kind === "plan" ? "badge-gold" : l.kind === "franchise" ? "badge-green" : "badge-steel"}`}>
+                    {KIND_LABEL[l.kind] ?? l.kind}
                   </span>
                 </p>
                 <p className="mt-1 text-[12.5px] text-graphite">

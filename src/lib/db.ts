@@ -1,6 +1,4 @@
-import { createClient, Client, InValue } from "@libsql/client";
-import path from "path";
-import fs from "fs";
+import mysql, { Pool } from "mysql2/promise";
 import crypto from "crypto";
 import rawProducts from "@/data/products.json";
 import { enrichRaw, groupOf } from "./enrich";
@@ -8,96 +6,149 @@ import { sampleImageForGroup } from "./product-images";
 import { Order, Product, RawProduct, Role, User, UserStatus } from "./types";
 
 /**
- * Data layer backed by libSQL.
- *  - Production (Vercel): set TURSO_DATABASE_URL + TURSO_AUTH_TOKEN → hosted Turso.
- *  - Local dev: no env vars → a local SQLite file at data/helbrede.db.
+ * Data layer backed by MySQL (via mysql2).
+ *  - Local dev: connects to 127.0.0.1:3306 (Laragon or any local MySQL) by default.
+ *  - Production: set MYSQL_HOST/MYSQL_PORT/MYSQL_USER/MYSQL_PASSWORD/MYSQL_DATABASE
+ *    (or a single MYSQL_URL connection string) to point at the hosting provider's MySQL.
  * Same async API either way.
  */
 
 declare global {
   // eslint-disable-next-line no-var
-  var __helbredeClient: Client | undefined;
+  var __helbredePool: Pool | undefined;
   // eslint-disable-next-line no-var
   var __helbredeInit: Promise<void> | undefined;
 }
 
-function makeClient(): Client {
-  const url = process.env.TURSO_DATABASE_URL;
-  const authToken = process.env.TURSO_AUTH_TOKEN;
-  if (url) return createClient({ url, authToken });
-
-  // local dev fallback: file-based libSQL
-  const dir = path.join(process.cwd(), "data");
-  if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
-  return createClient({ url: `file:${path.join(dir, "helbrede.db")}` });
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+type SqlArg = any;
+interface Query {
+  sql: string;
+  args?: SqlArg[];
+}
+interface ExecResult {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  rows: any[];
 }
 
-function client(): Client {
-  if (!global.__helbredeClient) global.__helbredeClient = makeClient();
-  return global.__helbredeClient;
+function makePool(): Pool {
+  const url = process.env.MYSQL_URL;
+  if (url) return mysql.createPool(url);
+
+  return mysql.createPool({
+    host: process.env.MYSQL_HOST ?? "127.0.0.1",
+    port: Number(process.env.MYSQL_PORT ?? 3306),
+    user: process.env.MYSQL_USER ?? "root",
+    password: process.env.MYSQL_PASSWORD ?? "",
+    database: process.env.MYSQL_DATABASE ?? "helbrede",
+    waitForConnections: true,
+    connectionLimit: 10,
+    dateStrings: true,
+  });
+}
+
+function pool(): Pool {
+  if (!global.__helbredePool) global.__helbredePool = makePool();
+  return global.__helbredePool;
+}
+
+async function execute(query: string | Query): Promise<ExecResult> {
+  const sql = typeof query === "string" ? query : query.sql;
+  const args = typeof query === "string" ? [] : (query.args ?? []);
+  const [rows] = await pool().query(sql, args);
+  return { rows: rows as ExecResult["rows"] };
+}
+
+/** Runs statements sequentially inside one transaction. */
+async function batch(stmts: Query[]): Promise<void> {
+  const conn = await pool().getConnection();
+  try {
+    await conn.beginTransaction();
+    for (const s of stmts) await conn.query(s.sql, s.args ?? []);
+    await conn.commit();
+  } catch (e) {
+    await conn.rollback();
+    throw e;
+  } finally {
+    conn.release();
+  }
 }
 
 /* ---------- schema + seed (idempotent, run once per instance) ---------- */
 
 async function doInit(): Promise<void> {
-  const db = client();
+  await batch([
+    {
+      sql: `CREATE TABLE IF NOT EXISTS products (
+        id VARCHAR(191) PRIMARY KEY, sno INT NOT NULL, name VARCHAR(255) NOT NULL,
+        composition VARCHAR(600) NOT NULL DEFAULT '', packing VARCHAR(50) NOT NULL DEFAULT '',
+        mrp DOUBLE NOT NULL, category VARCHAR(100) NOT NULL DEFAULT 'Other', grp VARCHAR(100) NOT NULL DEFAULT 'Other',
+        isRx TINYINT(1) NOT NULL DEFAULT 0, schemeBuy INT, schemeFree INT,
+        movement VARCHAR(20) NOT NULL DEFAULT 'steady', stock INT NOT NULL DEFAULT 1000, image VARCHAR(500),
+        priceDistributor DOUBLE, priceStockist DOUBLE, priceChemist DOUBLE, priceDoctor DOUBLE
+      ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4`,
+    },
+    {
+      sql: `CREATE TABLE IF NOT EXISTS users (
+        email VARCHAR(191) PRIMARY KEY, name VARCHAR(255) NOT NULL, password VARCHAR(255) NOT NULL,
+        phone VARCHAR(30) NOT NULL DEFAULT '', role VARCHAR(20) NOT NULL, firmName VARCHAR(255), drugLicense VARCHAR(100),
+        gstNumber VARCHAR(50), medicalRegNo VARCHAR(100), city VARCHAR(100), state VARCHAR(100),
+        turnoverBand VARCHAR(20), businessType VARCHAR(20), degreeUrl VARCHAR(500),
+        status VARCHAR(20) NOT NULL DEFAULT 'pending', isAdmin TINYINT(1) NOT NULL DEFAULT 0, createdAt VARCHAR(40) NOT NULL
+      ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4`,
+    },
+    {
+      sql: `CREATE TABLE IF NOT EXISTS orders (
+        id VARCHAR(50) PRIMARY KEY, userEmail VARCHAR(191) NOT NULL, userName VARCHAR(255) NOT NULL, role VARCHAR(20) NOT NULL,
+        city VARCHAR(100), placedAt VARCHAR(40) NOT NULL, status VARCHAR(20) NOT NULL DEFAULT 'Placed', \`lines\` TEXT NOT NULL,
+        subtotal DOUBLE NOT NULL, gst DOUBLE NOT NULL, total DOUBLE NOT NULL, savingsVsMrp DOUBLE NOT NULL
+      ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4`,
+    },
+    {
+      sql: `CREATE TABLE IF NOT EXISTS sessions (
+        token VARCHAR(191) PRIMARY KEY, email VARCHAR(191) NOT NULL, createdAt VARCHAR(40) NOT NULL
+      ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4`,
+    },
+    {
+      sql: `CREATE TABLE IF NOT EXISTS leads (
+        id VARCHAR(50) PRIMARY KEY, kind VARCHAR(20) NOT NULL, name VARCHAR(255) NOT NULL, phone VARCHAR(30),
+        city VARCHAR(100), goal VARCHAR(255), budget DOUBLE, note TEXT, createdAt VARCHAR(40) NOT NULL
+      ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4`,
+    },
+  ]);
 
-  await db.batch(
-    [
-      `CREATE TABLE IF NOT EXISTS products (
-        id TEXT PRIMARY KEY, sno INTEGER NOT NULL, name TEXT NOT NULL,
-        composition TEXT NOT NULL DEFAULT '', packing TEXT NOT NULL DEFAULT '',
-        mrp REAL NOT NULL, category TEXT NOT NULL DEFAULT 'Other', grp TEXT NOT NULL DEFAULT 'Other',
-        isRx INTEGER NOT NULL DEFAULT 0, schemeBuy INTEGER, schemeFree INTEGER,
-        movement TEXT NOT NULL DEFAULT 'steady', stock INTEGER NOT NULL DEFAULT 1000, image TEXT,
-        priceDistributor REAL, priceStockist REAL, priceChemist REAL, priceDoctor REAL
-      )`,
-      `CREATE TABLE IF NOT EXISTS users (
-        email TEXT PRIMARY KEY, name TEXT NOT NULL, password TEXT NOT NULL,
-        phone TEXT NOT NULL DEFAULT '', role TEXT NOT NULL, firmName TEXT, drugLicense TEXT,
-        gstNumber TEXT, medicalRegNo TEXT, city TEXT, state TEXT,
-        status TEXT NOT NULL DEFAULT 'pending', isAdmin INTEGER NOT NULL DEFAULT 0, createdAt TEXT NOT NULL
-      )`,
-      `CREATE TABLE IF NOT EXISTS orders (
-        id TEXT PRIMARY KEY, userEmail TEXT NOT NULL, userName TEXT NOT NULL, role TEXT NOT NULL,
-        city TEXT, placedAt TEXT NOT NULL, status TEXT NOT NULL DEFAULT 'Placed', lines TEXT NOT NULL,
-        subtotal REAL NOT NULL, gst REAL NOT NULL, total REAL NOT NULL, savingsVsMrp REAL NOT NULL
-      )`,
-      `CREATE TABLE IF NOT EXISTS sessions (
-        token TEXT PRIMARY KEY, email TEXT NOT NULL, createdAt TEXT NOT NULL
-      )`,
-      `CREATE TABLE IF NOT EXISTS leads (
-        id TEXT PRIMARY KEY, kind TEXT NOT NULL, name TEXT NOT NULL, phone TEXT,
-        city TEXT, goal TEXT, budget REAL, note TEXT, createdAt TEXT NOT NULL
-      )`,
-    ],
-    "write"
-  );
+  // migrate: add columns for existing DBs created before turnover-based registration
+  for (const col of ["turnoverBand VARCHAR(20)", "businessType VARCHAR(20)", "degreeUrl VARCHAR(500)"]) {
+    try {
+      await execute(`ALTER TABLE users ADD COLUMN ${col}`);
+    } catch {
+      /* column already exists */
+    }
+  }
 
   // seed products once
-  const pc = await db.execute("SELECT COUNT(*) AS n FROM products");
+  const pc = await execute("SELECT COUNT(*) AS n FROM products");
   if (Number(pc.rows[0].n) === 0) {
     const stmts = (rawProducts as RawProduct[])
       .map(enrichRaw)
       .filter((e) => e.mrp > 0 || (e.priceDistributor ?? 0) > 0)
       .map((e) => ({
-        sql: `INSERT OR IGNORE INTO products
+        sql: `INSERT IGNORE INTO products
           (id, sno, name, composition, packing, mrp, category, grp, isRx, schemeBuy, schemeFree, movement, stock, image, priceDistributor, priceStockist, priceChemist, priceDoctor)
           VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)`,
         args: [
           e.id, e.sno, e.name, e.composition, e.packing, e.mrp, e.category, e.grp,
           e.isRx, e.schemeBuy, e.schemeFree, e.movement, e.stock, e.image,
           e.priceDistributor, e.priceStockist, e.priceChemist, e.priceDoctor,
-        ] as InValue[],
+        ] as SqlArg[],
       }));
-    // libSQL caps statements per batch; chunk to be safe
     for (let i = 0; i < stmts.length; i += 100) {
-      await db.batch(stmts.slice(i, i + 100), "write");
+      await batch(stmts.slice(i, i + 100));
     }
   }
 
   // seed demo users once
-  const uc = await db.execute("SELECT COUNT(*) AS n FROM users");
+  const uc = await execute("SELECT COUNT(*) AS n FROM users");
   if (Number(uc.rows[0].n) === 0) {
     const seed = [
       ["admin@helbrede.com", "Admin", "admin123", "9000000000", "distributor", null, null, null, null, "Panchkula", "Haryana", "active", 1, "2026-01-01T00:00:00.000Z"],
@@ -107,22 +158,20 @@ async function doInit(): Promise<void> {
       ["doctor@demo.in", "Dr. Neha Kapoor", "demo123", "9844444444", "doctor", null, null, null, "PMC-56789", "Mohali", "Punjab", "active", 0, "2026-04-02T00:00:00.000Z"],
       ["pending@demo.in", "Gupta Pharma Agency", "demo123", "9855555555", "stockist", "Gupta Pharma Agency", "DL-20B-990011", "07AAKCG5678P1Z3", null, "Delhi", "Delhi", "pending", 0, "2026-07-01T00:00:00.000Z"],
     ];
-    await db.batch(
+    await batch(
       seed.map((s) => ({
-        sql: `INSERT OR IGNORE INTO users
+        sql: `INSERT IGNORE INTO users
           (email, name, password, phone, role, firmName, drugLicense, gstNumber, medicalRegNo, city, state, status, isAdmin, createdAt)
           VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)`,
-        args: s as InValue[],
-      })),
-      "write"
+        args: s as SqlArg[],
+      }))
     );
   }
 }
 
-async function ready(): Promise<Client> {
+async function ready(): Promise<void> {
   if (!global.__helbredeInit) global.__helbredeInit = doInit();
   await global.__helbredeInit;
-  return client();
 }
 
 /* ---------- row mapping ---------- */
@@ -167,6 +216,9 @@ function rowToUser(r: any): User {
     medicalRegNo: r.medicalRegNo ?? undefined,
     city: r.city ?? undefined,
     state: r.state ?? undefined,
+    turnoverBand: r.turnoverBand ?? undefined,
+    businessType: r.businessType ?? undefined,
+    degreeUrl: r.degreeUrl ?? undefined,
     status: r.status,
     isAdmin: !!Number(r.isAdmin),
     createdAt: r.createdAt,
@@ -196,7 +248,7 @@ function rowToOrder(r: any): Order {
 /**
  * Read-only fallback to the bundled catalog (src/data/products.json), built once.
  * Lets the public homepage / catalog / product pages render even when the database
- * is unreachable — e.g. deployed without TURSO_DATABASE_URL on a read-only host.
+ * is unreachable — e.g. deployed without MySQL env vars on a read-only host.
  * Writes (auth, orders, admin edits) still require a real database.
  */
 let fallbackCache: Product[] | null = null;
@@ -213,8 +265,8 @@ function fallbackProducts(): Product[] {
 
 export async function listProducts(): Promise<Product[]> {
   try {
-    const db = await ready();
-    const res = await db.execute("SELECT * FROM products ORDER BY name");
+    await ready();
+    const res = await execute("SELECT * FROM products ORDER BY name");
     return res.rows.map(rowToProduct);
   } catch (e) {
     console.error("[db] listProducts: database unavailable, serving bundled catalog.", e);
@@ -224,8 +276,8 @@ export async function listProducts(): Promise<Product[]> {
 
 export async function getProduct(id: string): Promise<Product | null> {
   try {
-    const db = await ready();
-    const res = await db.execute({ sql: "SELECT * FROM products WHERE id = ?", args: [id] });
+    await ready();
+    const res = await execute({ sql: "SELECT * FROM products WHERE id = ?", args: [id] });
     return res.rows[0] ? rowToProduct(res.rows[0]) : null;
   } catch (e) {
     console.error("[db] getProduct: database unavailable, serving bundled catalog.", e);
@@ -250,15 +302,15 @@ export interface ProductInput {
 }
 
 export async function createProduct(input: ProductInput): Promise<Product> {
-  const db = await ready();
-  const maxRes = await db.execute("SELECT MAX(sno) AS m FROM products");
+  await ready();
+  const maxRes = await execute("SELECT MAX(sno) AS m FROM products");
   const sno = Number(maxRes.rows[0].m ?? 0) + 1;
   const id =
     `${input.name}-${input.packing}`
       .toLowerCase()
       .replace(/[^a-z0-9]+/g, "-")
       .replace(/^-+|-+$/g, "") + `-${sno}`;
-  await db.execute({
+  await execute({
     sql: `INSERT INTO products (id, sno, name, composition, packing, mrp, category, grp, isRx, schemeBuy, schemeFree, movement, stock, image, priceDistributor, priceStockist, priceChemist, priceDoctor)
           VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'steady', ?, NULL, ?, ?, ?, ?)`,
     args: [
@@ -272,8 +324,8 @@ export async function createProduct(input: ProductInput): Promise<Product> {
 }
 
 export async function updateProduct(id: string, input: ProductInput): Promise<Product | null> {
-  const db = await ready();
-  await db.execute({
+  await ready();
+  await execute({
     sql: `UPDATE products SET name=?, composition=?, packing=?, mrp=?, category=?, grp=?, isRx=?, schemeBuy=?, schemeFree=?, stock=?,
             priceDistributor=?, priceStockist=?, priceChemist=?, priceDoctor=? WHERE id=?`,
     args: [
@@ -286,26 +338,26 @@ export async function updateProduct(id: string, input: ProductInput): Promise<Pr
 }
 
 export async function setProductImage(id: string, image: string | null): Promise<void> {
-  const db = await ready();
-  await db.execute({ sql: "UPDATE products SET image=? WHERE id=?", args: [image, id] });
+  await ready();
+  await execute({ sql: "UPDATE products SET image=? WHERE id=?", args: [image, id] });
 }
 
 export async function deleteProduct(id: string): Promise<void> {
-  const db = await ready();
-  await db.execute({ sql: "DELETE FROM products WHERE id=?", args: [id] });
+  await ready();
+  await execute({ sql: "DELETE FROM products WHERE id=?", args: [id] });
 }
 
 /* ---------- users & sessions ---------- */
 
 export async function getUser(email: string): Promise<User | null> {
-  const db = await ready();
-  const res = await db.execute({ sql: "SELECT * FROM users WHERE email = ?", args: [email.toLowerCase()] });
+  await ready();
+  const res = await execute({ sql: "SELECT * FROM users WHERE email = ?", args: [email.toLowerCase()] });
   return res.rows[0] ? rowToUser(res.rows[0]) : null;
 }
 
 export async function listUsers(): Promise<User[]> {
-  const db = await ready();
-  const res = await db.execute("SELECT * FROM users ORDER BY createdAt DESC");
+  await ready();
+  const res = await execute("SELECT * FROM users ORDER BY createdAt DESC");
   return res.rows.map(rowToUser);
 }
 
@@ -321,19 +373,22 @@ export interface UserInput {
   medicalRegNo?: string | null;
   city?: string | null;
   state?: string | null;
+  turnoverBand?: string | null;
+  businessType?: string | null;
   status: UserStatus;
   isAdmin?: boolean;
 }
 
 export async function createUser(input: UserInput): Promise<User> {
-  const db = await ready();
-  await db.execute({
-    sql: `INSERT INTO users (email, name, password, phone, role, firmName, drugLicense, gstNumber, medicalRegNo, city, state, status, isAdmin, createdAt)
-          VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+  await ready();
+  await execute({
+    sql: `INSERT INTO users (email, name, password, phone, role, firmName, drugLicense, gstNumber, medicalRegNo, city, state, turnoverBand, businessType, status, isAdmin, createdAt)
+          VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
     args: [
       input.email.toLowerCase(), input.name, input.password, input.phone, input.role,
       input.firmName ?? null, input.drugLicense ?? null, input.gstNumber ?? null,
       input.medicalRegNo ?? null, input.city ?? null, input.state ?? null,
+      input.turnoverBand ?? null, input.businessType ?? null,
       input.status, input.isAdmin ? 1 : 0, new Date().toISOString(),
     ],
   });
@@ -341,20 +396,25 @@ export async function createUser(input: UserInput): Promise<User> {
 }
 
 export async function setUserStatus(email: string, status: UserStatus): Promise<void> {
-  const db = await ready();
-  await db.execute({ sql: "UPDATE users SET status=? WHERE email=?", args: [status, email.toLowerCase()] });
+  await ready();
+  await execute({ sql: "UPDATE users SET status=? WHERE email=?", args: [status, email.toLowerCase()] });
+}
+
+export async function setUserDegree(email: string, degreeUrl: string | null): Promise<void> {
+  await ready();
+  await execute({ sql: "UPDATE users SET degreeUrl=? WHERE email=?", args: [degreeUrl, email.toLowerCase()] });
 }
 
 export async function deleteUser(email: string): Promise<void> {
-  const db = await ready();
-  await db.execute({ sql: "DELETE FROM sessions WHERE email=?", args: [email.toLowerCase()] });
-  await db.execute({ sql: "DELETE FROM users WHERE email=?", args: [email.toLowerCase()] });
+  await ready();
+  await execute({ sql: "DELETE FROM sessions WHERE email=?", args: [email.toLowerCase()] });
+  await execute({ sql: "DELETE FROM users WHERE email=?", args: [email.toLowerCase()] });
 }
 
 export async function createSession(email: string): Promise<string> {
-  const db = await ready();
+  await ready();
   const token = crypto.randomBytes(24).toString("hex");
-  await db.execute({
+  await execute({
     sql: "INSERT INTO sessions (token, email, createdAt) VALUES (?, ?, ?)",
     args: [token, email.toLowerCase(), new Date().toISOString()],
   });
@@ -364,8 +424,8 @@ export async function createSession(email: string): Promise<string> {
 export async function getSessionUser(token: string | undefined): Promise<User | null> {
   if (!token) return null;
   try {
-    const db = await ready();
-    const res = await db.execute({ sql: "SELECT email FROM sessions WHERE token = ?", args: [token] });
+    await ready();
+    const res = await execute({ sql: "SELECT email FROM sessions WHERE token = ?", args: [token] });
     const email = res.rows[0]?.email as string | undefined;
     return email ? getUser(email) : null;
   } catch (e) {
@@ -376,16 +436,16 @@ export async function getSessionUser(token: string | undefined): Promise<User | 
 }
 
 export async function deleteSession(token: string): Promise<void> {
-  const db = await ready();
-  await db.execute({ sql: "DELETE FROM sessions WHERE token=?", args: [token] });
+  await ready();
+  await execute({ sql: "DELETE FROM sessions WHERE token=?", args: [token] });
 }
 
 /* ---------- orders ---------- */
 
 export async function insertOrder(o: Order): Promise<void> {
-  const db = await ready();
-  await db.execute({
-    sql: `INSERT INTO orders (id, userEmail, userName, role, city, placedAt, status, lines, subtotal, gst, total, savingsVsMrp)
+  await ready();
+  await execute({
+    sql: `INSERT INTO orders (id, userEmail, userName, role, city, placedAt, status, \`lines\`, subtotal, gst, total, savingsVsMrp)
           VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
     args: [
       o.id, o.userEmail, o.userName, o.role, o.city ?? null, o.placedAt, o.status,
@@ -395,16 +455,16 @@ export async function insertOrder(o: Order): Promise<void> {
 }
 
 export async function listOrders(userEmail?: string): Promise<Order[]> {
-  const db = await ready();
+  await ready();
   const res = userEmail
-    ? await db.execute({ sql: "SELECT * FROM orders WHERE userEmail=? ORDER BY placedAt DESC", args: [userEmail] })
-    : await db.execute("SELECT * FROM orders ORDER BY placedAt DESC");
+    ? await execute({ sql: "SELECT * FROM orders WHERE userEmail=? ORDER BY placedAt DESC", args: [userEmail] })
+    : await execute("SELECT * FROM orders ORDER BY placedAt DESC");
   return res.rows.map(rowToOrder);
 }
 
 export async function setOrderStatus(id: string, status: string): Promise<void> {
-  const db = await ready();
-  await db.execute({ sql: "UPDATE orders SET status=? WHERE id=?", args: [status, id] });
+  await ready();
+  await execute({ sql: "UPDATE orders SET status=? WHERE id=?", args: [status, id] });
 }
 
 /* ---------- leads ---------- */
@@ -422,10 +482,10 @@ export interface Lead {
 }
 
 export async function insertLead(l: Omit<Lead, "id" | "createdAt">): Promise<Lead> {
-  const db = await ready();
+  await ready();
   const id = "LD" + Date.now().toString(36).toUpperCase();
   const createdAt = new Date().toISOString();
-  await db.execute({
+  await execute({
     sql: `INSERT INTO leads (id, kind, name, phone, city, goal, budget, note, createdAt)
           VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
     args: [
@@ -437,8 +497,8 @@ export async function insertLead(l: Omit<Lead, "id" | "createdAt">): Promise<Lea
 }
 
 export async function listLeads(): Promise<Lead[]> {
-  const db = await ready();
-  const res = await db.execute("SELECT * FROM leads ORDER BY createdAt DESC");
+  await ready();
+  const res = await execute("SELECT * FROM leads ORDER BY createdAt DESC");
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   return res.rows.map((r: any) => ({
     id: r.id,
@@ -454,9 +514,9 @@ export async function listLeads(): Promise<Lead[]> {
 }
 
 export async function recentOrdersForFeed(limit = 20) {
-  const db = await ready();
-  const res = await db.execute({
-    sql: "SELECT role, city, lines, placedAt FROM orders ORDER BY placedAt DESC LIMIT ?",
+  await ready();
+  const res = await execute({
+    sql: "SELECT role, city, `lines`, placedAt FROM orders ORDER BY placedAt DESC LIMIT ?",
     args: [limit],
   });
   return res.rows.map((r) => {

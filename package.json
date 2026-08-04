@@ -8,9 +8,8 @@
     "start": "next start -p 3480"
   },
   "dependencies": {
-    "@libsql/client": "^0.17.4",
-    "@tursodatabase/database": "^0.7.2",
     "@vercel/blob": "^2.6.1",
+    "mysql2": "^3.23.2",
     "next": "^16.2.12",
     "react": "^19.2.7",
     "react-dom": "^19.2.7"

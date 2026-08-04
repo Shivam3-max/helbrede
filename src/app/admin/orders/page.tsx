@@ -17,6 +17,8 @@ const FILTERS: ("All" | OrderStatus)[] = ["All", "Placed", "Confirmed", "Dispatc
 export default function AdminOrders() {
   const [orders, setOrders] = useState<Order[]>([]);
   const [filter, setFilter] = useState<(typeof FILTERS)[number]>("All");
+  const [error, setError] = useState<string | null>(null);
+  const [busyId, setBusyId] = useState<string | null>(null);
 
   const load = () =>
     fetch("/api/orders").then((r) => r.json()).then((d) => setOrders(d.orders ?? [])).catch(() => {});
@@ -28,12 +30,25 @@ export default function AdminOrders() {
   const advance = async (o: Order) => {
     const next = NEXT_STATUS[o.status];
     if (!next) return;
-    await fetch(`/api/orders/${o.id}`, {
-      method: "PUT",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ status: next }),
-    });
-    load();
+    setError(null);
+    setBusyId(o.id);
+    try {
+      const res = await fetch(`/api/orders/${o.id}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ status: next }),
+      });
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        setError(data.error || "Could not update this order.");
+        return;
+      }
+      await load();
+    } catch {
+      setError("Network error — could not reach the server.");
+    } finally {
+      setBusyId(null);
+    }
   };
 
   const shown = orders.filter((o) => filter === "All" || o.status === filter);
@@ -52,6 +67,12 @@ export default function AdminOrders() {
           </button>
         ))}
       </div>
+
+      {error && (
+        <p className="mt-4 rounded-lg bg-[var(--red-soft)] px-3 py-2 text-[13px] font-semibold text-[var(--red)]">
+          {error}
+        </p>
+      )}
 
       {shown.length === 0 ? (
         <div className="card mt-4 p-10 text-center text-graphite">No orders here yet.</div>
@@ -78,8 +99,12 @@ export default function AdminOrders() {
                   </span>
                 </div>
                 {NEXT_STATUS[o.status] && (
-                  <button className="btn-primary !px-4 !py-2 !text-[12px]" onClick={() => advance(o)}>
-                    → {NEXT_STATUS[o.status]}
+                  <button
+                    className="btn-primary !px-4 !py-2 !text-[12px] disabled:opacity-40"
+                    disabled={busyId === o.id}
+                    onClick={() => advance(o)}
+                  >
+                    {busyId === o.id ? "…" : `→ ${NEXT_STATUS[o.status]}`}
                   </button>
                 )}
               </div>

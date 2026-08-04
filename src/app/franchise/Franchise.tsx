@@ -15,6 +15,8 @@ const PERKS = [
 export default function Franchise() {
   const [applied, setApplied] = useState<string | null>(null);
   const [form, setForm] = useState({ name: "", phone: "", district: "" });
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   return (
     <>
@@ -56,9 +58,33 @@ export default function Franchise() {
                   <h3 className="font-display text-lg font-black">Territory application</h3>
                   <form
                     className="mt-4 space-y-3"
-                    onSubmit={(e) => {
+                    onSubmit={async (e) => {
                       e.preventDefault();
-                      setApplied(form.district || "your selected district");
+                      setSubmitting(true);
+                      setError(null);
+                      try {
+                        const res = await fetch("/api/leads", {
+                          method: "POST",
+                          headers: { "Content-Type": "application/json" },
+                          body: JSON.stringify({
+                            kind: "franchise",
+                            name: form.name,
+                            phone: form.phone,
+                            city: form.district,
+                            goal: "Franchise territory application",
+                          }),
+                        });
+                        if (!res.ok) {
+                          const data = await res.json().catch(() => ({}));
+                          setError(data.error || "Could not submit your application.");
+                          return;
+                        }
+                        setApplied(form.district || "your selected district");
+                      } catch {
+                        setError("Network error — could not reach the server.");
+                      } finally {
+                        setSubmitting(false);
+                      }
                     }}
                   >
                     <div>
@@ -73,7 +99,12 @@ export default function Franchise() {
                       <label className="label">District</label>
                       <input className="input" required placeholder="e.g. Ludhiana, Punjab" value={form.district} onChange={(e) => setForm({ ...form, district: e.target.value })} />
                     </div>
-                    <button type="submit" className="btn-gold w-full">Apply for monopoly rights</button>
+                    {error && (
+                      <p className="rounded-lg bg-[var(--red-soft)] px-3 py-2 text-[13px] font-semibold text-[var(--red)]">{error}</p>
+                    )}
+                    <button type="submit" className="btn-gold w-full disabled:opacity-40" disabled={submitting}>
+                      {submitting ? "Submitting…" : "Apply for monopoly rights"}
+                    </button>
                   </form>
                 </>
               )}

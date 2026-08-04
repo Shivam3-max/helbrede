@@ -1,51 +1,43 @@
-# Deploying Helbrede Healthcare to Vercel
+# Deploying Helbrede Healthcare
 
-The app now uses **Turso** (cloud SQLite) for the database and **Vercel Blob** for
-product image uploads, because Vercel's servers have a read-only filesystem.
+The app uses **MySQL** for the database (via `mysql2`) and **Vercel Blob** for
+product image uploads on Vercel, because Vercel's servers have a read-only filesystem.
 
-Local development needs **nothing** — with no env vars set it automatically uses a
-local SQLite file at `data/helbrede.db`.
+Local development needs a MySQL server reachable at `127.0.0.1:3306` (e.g. Laragon,
+XAMPP, or `docker run -p 3306:3306 -e MYSQL_ALLOW_EMPTY_PASSWORD=yes mysql`) with a
+database named `helbrede`. With no `MYSQL_*` env vars set, the app connects as
+`root` with no password — matching most local MySQL installs out of the box.
 
-For production you set **three environment variables** in Vercel. One-time setup:
+## 1. Create the local database (one-time)
 
-## 1. Create the Turso database (free)
-
-Install the CLI and create a DB:
-
-```bash
-curl -sSfL https://get.tur.so/install.sh | bash
-turso auth signup                 # opens browser, free account
-turso db create helbrede
-turso db show helbrede --url      # → copy this = TURSO_DATABASE_URL
-turso db tokens create helbrede   # → copy this = TURSO_AUTH_TOKEN
+```sql
+CREATE DATABASE helbrede CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 ```
 
-(You can also do this from the Turso web dashboard: create a database, then
-create a token under the database's settings.)
+## 2. Set environment variables for production
 
-## 2. Create a Vercel Blob store (free)
+Any MySQL host works (your hosting provider's MySQL, PlanetScale, RDS, etc).
+Either set a single connection string, or the discrete parts:
 
-In your Vercel project:
-**Storage → Create Database → Blob → Connect to this project.**
+| Name              | Value                                          |
+|--------------------|------------------------------------------------|
+| `MYSQL_URL`        | `mysql://user:password@host:3306/dbname` (or use the four vars below instead) |
+| `MYSQL_HOST`        | e.g. `db.yourhost.com`                         |
+| `MYSQL_PORT`        | e.g. `3306`                                    |
+| `MYSQL_USER`        | your MySQL username                            |
+| `MYSQL_PASSWORD`    | your MySQL password                            |
+| `MYSQL_DATABASE`    | e.g. `helbrede`                                 |
+| `BLOB_READ_WRITE_TOKEN` | only needed on Vercel — added automatically when you connect a Blob store |
 
-Vercel automatically adds the `BLOB_READ_WRITE_TOKEN` env var for you — nothing to copy.
+If deployed somewhere with a writable filesystem (a VPS, cPanel/Node hosting, etc.),
+`BLOB_READ_WRITE_TOKEN` can be left unset — uploads then fall back to writing into
+`public/uploads/`.
 
-## 3. Set environment variables in Vercel
+## 3. Deploy
 
-**Project → Settings → Environment Variables** (Production + Preview):
-
-| Name                  | Value                                   |
-|-----------------------|-----------------------------------------|
-| `TURSO_DATABASE_URL`  | from step 1 (`libsql://helbrede-...`)   |
-| `TURSO_AUTH_TOKEN`    | from step 1                             |
-| `BLOB_READ_WRITE_TOKEN` | added automatically in step 2         |
-
-## 4. Redeploy
-
-Trigger a new deployment (push a commit, or **Deployments → Redeploy**).
-
-On the first request, the database **auto-seeds** all 355 products and the demo
-accounts — no manual import needed.
+On the first request, the app **auto-creates the tables and seeds** all products
+and the demo accounts against whatever MySQL database it's pointed at — no manual
+import needed.
 
 ## Demo logins after deploy
 
@@ -55,6 +47,5 @@ accounts — no manual import needed.
 
 ## Notes
 
-- Data now persists across devices and deploys (it lives in Turso, not the local file).
-- Product images uploaded from the admin panel are stored in Vercel Blob and served from its CDN.
-- To reset the demo data, drop the tables in Turso (or create a fresh Turso DB) and redeploy — it re-seeds automatically.
+- Data persists across devices/deploys as long as everything points at the same MySQL database.
+- To reset the demo data, drop the tables (or point at a fresh database) and redeploy — it re-seeds automatically.

@@ -88,6 +88,12 @@ export interface User {
   medicalRegNo?: string;
   city?: string;
   state?: string;
+  /** Annual turnover band picked at registration ("upto25" | "25to75" | "above75"); drives `role`. */
+  turnoverBand?: string;
+  /** Business type within the "upto25" band ("doctor" | "chemist" | "retailer" | "pcd" | "hospital"). */
+  businessType?: string;
+  /** Uploaded degree/qualification file URL — doctors only, optional. */
+  degreeUrl?: string;
   status: UserStatus;
   isAdmin?: boolean;
   createdAt: string;

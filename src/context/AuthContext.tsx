@@ -17,6 +17,8 @@ export interface RegisterInput {
   medicalRegNo?: string;
   city?: string;
   state?: string;
+  turnoverBand?: string;
+  businessType?: string;
 }
 
 interface AuthCtx {
@@ -80,6 +82,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     });
     const data = await res.json();
     if (!res.ok) return data.error || "Registration failed.";
+    setUser(data.user);
     return null;
   };
 

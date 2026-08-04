@@ -717,14 +717,29 @@ function Legend({ items }: { items: [string, string][] }) {
 function PlanRequest({ investment }: { investment: number }) {
   const [f, setF] = useState({ name: "", phone: "", city: "", goal: GOALS[0] });
   const [done, setDone] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
-    await fetch("/api/leads", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ kind: "plan", ...f, budget: investment }),
-    });
-    setDone(true);
+    setSubmitting(true);
+    setError(null);
+    try {
+      const res = await fetch("/api/leads", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ kind: "plan", ...f, budget: investment }),
+      });
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        setError(data.error || "Could not submit your request.");
+        return;
+      }
+      setDone(true);
+    } catch {
+      setError("Network error — could not reach the server.");
+    } finally {
+      setSubmitting(false);
+    }
   };
   if (done)
     return (
@@ -747,8 +762,13 @@ function PlanRequest({ investment }: { investment: number }) {
         <select className="input" value={f.goal} onChange={(e) => setF({ ...f, goal: e.target.value })}>
           {GOALS.map((g) => <option key={g}>{g}</option>)}
         </select>
+        {error && (
+          <p className="sm:col-span-2 rounded-lg bg-[var(--red-soft)] px-3 py-2 text-[13px] font-semibold text-[var(--red)]">{error}</p>
+        )}
         <div className="sm:col-span-2">
-          <button className="btn-primary w-full">Get my plan (budget {inr0(investment)})</button>
+          <button className="btn-primary w-full disabled:opacity-40" disabled={submitting}>
+            {submitting ? "Submitting…" : `Get my plan (budget ${inr0(investment)})`}
+          </button>
         </div>
       </form>
     </div>
@@ -758,14 +778,29 @@ function PlanRequest({ investment }: { investment: number }) {
 function Consultation() {
   const [f, setF] = useState({ name: "", phone: "", note: "" });
   const [done, setDone] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
-    await fetch("/api/leads", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ kind: "consultation", name: f.name, phone: f.phone, note: f.note }),
-    });
-    setDone(true);
+    setSubmitting(true);
+    setError(null);
+    try {
+      const res = await fetch("/api/leads", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ kind: "consultation", name: f.name, phone: f.phone, note: f.note }),
+      });
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        setError(data.error || "Could not book your consultation.");
+        return;
+      }
+      setDone(true);
+    } catch {
+      setError("Network error — could not reach the server.");
+    } finally {
+      setSubmitting(false);
+    }
   };
   if (done)
     return (
@@ -785,7 +820,12 @@ function Consultation() {
         <input className="input" required placeholder="Your name" value={f.name} onChange={(e) => setF({ ...f, name: e.target.value })} />
         <input className="input" required placeholder="Phone" value={f.phone} onChange={(e) => setF({ ...f, phone: e.target.value })} />
         <input className="input" placeholder="Preferred day/time (optional)" value={f.note} onChange={(e) => setF({ ...f, note: e.target.value })} />
-        <button className="btn-gold w-full">Book my free call</button>
+        {error && (
+          <p className="rounded-lg bg-[var(--red-soft)] px-3 py-2 text-[13px] font-semibold text-[var(--red)]">{error}</p>
+        )}
+        <button className="btn-gold w-full disabled:opacity-40" disabled={submitting}>
+          {submitting ? "Booking…" : "Book my free call"}
+        </button>
       </form>
     </div>
   );
