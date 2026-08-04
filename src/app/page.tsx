@@ -306,7 +306,7 @@ export default async function Home() {
                   Register Free
                 </Link>
                 <Link href="/login" className="btn-ghost">
-                  Login with demo account
+                  Partner Login
                 </Link>
               </div>
             </div>

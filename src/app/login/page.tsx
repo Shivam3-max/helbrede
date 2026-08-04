@@ -7,14 +7,6 @@ import PageTitle from "@/components/PageTitle";
 import PasswordInput from "@/components/PasswordInput";
 import { useAuth } from "@/context/AuthContext";
 
-const DEMOS = [
-  { label: "Distributor", email: "distributor@demo.in" },
-  { label: "Stockist", email: "stockist@demo.in" },
-  { label: "Chemist", email: "chemist@demo.in" },
-  { label: "Doctor", email: "doctor@demo.in" },
-  { label: "Admin", email: "admin@helbrede.com" },
-];
-
 export default function LoginPage() {
   const { login } = useAuth();
   const router = useRouter();
@@ -66,22 +58,6 @@ export default function LoginPage() {
               Register your business free →
             </Link>
           </p>
-          <div className="mt-6 border-t border-line pt-4">
-            <p className="label text-center">One-click demo accounts</p>
-            <div className="flex flex-wrap justify-center gap-2">
-              {DEMOS.map((d) => (
-                <button
-                  key={d.email}
-                  className="chip !cursor-pointer hover:border-ink"
-                  onClick={() =>
-                    submit(d.email, d.email.startsWith("admin") ? "admin123" : "demo123")
-                  }
-                >
-                  {d.label}
-                </button>
-              ))}
-            </div>
-          </div>
         </div>
       </div>
     </section>

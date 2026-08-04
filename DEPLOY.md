@@ -62,11 +62,14 @@ On the first request, the app **auto-creates the tables and seeds** all products
 and the demo accounts against whatever MySQL database it's pointed at — no manual
 import needed.
 
-## Demo logins after deploy
+## Demo accounts after deploy
 
-- Admin: `admin@helbrede.com` / `admin123`
-- Buyers: `chemist@demo.in`, `stockist@demo.in`, `distributor@demo.in`, `doctor@demo.in` — all `demo123`
-- Pending (shows verification gate): `pending@demo.in` / `demo123`
+The app auto-seeds one admin account and a handful of demo buyer accounts
+(one per role, plus one left `pending` to show the verification gate) —
+see the seed list in `src/lib/db.ts`. **Change these passwords (or delete
+the accounts) before sharing the deployed URL publicly** — the seeded
+passwords are for local development only and shouldn't stay live on a
+public deployment.
 
 ## Notes
 

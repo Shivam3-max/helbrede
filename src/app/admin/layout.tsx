@@ -44,8 +44,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
             Admin access only.{" "}
             <Link href="/login" className="font-bold" style={{ color: "var(--green)" }}>
               Login as admin →
-            </Link>{" "}
-            (admin@helbrede.com / admin123)
+            </Link>
           </p>
         </div>
       </>

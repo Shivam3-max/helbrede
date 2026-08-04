@@ -40,7 +40,7 @@ export default function Header() {
     >
       <div className="container-x flex h-16 items-center justify-between gap-4">
         <Link href="/" aria-label="Helbrede Healthcare — home" className="flex items-center">
-          <Brand className="h-10" />
+          <Brand className="h-12" />
         </Link>
 
         <nav className="hidden items-center gap-5 lg:flex">

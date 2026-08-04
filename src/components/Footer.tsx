@@ -6,7 +6,7 @@ export default function Footer() {
     <footer className="border-t border-line bg-paper">
       <div className="container-x grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4">
         <div>
-          <Brand full className="h-16" />
+          <Brand full className="h-20" />
           <p className="mt-4 text-[13.5px] leading-relaxed text-graphite">
             India&apos;s bulk pharma ordering platform for stockists, distributors, chemists and
             doctors — fixed role-based trade rates on 360+ verified SKUs.
