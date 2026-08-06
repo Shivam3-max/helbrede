@@ -16,6 +16,7 @@ export interface RegisterInput {
   medicalRegNo?: string;
   city?: string;
   state?: string;
+  turnoverBand?: string;
   businessType?: string;
 }
 

@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import PasswordInput from "@/components/PasswordInput";
 import { dateShort } from "@/lib/format";
 import { ROLES } from "@/lib/pricing";
-import { businessTypeLabel } from "@/lib/registration";
+import { businessTypeLabel, TURNOVER_BANDS } from "@/lib/registration";
 import { Role, User, UserStatus } from "@/lib/types";
 
 type PublicUser = Omit<User, "password">;
@@ -155,6 +155,11 @@ export default function AdminUsers() {
                   </span>
                   {businessTypeLabel(u.businessType) && u.businessType !== u.role && (
                     <span className="chip !py-0.5 !text-[10px]">{businessTypeLabel(u.businessType)}</span>
+                  )}
+                  {u.turnoverBand && (
+                    <span className="chip !py-0.5 !text-[10px]">
+                      {TURNOVER_BANDS.find((b) => b.id === u.turnoverBand)?.label ?? u.turnoverBand}
+                    </span>
                   )}
                 </p>
                 <p className="mt-1 text-[12.5px] text-graphite">

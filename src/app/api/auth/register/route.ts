@@ -2,12 +2,13 @@ import { NextRequest, NextResponse } from "next/server";
 import { createUser, getUser } from "@/lib/db";
 
 /**
- * Self-registration no longer picks a trade role (the annual-turnover
- * picker was removed) — every new account starts `pending` with an empty
- * role, and an admin assigns the actual role (distributor/stockist/
- * chemist/doctor) when approving it from the verification queue.
- * `businessType` ("what best describes you") is still collected as a hint
- * for the admin, it just no longer determines the role by itself.
+ * Self-registration no longer determines the trade role automatically —
+ * every new account starts `pending` with an empty role, and an admin
+ * assigns the actual role (distributor/stockist/chemist/doctor) when
+ * approving it from the verification queue. `turnoverBand` (annual
+ * turnover picked at registration) and `businessType` ("what best
+ * describes you", collected within the lowest turnover band) are still
+ * gathered as hints for the admin — neither determines the role by itself.
  * No session is created here since a pending account can't log in yet.
  */
 export async function POST(req: NextRequest) {
@@ -29,6 +30,7 @@ export async function POST(req: NextRequest) {
     medicalRegNo: b.medicalRegNo || null,
     city: b.city || null,
     state: b.state || null,
+    turnoverBand: b.turnoverBand || null,
     businessType: b.businessType || null,
     status: "pending",
   });

@@ -5,7 +5,7 @@ import { useState } from "react";
 import PageTitle from "@/components/PageTitle";
 import PasswordInput from "@/components/PasswordInput";
 import { useAuth } from "@/context/AuthContext";
-import { BUSINESS_TYPES, BusinessType } from "@/lib/registration";
+import { BUSINESS_TYPES, BusinessType, TURNOVER_BANDS, TurnoverBand } from "@/lib/registration";
 
 const STATES = [
   "Chandigarh", "Delhi", "Haryana", "Himachal Pradesh", "Jammu & Kashmir",
@@ -17,6 +17,7 @@ export default function RegisterPage() {
   const [done, setDone] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [submitting, setSubmitting] = useState(false);
+  const [band, setBand] = useState<TurnoverBand>("upto25");
   const [businessType, setBusinessType] = useState<BusinessType>("chemist");
   const [f, setF] = useState({
     name: "", email: "", password: "", phone: "", firmName: "",
@@ -58,26 +59,46 @@ export default function RegisterPage() {
           <p className="eyebrow">Free registration</p>
           <h1 className="mt-2 font-display text-2xl font-black">Register your business</h1>
           <p className="mt-1 text-[13.5px] text-graphite">
-            Fill in what you have below — our team verifies your details and activates your account
+            Tell us your annual turnover — our team verifies your details and activates your account
             with the right trade role (distributor / stockist / chemist / doctor) and pricing tier.
             Nothing here is mandatory except contact, email and password.
           </p>
 
-          <div className="mt-6">
-            <label className="label">What best describes you?</label>
-            <select
-              className="input"
-              value={businessType}
-              onChange={(e) => setBusinessType(e.target.value as BusinessType)}
-            >
-              {BUSINESS_TYPES.map((t) => (
-                <option key={t.id} value={t.id}>{t.label}</option>
-              ))}
-            </select>
+          <p className="label mt-6">Annual turnover</p>
+          <div className="grid gap-2 sm:grid-cols-3">
+            {TURNOVER_BANDS.map((b) => (
+              <button
+                key={b.id}
+                type="button"
+                onClick={() => setBand(b.id)}
+                className={`rounded-xl border px-3 py-3 text-center transition-all ${
+                  band === b.id
+                    ? "border-green bg-green-soft text-[var(--green)]"
+                    : "border-line hover:border-ink"
+                }`}
+              >
+                <span className="block text-[13px] font-bold">{b.label}</span>
+              </button>
+            ))}
           </div>
 
+          {band === "upto25" && (
+            <div className="mt-4">
+              <label className="label">What best describes you?</label>
+              <select
+                className="input"
+                value={businessType}
+                onChange={(e) => setBusinessType(e.target.value as BusinessType)}
+              >
+                {BUSINESS_TYPES.map((t) => (
+                  <option key={t.id} value={t.id}>{t.label}</option>
+                ))}
+              </select>
+            </div>
+          )}
+
           <form
-            className="mt-4 grid gap-4 sm:grid-cols-2"
+            className="mt-6 grid gap-4 sm:grid-cols-2"
             onSubmit={async (e) => {
               e.preventDefault();
               setSubmitting(true);
@@ -89,7 +110,8 @@ export default function RegisterPage() {
                 medicalRegNo: f.medicalRegNo || undefined,
                 city: f.city || undefined,
                 state: f.state || undefined,
-                businessType,
+                turnoverBand: band,
+                businessType: band === "upto25" ? businessType : undefined,
               });
               if (err) {
                 setError(err);
