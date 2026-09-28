@@ -1,4 +1,5 @@
 import { Product } from "./types";
+import { catalogImage } from "./catalog-images";
 
 function buildSampleImage(accent: string, surface: string, badge: string, icon: string): string {
   const svg = `
@@ -104,6 +105,9 @@ export function sampleImageForGroup(group: string): string {
   return GROUP_SAMPLE_IMAGES[group] || GROUP_SAMPLE_IMAGES.Other;
 }
 
-export function sampleImageForProduct(product: Pick<Product, "image" | "group">): string | null {
-  return product.image || sampleImageForGroup(product.group);
+export function sampleImageForProduct(
+  product: Pick<Product, "id" | "image" | "group">
+): string | null {
+  // Priority: admin-uploaded image → real catalogue crop → generated sample art.
+  return product.image || catalogImage(product.id) || sampleImageForGroup(product.group);
 }
